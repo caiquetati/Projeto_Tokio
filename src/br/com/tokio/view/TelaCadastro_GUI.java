@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.UIManager;
@@ -91,8 +92,10 @@ public class TelaCadastro_GUI {
 		JButton Cadastro = new JButton("CADASTRAR");
 		Cadastro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!!");
 				Tela_Main_GUI main = new Tela_Main_GUI();
 				main.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		Cadastro.setBounds(324, 266, 116, 23);
@@ -132,7 +135,7 @@ public class TelaCadastro_GUI {
 		panel.add(lblNewLabel_7);
 		
 		
-		MaskFormatter mascaraTel = new MaskFormatter("(##)####-###");
+		MaskFormatter mascaraTel = new MaskFormatter("(##)#####-####");
 		JFormattedTextField formattedTextField = new JFormattedTextField(mascaraTel);
 		formattedTextField.setLocale(new Locale("pt", "BR"));
 		formattedTextField.setToolTipText("");

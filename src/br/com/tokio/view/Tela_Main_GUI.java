@@ -82,6 +82,8 @@ public class Tela_Main_GUI {
 			public void mouseClicked(MouseEvent e) {
 				Tela_Condominio_GUI cond = new Tela_Condominio_GUI();
 				cond.frame.setVisible(true);
+				frame.dispose();
+
 			}
 		});
 		panel_2_1_1.setBorder(UIManager.getBorder("CheckBox.border"));
@@ -106,6 +108,8 @@ public class Tela_Main_GUI {
 			public void mouseClicked(MouseEvent e) {
 				Tela_Apartamento_GUI apartamento = new Tela_Apartamento_GUI();
 				apartamento.frame.setVisible(true);
+				frame.dispose();
+
 			}
 		});
 		panel_2_1_1_1.setBorder(UIManager.getBorder("CheckBox.border"));
@@ -130,6 +134,8 @@ public class Tela_Main_GUI {
 			public void mouseClicked(MouseEvent e) {
 				Tela_Casa_GUI casa = new Tela_Casa_GUI();
 				casa.frame.setVisible(true);
+				frame.dispose();
+
 			}
 		});
 		panel_2_1_1_2.setBorder(UIManager.getBorder("CheckBox.border"));
@@ -155,17 +161,6 @@ public class Tela_Main_GUI {
 		JButton btnNewButton = new JButton("X");
 		btnNewButton.setBounds(401, 0, 49, 28);
 		panel.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			
-				
-			}
-		});
-		btnNewButton_1.setBounds(352, 0, 39, 28);
-		panel.add(btnNewButton_1);
-		btnNewButton_1.setIcon(new ImageIcon(Tela_Main_GUI.class.getResource("/br/com/tokio/images/arrow_resized_resized.png")));
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(Tela_Main_GUI.class.getResource("/br/com/tokio/images/Main_Image.jpg")));

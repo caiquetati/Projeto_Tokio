@@ -13,6 +13,8 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Tela_Apartamento_GUI {
 
@@ -77,55 +79,82 @@ public class Tela_Apartamento_GUI {
 		panel_1.add(lblNewLabel_2);
 		
 		JTextPane basico = new JTextPane();
+		basico.setVisible(false);
 		basico.setText("Incêndio\r\nroubo\r\ndanos elétricos\r\ndisp. aluguel \r\nResponsabilidade civil\r\n");
 		basico.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		basico.setBounds(138, 141, 115, 104);
+		basico.setBounds(210, 87, 210, 155);
 		panel_1.add(basico);
+		
+		JTextPane intermediario = new JTextPane();
+		intermediario.setVisible(false);
+		intermediario.setText("incêndio\r\nroubo\r\ndanos elétricos\r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\n");
+		intermediario.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		intermediario.setBounds(210, 87, 210, 155);
+		panel_1.add(intermediario);
+		
+		JTextPane completo = new JTextPane();
+		completo.setVisible(false);
+		completo.setText("incêndio                              \r\nroubo                                   \r\ndanos elétricos  \r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\nVidros \r\nvazamento de tubulações \r\nincêndio\r\nroubo\r\ndanos elétricos\r\n");
+		completo.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		completo.setBounds(210, 87, 210, 155);
+		panel_1.add(completo);
 		
 		JPanel panel_1_1 = new JPanel();
 		panel_1_1.setLayout(null);
 		panel_1_1.setBackground(new Color(153, 153, 153));
-		panel_1_1.setBounds(26, 87, 84, 27);
+		panel_1_1.setBounds(26, 87, 107, 27);
 		panel_1.add(panel_1_1);
 		
-		JLabel lblNewLabel_3 = new JLabel("Basico");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_3.setBounds(10, 0, 53, 25);
-		panel_1_1.add(lblNewLabel_3);
-		
-		JLabel lblNewLabel_3_1 = new JLabel("Intermediario");
-		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_3_1.setBounds(151, 87, 107, 25);
-		panel_1.add(lblNewLabel_3_1);
+		JLabel lblBasico = new JLabel("Basico");
+		lblBasico.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				basico.setVisible(true);
+				intermediario.setVisible(false);
+				completo.setVisible(false);
+			}
+		});
+		lblBasico.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblBasico.setBounds(10, 0, 53, 25);
+		panel_1_1.add(lblBasico);
 		
 		JPanel panel_1_1_1 = new JPanel();
 		panel_1_1_1.setLayout(null);
 		panel_1_1_1.setBackground(new Color(153, 153, 153));
-		panel_1_1_1.setBounds(151, 87, 107, 27);
+		panel_1_1_1.setBounds(26, 131, 107, 27);
 		panel_1.add(panel_1_1_1);
+		
+		JLabel lblIntermediario = new JLabel("Intermediario");
+		lblIntermediario.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				basico.setVisible(false);
+				intermediario.setVisible(true);
+				completo.setVisible(false);
+			}
+		});
+		lblIntermediario.setBounds(0, 0, 107, 25);
+		panel_1_1_1.add(lblIntermediario);
+		lblIntermediario.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		
 		JPanel panel_1_2 = new JPanel();
 		panel_1_2.setLayout(null);
 		panel_1_2.setBackground(new Color(153, 153, 153));
-		panel_1_2.setBounds(293, 87, 84, 27);
+		panel_1_2.setBounds(26, 169, 107, 27);
 		panel_1.add(panel_1_2);
 		
-		JLabel lblNewLabel_3_2 = new JLabel("Completo");
-		lblNewLabel_3_2.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_3_2.setBounds(0, 0, 84, 25);
-		panel_1_2.add(lblNewLabel_3_2);
-		
-		JTextPane intermediario = new JTextPane();
-		intermediario.setText("incêndio\r\nroubo\r\ndanos elétricos\r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\n");
-		intermediario.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		intermediario.setBounds(138, 123, 188, 104);
-		panel_1.add(intermediario);
-		
-		JTextPane completo = new JTextPane();
-		completo.setText("incêndio                              \r\nroubo                                   \r\ndanos elétricos  \r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\nVidros \r\nvazamento de tubulações \r\nincêndio\r\nroubo\r\ndanos elétricos\r\n");
-		completo.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		completo.setBounds(138, 123, 210, 162);
-		panel_1.add(completo);
+		JLabel lblCompleto = new JLabel("Completo");
+		lblCompleto.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				basico.setVisible(false);
+				intermediario.setVisible(false);
+				completo.setVisible(true);
+			}
+		});
+		lblCompleto.setBounds(10, 0, 84, 25);
+		panel_1_2.add(lblCompleto);
+		lblCompleto.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		
 		JButton btnNewButton_1 = new JButton("X");
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -146,6 +175,11 @@ public class Tela_Apartamento_GUI {
 		btnNewButton_1_1.setIcon(new ImageIcon(Tela_Apartamento_GUI.class.getResource("/br/com/tokio/images/arrow_resized_resized.png")));
 		btnNewButton_1_1.setBounds(321, 0, 39, 28);
 		panel_1.add(btnNewButton_1_1);
+		
+		JLabel lblNewLabel_3 = new JLabel("Escolha seu plano:");
+		lblNewLabel_3.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 11));
+		lblNewLabel_3.setBounds(0, 61, 133, 14);
+		panel_1.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(Tela_Apartamento_GUI.class.getResource("/br/com/tokio/images/apartamento_resized_updated.jpg")));
