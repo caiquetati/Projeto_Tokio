@@ -1,16 +1,16 @@
 package br.com.tokio.testes;
 
-
-import br.com.tokio.controller.UsuarioDAO;
-import br.com.tokio.model.Usuario;
+import br.com.tokio.util.CriptografiaAES;
 
 public class Teste {
 
 	public static void main(String[] args) {
-		UsuarioDAO dao = new UsuarioDAO();
-		Usuario novoUsuario = new Usuario(574162138,"Arthur","Fiap@123", "11082005", "masc", 181134165);
-		dao.insert(novoUsuario);
-		System.out.println(dao.selectAll());
+		String texto = "fiap123";
+		System.out.println(texto);
+		String textoC = CriptografiaAES.criptografar(texto);
+		System.out.println(textoC);
+		String textoD = CriptografiaAES.descriptografar(textoC);
+		System.out.println(textoD);
 	}
 
 }

@@ -43,7 +43,7 @@ public class UsuarioDAO {
 
 	// Metodo Criar Usuario e enviar para o banco de dados
 	public void insert(Usuario usuario) {
-		String sql = "INSERT INTO t_sip_cliente (CPF_CLIENTE, NM_CLIENTE, CD_SENHA_CLIENTE, DT_NASCIMENTO_CLIENTE, DS_SEXO_CLIENTE, TEL_CLIENTE) values (?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO t_sip_cliente () values (?)";
 		if (verificarSenha(usuario.getSenha())) {
 			try {
 				PreparedStatement stmt = conexao.prepareStatement(sql);
