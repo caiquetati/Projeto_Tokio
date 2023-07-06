@@ -73,6 +73,8 @@ public class Tela_Casa_GUI {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			//	JOptionPane.showMessageDialog(null, "voce escolheu...");
+				Tela_Pagamento_GUI pagamento = new Tela_Pagamento_GUI();
+				pagamento.frame.setVisible(true);
 			}
 		});
 		btnNewButton.setBounds(315, 254, 110, 23);

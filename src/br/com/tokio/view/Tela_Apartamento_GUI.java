@@ -69,6 +69,12 @@ public class Tela_Apartamento_GUI {
 		panel_1.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Confirmar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Tela_Pagamento_GUI pagamento = new Tela_Pagamento_GUI();
+				pagamento.frame.setVisible(true);
+			}
+		});
 		btnNewButton.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
 		btnNewButton.setBounds(321, 255, 111, 23);
 		panel_1.add(btnNewButton);

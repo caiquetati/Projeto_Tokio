@@ -11,10 +11,13 @@ import java.awt.Color;
 import javax.swing.UIManager;
 import java.awt.Font;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 import javax.swing.JButton;
 import java.awt.Component;
+import java.awt.Desktop;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.net.URI;
 import java.text.ParseException;
 
 import javax.swing.JComboBox;
@@ -30,6 +33,11 @@ import javax.swing.border.LineBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.MatteBorder;
+import javax.swing.JTextField;
+import java.awt.Color;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+
 public class TelaCadastro_GUI {
 
 	JFrame frame;
@@ -78,9 +86,32 @@ public class TelaCadastro_GUI {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
+		JLabel lblNewLabel_2_1 = new JLabel("");
+		lblNewLabel_2_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				openDulvidas();
+			}
+		});
+		
+		JLabel lblNewLabel_8 = new JLabel("");
+		lblNewLabel_8.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Tela_Inicial_GUI telacadastro = new Tela_Inicial_GUI();
+				telacadastro.frame.setVisible(true);
+			}
+		});
+		lblNewLabel_8.setIcon(new ImageIcon(TelaCadastro_GUI.class.getResource("/br/com/tokio/images/arrow_resized_resized.png")));
+		lblNewLabel_8.setBounds(404, 9, 25, 30);
+		panel.add(lblNewLabel_8);
+		lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\5a3698b221c196.3039888215135274741383_resized.png"));
+		lblNewLabel_2_1.setBounds(439, 9, 25, 30);
+		panel.add(lblNewLabel_2_1);
+		
 		JLabel lblNewLabel_1 = new JLabel("Primeiro acesso");
 		lblNewLabel_1.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 18));
-		lblNewLabel_1.setBounds(180, 16, 230, 41);
+		lblNewLabel_1.setBounds(167, 16, 216, 41);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nome:");
@@ -88,10 +119,12 @@ public class TelaCadastro_GUI {
 		panel.add(lblNewLabel_2);
 		
 		Nome = new JTextField();
+
 		Nome.setBorder(new MatteBorder(2, 2, 0, 0, (Color) new Color(0, 0, 0)));
 		Nome.setBounds(60, 88, 216, 20);
 		panel.add(Nome);
 		Nome.setColumns(10);
+		; 
 		
 		JLabel lblNewLabel_3 = new JLabel("CPF:");
 		lblNewLabel_3.setBounds(41, 119, 46, 14);
@@ -163,9 +196,24 @@ public class TelaCadastro_GUI {
 		panel.add(formattedTextField_1);
 		
 		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+			}
+		});
 		lblNewLabel.setIcon(new ImageIcon(TelaCadastro_GUI.class.getResource("/br/com/tokio/images/Image_Cadastro_resized_resized_updated.png")));
-		lblNewLabel.setBounds(30, 0, 477, 346);
+		lblNewLabel.setBounds(25, 16, 450, 307);
 		panel.add(lblNewLabel);
-	}
+	}private static void openDulvidas() {
+        try {
+            URI uri = new URI("https://docs.google.com/document/d/1oALTDDmqvJZ56OjX-miOh3cdlJV5kLIB30OqqQmuUEs/edit?pli=1"); 
+            Desktop.getDesktop().browse(uri);//https://www.instagram.com/tokiomarineseguradora
+        } catch (Exception e) {
+            e.printStackTrace();}
+        }
 	
+
+
+
 }

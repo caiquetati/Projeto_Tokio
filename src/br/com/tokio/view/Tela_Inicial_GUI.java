@@ -209,10 +209,28 @@ public class Tela_Inicial_GUI {
 		btnNewButton.setBounds(229, 203, 89, 23);
 		panel_1.add(btnNewButton);
 		
-		JLabel lblNewLabel_6 = new JLabel("");
-		lblNewLabel_6.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\capa_resized_updated.jpg"));
-		lblNewLabel_6.setBounds(10, 11, 410, 256);
-		panel_1.add(lblNewLabel_6);
+		JLabel lblNewLabel_1_1_1 = new JLabel("");
+		lblNewLabel_1_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				 openWats();
+			}
+		});
+		lblNewLabel_1_1_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\watts_logo_resized.jpg"));
+		lblNewLabel_1_1_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+		lblNewLabel_1_1_1.setBounds(248, 237, 30, 30);
+		panel_1.add(lblNewLabel_1_1_1);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("");
+		lblNewLabel_2_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				openDulvidas();
+			}
+		});
+		lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\5a3698b221c196.3039888215135274741383_resized.png"));
+		lblNewLabel_2_1.setBounds(360, 11, 25, 30);
+		panel_1.add(lblNewLabel_2_1);
 		
 		
 		
@@ -220,7 +238,7 @@ public class Tela_Inicial_GUI {
 	}
 	 private static void openInstagram() {
 	        try {
-	            URI uri = new URI("https://www.instagram.com/tokiomarineseguradora");
+	            URI uri = new URI("https://www.instagram.com/tokiomarineseguradora"); 
 	            Desktop.getDesktop().browse(uri);
 	        } catch (Exception e) {
 	            e.printStackTrace();}
@@ -234,14 +252,23 @@ public class Tela_Inicial_GUI {
 		        }}
 	        private static void openLinkedin() {
 		        try {
-		            URI uri = new URI("https://br.linkedin.com/company/tokio-marine-seguradora-s-a");
+		            URI uri = new URI("https://www.linkedin.com/company/tokio-marine-seguradora-s-a/");
 		            Desktop.getDesktop().browse(uri);
 		        } catch (Exception e) {
 		            
-		        	 e.printStackTrace();}
-		        
-		        
-
-		        
-	        }}
+		        	 e.printStackTrace();
+		        	 }}	private static void openWats() {
+		        try {
+		            URI uri = new URI("https://api.whatsapp.com/send/?phone=5511961762834&text&type=phone_number&app_absent=0");
+		            Desktop.getDesktop().browse(uri);
+		        } catch (Exception e) {
+		            e.printStackTrace();}
+		        }private static void openDulvidas() {
+			        try {
+			            URI uri = new URI("https://docs.google.com/document/d/1oALTDDmqvJZ56OjX-miOh3cdlJV5kLIB30OqqQmuUEs/edit?pli=1"); 
+			            Desktop.getDesktop().browse(uri);//https://www.instagram.com/tokiomarineseguradora
+			        } catch (Exception e) {
+			            e.printStackTrace();}
+			        }
+}
 

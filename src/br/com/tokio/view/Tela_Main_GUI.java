@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Color;
+import java.awt.Desktop;
+
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import javax.swing.UIManager;
@@ -15,6 +17,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.net.URI;
+
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.MatteBorder;
 import javax.swing.SwingConstants;
@@ -181,6 +185,23 @@ public class Tela_Main_GUI {
 		lblNewLabel_10.setIcon(new ImageIcon(Tela_Main_GUI.class.getResource("/br/com/tokio/images/CLOSE_resized.png")));
 		lblNewLabel_10.setBounds(504, 11, 25, 30);
 		panel.add(lblNewLabel_10);
-	}
+		
+		JLabel lblNewLabel_2_1 = new JLabel("");
+		lblNewLabel_2_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				openDulvidas();
+			}
+		});
+		lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\5a3698b221c196.3039888215135274741383_resized.png"));
+		lblNewLabel_2_1.setBounds(478, 11, 25, 30);
+		panel.add(lblNewLabel_2_1);
+	}private static void openDulvidas() {
+        try {
+            URI uri = new URI("https://docs.google.com/document/d/1oALTDDmqvJZ56OjX-miOh3cdlJV5kLIB30OqqQmuUEs/edit?pli=1"); 
+            Desktop.getDesktop().browse(uri);//https://www.instagram.com/tokiomarineseguradora
+        } catch (Exception e) {
+            e.printStackTrace();}
+        }
 
 }

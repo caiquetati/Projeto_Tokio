@@ -153,6 +153,12 @@ public class Tela_Condominio_GUI {
 		panel_1_2.add(lblNewLabel_3_2);
 
 		JButton btnNewButton = new JButton("Confirmar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Tela_Pagamento_GUI pagamento = new Tela_Pagamento_GUI();
+				pagamento.frame.setVisible(true);
+			}
+		});
 		btnNewButton.setBounds(320, 255, 110, 23);
 		panel_1.add(btnNewButton);
 
