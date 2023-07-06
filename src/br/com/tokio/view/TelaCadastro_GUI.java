@@ -103,18 +103,19 @@ public class TelaCadastro_GUI {
 			}
 		});
 		lblNewLabel_8.setIcon(new ImageIcon(TelaCadastro_GUI.class.getResource("/br/com/tokio/images/arrow_resized_resized.png")));
-		lblNewLabel_8.setBounds(404, 9, 25, 30);
+		lblNewLabel_8.setBounds(376, 20, 25, 30);
 		panel.add(lblNewLabel_8);
-		lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\5a3698b221c196.3039888215135274741383_resized.png"));
-		lblNewLabel_2_1.setBounds(439, 9, 25, 30);
+		lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\problem (2)_resized.png"));
+		lblNewLabel_2_1.setBounds(411, 20, 39, 30);
 		panel.add(lblNewLabel_2_1);
 		
-		JLabel lblNewLabel_1 = new JLabel("Primeiro acesso");
-		lblNewLabel_1.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 18));
-		lblNewLabel_1.setBounds(167, 16, 216, 41);
+		JLabel lblNewLabel_1 = new JLabel("PRIMEIRO ACESSO");
+		lblNewLabel_1.setFont(new Font("Lucida Bright", Font.BOLD, 22));
+		lblNewLabel_1.setBounds(131, 9, 216, 41);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nome:");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_2.setBounds(41, 64, 59, 23);
 		panel.add(lblNewLabel_2);
 		
@@ -127,11 +128,13 @@ public class TelaCadastro_GUI {
 		; 
 		
 		JLabel lblNewLabel_3 = new JLabel("CPF:");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_3.setBounds(41, 119, 46, 14);
 		panel.add(lblNewLabel_3);
 		
 		JButton Cadastro = new JButton("CADASTRAR");
-		Cadastro.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
+		Cadastro.setFont(new Font("Tahoma", Font.BOLD, 11));
+		Cadastro.setBorder(new MatteBorder(2, 2, 3, 1, (Color) new Color(0, 0, 0)));
 		Cadastro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!!");
@@ -140,7 +143,7 @@ public class TelaCadastro_GUI {
 				frame.dispose();
 			}
 		});
-		Cadastro.setBounds(381, 312, 116, 23);
+		Cadastro.setBounds(361, 323, 116, 23);
 		panel.add(Cadastro);
 		
 		JLabel lblNewLabel_4 = new JLabel("");
@@ -151,11 +154,12 @@ public class TelaCadastro_GUI {
 				System.exit(0);
 			}
 		});
-		lblNewLabel_4.setIcon(new ImageIcon(TelaCadastro_GUI.class.getResource("/br/com/tokio/images/CLOSE_resized.png")));
-		lblNewLabel_4.setBounds(472, 11, 25, 28);
+		lblNewLabel_4.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\close_resized (2).png"));
+		lblNewLabel_4.setBounds(449, 23, 28, 23);
 		panel.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("Idade:");
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_5.setBounds(41, 165, 46, 14);
 		panel.add(lblNewLabel_5);
 		
@@ -165,7 +169,8 @@ public class TelaCadastro_GUI {
 		panel.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_6 = new JLabel("Genero");
+		JLabel lblNewLabel_6 = new JLabel("Genero:");
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_6.setBounds(289, 119, 46, 14);
 		panel.add(lblNewLabel_6);
 		
@@ -174,8 +179,9 @@ public class TelaCadastro_GUI {
 		comboBox.setBounds(302, 134, 96, 22);
 		panel.add(comboBox);
 		
-		JLabel lblNewLabel_7 = new JLabel("Telefone");
-		lblNewLabel_7.setBounds(289, 68, 46, 14);
+		JLabel lblNewLabel_7 = new JLabel("Telefone:");
+		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_7.setBounds(289, 68, 83, 14);
 		panel.add(lblNewLabel_7);
 		
 		
@@ -203,7 +209,7 @@ public class TelaCadastro_GUI {
 			}
 		});
 		lblNewLabel.setIcon(new ImageIcon(TelaCadastro_GUI.class.getResource("/br/com/tokio/images/Image_Cadastro_resized_resized_updated.png")));
-		lblNewLabel.setBounds(25, 16, 450, 307);
+		lblNewLabel.setBounds(25, 9, 450, 326);
 		panel.add(lblNewLabel);
 	}private static void openDulvidas() {
         try {

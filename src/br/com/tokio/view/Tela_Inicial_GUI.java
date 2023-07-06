@@ -27,6 +27,7 @@ import java.awt.Font;
 import java.awt.GridBagLayout;
 
 import javax.swing.border.MatteBorder;
+import javax.swing.border.LineBorder;
 
 public class Tela_Inicial_GUI {
 
@@ -70,7 +71,7 @@ public class Tela_Inicial_GUI {
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBorder(new MatteBorder(5, 4, 4, 4, (Color) new Color(0, 0, 0)));
+		panel.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		panel.setBounds(0, 0, 450, 300);
 		panel.setBackground(new Color(20, 129, 99));
 		frame.getContentPane().add(panel);
@@ -78,8 +79,8 @@ public class Tela_Inicial_GUI {
 		
 		JPanel panel_1 = new JPanel();
 		
-		panel_1.setBorder(new MatteBorder(5, 4, 2, 3, (Color) new Color(0, 0, 0)));
-		panel_1.setBackground(Color.GRAY);
+		panel_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+		panel_1.setBackground(new Color(60, 179, 113));
 		panel_1.setBounds(10, 11, 430, 278);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
@@ -92,8 +93,8 @@ public class Tela_Inicial_GUI {
 				openInstagram();
 			}
 		});
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\icon_instagram_resized.png"));
-		lblNewLabel.setBounds(368, 237, 30, 30);
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\instagram_resized (1).png"));
+		lblNewLabel.setBounds(50, 237, 30, 30);
 		panel_1.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
@@ -104,8 +105,8 @@ public class Tela_Inicial_GUI {
 				openFacebook();
 			}
 		});
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\icon facebook_resized.png"));
-		lblNewLabel_1.setBounds(328, 237, 30, 30);
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\facebook (1)_resized.png"));
+		lblNewLabel_1.setBounds(130, 237, 30, 30);
 		panel_1.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("");
@@ -116,8 +117,8 @@ public class Tela_Inicial_GUI {
 			}
 		});
 		lblNewLabel_1_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-		lblNewLabel_1_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\linkedin_tokio_resized.png"));
-		lblNewLabel_1_1.setBounds(288, 237, 30, 30);
+		lblNewLabel_1_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\linkedin_resized.png"));
+		lblNewLabel_1_1.setBounds(90, 237, 30, 30);
 		panel_1.add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
@@ -128,8 +129,8 @@ public class Tela_Inicial_GUI {
 				System.exit(0);
 			}
 		});
-		lblNewLabel_2.setIcon(new ImageIcon(Tela_Inicial_GUI.class.getResource("/br/com/tokio/images/CLOSE_resized.png")));
-		lblNewLabel_2.setBounds(395, 11, 25, 30);
+		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\close_resized (2).png"));
+		lblNewLabel_2.setBounds(405, 0, 25, 30);
 		panel_1.add(lblNewLabel_2);
 		
 
@@ -142,28 +143,29 @@ public class Tela_Inicial_GUI {
 		}		
 		JFormattedTextField formattedTextField_1 = new JFormattedTextField(mascaraCPF);
 		formattedTextField_1.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
-		formattedTextField_1.setBounds(138, 122, 180, 20);
+		formattedTextField_1.setBounds(138, 116, 180, 20);
 		panel_1.add(formattedTextField_1);
 		
 		passwordField = new JPasswordField();
 		passwordField.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
-		passwordField.setBounds(138, 163, 180, 20);
+		passwordField.setBounds(138, 147, 180, 20);
 		panel_1.add(passwordField);
 		
 		JLabel lblNewLabel_3 = new JLabel("CPF:\r\n");
-		lblNewLabel_3.setForeground(Color.WHITE);
-		lblNewLabel_3.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
-		lblNewLabel_3.setBounds(118, 93, 60, 30);
+		lblNewLabel_3.setForeground(new Color(0, 0, 0));
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_3.setBounds(81, 110, 37, 30);
 		panel_1.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Senha:\r\n");
-		lblNewLabel_4.setForeground(Color.WHITE);
-		lblNewLabel_4.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 13));
-		lblNewLabel_4.setBounds(118, 142, 60, 20);
+		lblNewLabel_4.setForeground(new Color(0, 0, 0));
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_4.setBounds(81, 147, 60, 20);
 		panel_1.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("Não possui cadastro?");
-		lblNewLabel_5.setForeground(Color.WHITE);
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_5.setForeground(new Color(0, 0, 0));
 		lblNewLabel_5.addMouseListener(new MouseAdapter() {
 			
 			
@@ -190,7 +192,7 @@ public class Tela_Inicial_GUI {
 				frame.dispose();
 			}
 		});
-		lblNewLabel_5.setBounds(209, 183, 149, 14);
+		lblNewLabel_5.setBounds(183, 173, 135, 14);
 		panel_1.add(lblNewLabel_5);
 		
 		JButton btnNewButton = new JButton("Entrar");
@@ -206,7 +208,7 @@ public class Tela_Inicial_GUI {
 		});
 		btnNewButton.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
 		btnNewButton.setFont(new Font("Arial Black", Font.PLAIN, 12));
-		btnNewButton.setBounds(229, 203, 89, 23);
+		btnNewButton.setBounds(229, 200, 89, 23);
 		panel_1.add(btnNewButton);
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("");
@@ -216,9 +218,9 @@ public class Tela_Inicial_GUI {
 				 openWats();
 			}
 		});
-		lblNewLabel_1_1_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\watts_logo_resized.jpg"));
+		lblNewLabel_1_1_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\whatsapp (1)_resized.png"));
 		lblNewLabel_1_1_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-		lblNewLabel_1_1_1.setBounds(248, 237, 30, 30);
+		lblNewLabel_1_1_1.setBounds(10, 237, 30, 30);
 		panel_1.add(lblNewLabel_1_1_1);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("");
@@ -228,9 +230,20 @@ public class Tela_Inicial_GUI {
 				openDulvidas();
 			}
 		});
-		lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\5a3698b221c196.3039888215135274741383_resized.png"));
-		lblNewLabel_2_1.setBounds(360, 11, 25, 30);
+		lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\problem (2)_resized.png"));
+		lblNewLabel_2_1.setBounds(373, 0, 25, 30);
 		panel_1.add(lblNewLabel_2_1);
+		
+		JLabel lblNewLabel_6 = new JLabel("");
+		lblNewLabel_6.setBackground(new Color(0, 0, 0));
+		lblNewLabel_6.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\ang.png"));
+		lblNewLabel_6.setBounds(0, -11, 395, 105);
+		panel_1.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("");
+		lblNewLabel_7.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\profile_resized.png"));
+		lblNewLabel_7.setBounds(328, 116, 74, 59);
+		panel_1.add(lblNewLabel_7);
 		
 		
 		

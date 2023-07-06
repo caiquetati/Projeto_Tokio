@@ -69,27 +69,24 @@ public class Tela_Apartamento_GUI {
 		panel_1.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Confirmar");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Tela_Pagamento_GUI pagamento = new Tela_Pagamento_GUI();
 				pagamento.frame.setVisible(true);
 			}
 		});
-		btnNewButton.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
+		btnNewButton.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(0, 0, 0)));
 		btnNewButton.setBounds(321, 255, 111, 23);
 		panel_1.add(btnNewButton);
 		
-		JLabel lblNewLabel_1 = new JLabel("Seguro");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
-		lblNewLabel_1.setBounds(166, 11, 115, 22);
+		JLabel lblNewLabel_1 = new JLabel("Seguro Apartamento");
+		lblNewLabel_1.setFont(new Font("Lucida Bright", Font.BOLD, 22));
+		lblNewLabel_1.setBounds(81, 11, 238, 33);
 		panel_1.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("Apartamento");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
-		lblNewLabel_2.setBounds(138, 34, 161, 22);
-		panel_1.add(lblNewLabel_2);
-		
 		JTextPane basico = new JTextPane();
+		basico.setFont(new Font("Tahoma", Font.BOLD, 11));
 		basico.setVisible(false);
 		basico.setText("Incêndio\r\nroubo\r\ndanos elétricos\r\ndisp. aluguel \r\nResponsabilidade civil\r\n");
 		basico.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
@@ -117,8 +114,8 @@ public class Tela_Apartamento_GUI {
 		panel_1_1.setBounds(26, 87, 107, 27);
 		panel_1.add(panel_1_1);
 		
-		JLabel lblBasico = new JLabel("Basico");
-		lblBasico.setBorder(new MatteBorder(3, 3, 1, 1, (Color) new Color(0, 0, 0)));
+		JLabel lblBasico = new JLabel("Básico");
+		lblBasico.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
 		lblBasico.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBasico.addMouseListener(new MouseAdapter() {
 			@Override
@@ -128,7 +125,7 @@ public class Tela_Apartamento_GUI {
 				completo.setVisible(false);
 			}
 		});
-		lblBasico.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblBasico.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblBasico.setBounds(0, 0, 107, 27);
 		panel_1_1.add(lblBasico);
 		
@@ -139,7 +136,7 @@ public class Tela_Apartamento_GUI {
 		panel_1.add(panel_1_1_1);
 		
 		JLabel lblIntermediario = new JLabel("Intermediario");
-		lblIntermediario.setBorder(new MatteBorder(3, 3, 1, 1, (Color) new Color(0, 0, 0)));
+		lblIntermediario.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
 		lblIntermediario.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIntermediario.addMouseListener(new MouseAdapter() {
 			@Override
@@ -151,7 +148,7 @@ public class Tela_Apartamento_GUI {
 		});
 		lblIntermediario.setBounds(0, 0, 107, 27);
 		panel_1_1_1.add(lblIntermediario);
-		lblIntermediario.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblIntermediario.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		JPanel panel_1_2 = new JPanel();
 		panel_1_2.setLayout(null);
@@ -160,7 +157,7 @@ public class Tela_Apartamento_GUI {
 		panel_1.add(panel_1_2);
 		
 		JLabel lblCompleto = new JLabel("Completo");
-		lblCompleto.setBorder(new MatteBorder(3, 3, 1, 1, (Color) new Color(0, 0, 0)));
+		lblCompleto.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
 		lblCompleto.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCompleto.addMouseListener(new MouseAdapter() {
 			@Override
@@ -172,11 +169,11 @@ public class Tela_Apartamento_GUI {
 		});
 		lblCompleto.setBounds(0, 0, 107, 25);
 		panel_1_2.add(lblCompleto);
-		lblCompleto.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblCompleto.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		JButton btnNewButton_1 = new JButton("");
 		btnNewButton_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.RED));
-		btnNewButton_1.setIcon(new ImageIcon(Tela_Apartamento_GUI.class.getResource("/br/com/tokio/images/CLOSE_resized.png")));
+		btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\close_resized (2).png"));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
@@ -193,12 +190,12 @@ public class Tela_Apartamento_GUI {
 			}
 		});
 		btnNewButton_1_1.setIcon(new ImageIcon(Tela_Apartamento_GUI.class.getResource("/br/com/tokio/images/arrow_resized_resized.png")));
-		btnNewButton_1_1.setBounds(340, 11, 39, 28);
+		btnNewButton_1_1.setBounds(340, 11, 39, 33);
 		panel_1.add(btnNewButton_1_1);
 		
 		JLabel lblNewLabel_3 = new JLabel("Escolha seu plano:");
-		lblNewLabel_3.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 11));
-		lblNewLabel_3.setBounds(0, 61, 133, 14);
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_3.setBounds(10, 62, 133, 14);
 		panel_1.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel = new JLabel("");

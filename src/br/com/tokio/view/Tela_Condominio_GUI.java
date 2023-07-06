@@ -64,21 +64,17 @@ public class Tela_Condominio_GUI {
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 
-		JLabel lblNewLabel_1 = new JLabel("Seguro");
-		lblNewLabel_1.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 18));
-		lblNewLabel_1.setBounds(183, 11, 94, 45);
+		JLabel lblNewLabel_1 = new JLabel("Seguro Condomínio");
+		lblNewLabel_1.setFont(new Font("Lucida Bright", Font.BOLD, 22));
+		lblNewLabel_1.setBounds(88, 11, 232, 45);
 		panel_1.add(lblNewLabel_1);
-
-		JLabel lblNewLabel_2 = new JLabel("Condominio");
-		lblNewLabel_2.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 18));
-		lblNewLabel_2.setBounds(152, 43, 156, 25);
-		panel_1.add(lblNewLabel_2);
 
 		JLabel lblNewLabel_3 = new JLabel("Basico");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		lblNewLabel_3.setBounds(10, 0, 53, 25);
 
 		JTextPane basico = new JTextPane();
+		basico.setFont(new Font("Tahoma", Font.BOLD, 11));
 		basico.setVisible(false);
 		basico.setText("Incêndio\r\nroubo\r\ndanos elétricos\r\ndisp. aluguel \r\nResponsabilidade civil\r\n");
 		basico.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
@@ -99,6 +95,7 @@ public class Tela_Condominio_GUI {
 		completo.setBounds(210, 79, 210, 165);
 
 		JPanel panel_1_1 = new JPanel();
+		panel_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		panel_1_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -190,7 +187,7 @@ public class Tela_Condominio_GUI {
 		panel_1.add(completo);
 		
 		JLabel lblNewLabel_3_3 = new JLabel("Escolha seu plano:");
-		lblNewLabel_3_3.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 11));
+		lblNewLabel_3_3.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_3_3.setBounds(9, 61, 133, 14);
 		panel_1.add(lblNewLabel_3_3);
 		
