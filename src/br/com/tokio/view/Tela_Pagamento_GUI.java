@@ -65,13 +65,15 @@ public class Tela_Pagamento_GUI {
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+		panel_1.setBackground(new Color(60, 179, 113));
 		panel_1.setBounds(10, 11, 504, 322);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Pagamento ");
-		lblNewLabel.setFont(new Font("Segoe UI", Font.BOLD | Font.ITALIC, 19));
-		lblNewLabel.setBounds(203, 11, 157, 38);
+		lblNewLabel.setFont(new Font("Lucida Bright", Font.BOLD, 22));
+		lblNewLabel.setBounds(157, 11, 157, 38);
 		panel_1.add(lblNewLabel);
 		
 		JPanel panel_2 = new JPanel();
@@ -80,6 +82,7 @@ public class Tela_Pagamento_GUI {
 		panel_2.setLayout(null);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nº cartão");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_2.setBounds(21, 11, 84, 14);
 		panel_2.add(lblNewLabel_2);
 		
@@ -96,6 +99,7 @@ public class Tela_Pagamento_GUI {
 		panel_2.add(formattedTextField);
 		
 		JLabel lblNewLabel_3 = new JLabel("CVV");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_3.setBounds(21, 55, 46, 14);
 		panel_2.add(lblNewLabel_3);
 		
@@ -111,7 +115,8 @@ public class Tela_Pagamento_GUI {
 		panel_2.add(formattedTextField_1);
 		
 		JLabel lblNewLabel_4 = new JLabel("Validade");
-		lblNewLabel_4.setBounds(106, 55, 46, 14);
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_4.setBounds(106, 55, 64, 14);
 		panel_2.add(lblNewLabel_4);
 		
 		MaskFormatter marcaraTel3 = null;
@@ -126,7 +131,9 @@ public class Tela_Pagamento_GUI {
 		panel_2.add(formattedTextField_2);
 		
 		JButton btnNewButton_3 = new JButton("Confirmar");
-		btnNewButton_3.setBounds(225, 88, 89, 23);
+		btnNewButton_3.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnNewButton_3.setBounds(225, 88, 100, 23);
 		panel_2.add(btnNewButton_3);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
@@ -135,26 +142,30 @@ public class Tela_Pagamento_GUI {
 		panel_1.add(lblNewLabel_1);
 		
 		JButton btnNewButton = new JButton("Debito");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnNewButton.setBounds(40, 127, 89, 23);
 		panel_1.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Credito");
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnNewButton_1.setBounds(157, 127, 89, 23);
 		panel_1.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_5 = new JLabel("PIX ");
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5.setBounds(408, 166, 86, 28);
 		panel_1.add(lblNewLabel_5);
 		
 		JButton btnNewButton_2 = new JButton("Boleto");
+		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnNewButton_2.setBounds(271, 127, 89, 23);
 		panel_1.add(btnNewButton_2);
 		
 		JLabel lblNewLabel_6 = new JLabel("Escolha o meio de pagamento");
-		lblNewLabel_6.setFont(new Font("Arial", Font.PLAIN, 17));
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 17));
 		lblNewLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_6.setBounds(89, 76, 234, 40);
+		lblNewLabel_6.setBounds(54, 81, 287, 40);
 		panel_1.add(lblNewLabel_6);
 		
 		JLabel lblNewLabel_7 = new JLabel("");
@@ -164,7 +175,7 @@ public class Tela_Pagamento_GUI {
 				System.exit(0);
 			}
 		});
-		lblNewLabel_7.setIcon(new ImageIcon(Tela_Pagamento_GUI.class.getResource("/br/com/tokio/images/CLOSE_resized.png")));
+		lblNewLabel_7.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\close_resized (2).png"));
 		lblNewLabel_7.setBounds(479, 0, 25, 38);
 		panel_1.add(lblNewLabel_7);
 		
@@ -187,8 +198,8 @@ public class Tela_Pagamento_GUI {
 				 openDulvidas();
 			}
 		});
-		lblNewLabel_7_1_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\5a3698b221c196.3039888215135274741383_resized.png"));
-		lblNewLabel_7_1_1.setBounds(419, 0, 25, 38);
+		lblNewLabel_7_1_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\problem (2)_resized.png"));
+		lblNewLabel_7_1_1.setBounds(426, 0, 25, 38);
 		panel_1.add(lblNewLabel_7_1_1);
 	}private static void openDulvidas() {
         try {
