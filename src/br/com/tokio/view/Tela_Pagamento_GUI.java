@@ -5,8 +5,6 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import javax.swing.JLabel;
 
 public class Tela_Pagamento_GUI {
 
@@ -41,26 +39,19 @@ public class Tela_Pagamento_GUI {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setUndecorated(true);
-		frame.setBackground(new Color(20, 129, 99));
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 524, 344);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 450, 300);
+		panel.setBounds(0, 0, 524, 344);
 		panel.setBackground(new Color(20, 129, 99));
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(Color.GRAY);
-		panel_1.setBounds(10, 11, 430, 278);
+		panel_1.setBounds(10, 11, 504, 322);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("Pagamento");
-		lblNewLabel.setBounds(158, 11, 131, 20);
-		panel_1.add(lblNewLabel);
 	}
-
 }

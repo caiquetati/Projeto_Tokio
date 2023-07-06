@@ -16,6 +16,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.border.EtchedBorder;
+import javax.swing.border.MatteBorder;
+import javax.swing.SwingConstants;
 
 public class Tela_Main_GUI {
 
@@ -55,24 +57,27 @@ public class Tela_Main_GUI {
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
+		panel.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));
 		panel.setBackground(new Color(20, 129, 99));
-		panel.setBounds(0, 0, 514, 360);
+		panel.setBounds(0, 0, 539, 360);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 4, true));
 		panel_1.setBackground(new Color(153, 153, 153));
-		panel_1.setBounds(30, 24, 435, 314);
+		panel_1.setBounds(49, 35, 435, 314);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
 		JLabel lblNewLabel_1 = new JLabel("Seguro");
+		lblNewLabel_1.setForeground(new Color(0, 0, 0));
 		lblNewLabel_1.setFont(new Font("Lucida Bright", Font.BOLD, 21));
 		lblNewLabel_1.setBounds(10, 12, 104, 39);
 		panel_1.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Residencial");
+		lblNewLabel_2.setForeground(Color.BLACK);
 		lblNewLabel_2.setFont(new Font("Lucida Bright", Font.BOLD, 21));
 		lblNewLabel_2.setBounds(10, 31, 127, 56);
 		panel_1.add(lblNewLabel_2);
@@ -160,18 +165,22 @@ public class Tela_Main_GUI {
 		panel_2_1_1_2.add(lblNewLabel_5);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(208, 11, 217, 288);
+		lblNewLabel.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
+		lblNewLabel.setBounds(208, 12, 217, 288);
 		panel_1.add(lblNewLabel);
 		lblNewLabel.setIcon(new ImageIcon(Tela_Main_GUI.class.getResource("/br/com/tokio/images/Main_Image.jpg")));
 		
-		JButton btnNewButton = new JButton("X");
-		btnNewButton.setBounds(465, 0, 39, 23);
-		panel.add(btnNewButton);
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		JLabel lblNewLabel_10 = new JLabel("");
+		lblNewLabel_10.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
 				System.exit(0);
 			}
 		});
+		lblNewLabel_10.setBorder(new MatteBorder(1, 1, 2, 2, (Color) new Color(255, 0, 0)));
+		lblNewLabel_10.setIcon(new ImageIcon(Tela_Main_GUI.class.getResource("/br/com/tokio/images/CLOSE_resized.png")));
+		lblNewLabel_10.setBounds(504, 11, 25, 30);
+		panel.add(lblNewLabel_10);
 	}
 
 }

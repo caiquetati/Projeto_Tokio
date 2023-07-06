@@ -15,6 +15,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.border.MatteBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.SwingConstants;
 
 public class Tela_Apartamento_GUI {
 
@@ -54,6 +57,7 @@ public class Tela_Apartamento_GUI {
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
+		panel.setBorder(new MatteBorder(4, 4, 4, 4, (Color) new Color(0, 0, 0)));
 		panel.setBounds(0, 0, 450, 300);
 		panel.setBackground(new Color(20, 129, 99));
 		frame.getContentPane().add(panel);
@@ -65,6 +69,7 @@ public class Tela_Apartamento_GUI {
 		panel_1.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Confirmar");
+		btnNewButton.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
 		btnNewButton.setBounds(321, 255, 111, 23);
 		panel_1.add(btnNewButton);
 		
@@ -81,31 +86,34 @@ public class Tela_Apartamento_GUI {
 		JTextPane basico = new JTextPane();
 		basico.setVisible(false);
 		basico.setText("Incêndio\r\nroubo\r\ndanos elétricos\r\ndisp. aluguel \r\nResponsabilidade civil\r\n");
-		basico.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		basico.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		basico.setBounds(210, 87, 210, 155);
 		panel_1.add(basico);
 		
 		JTextPane intermediario = new JTextPane();
 		intermediario.setVisible(false);
 		intermediario.setText("incêndio\r\nroubo\r\ndanos elétricos\r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\n");
-		intermediario.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		intermediario.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		intermediario.setBounds(210, 87, 210, 155);
 		panel_1.add(intermediario);
 		
 		JTextPane completo = new JTextPane();
 		completo.setVisible(false);
 		completo.setText("incêndio                              \r\nroubo                                   \r\ndanos elétricos  \r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\nVidros \r\nvazamento de tubulações \r\nincêndio\r\nroubo\r\ndanos elétricos\r\n");
-		completo.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		completo.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		completo.setBounds(210, 87, 210, 155);
 		panel_1.add(completo);
 		
 		JPanel panel_1_1 = new JPanel();
+		panel_1_1.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
 		panel_1_1.setLayout(null);
 		panel_1_1.setBackground(new Color(153, 153, 153));
 		panel_1_1.setBounds(26, 87, 107, 27);
 		panel_1.add(panel_1_1);
 		
 		JLabel lblBasico = new JLabel("Basico");
+		lblBasico.setBorder(new MatteBorder(3, 3, 1, 1, (Color) new Color(0, 0, 0)));
+		lblBasico.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBasico.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -115,7 +123,7 @@ public class Tela_Apartamento_GUI {
 			}
 		});
 		lblBasico.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblBasico.setBounds(10, 0, 53, 25);
+		lblBasico.setBounds(0, 0, 107, 27);
 		panel_1_1.add(lblBasico);
 		
 		JPanel panel_1_1_1 = new JPanel();
@@ -125,6 +133,8 @@ public class Tela_Apartamento_GUI {
 		panel_1.add(panel_1_1_1);
 		
 		JLabel lblIntermediario = new JLabel("Intermediario");
+		lblIntermediario.setBorder(new MatteBorder(3, 3, 1, 1, (Color) new Color(0, 0, 0)));
+		lblIntermediario.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIntermediario.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -133,7 +143,7 @@ public class Tela_Apartamento_GUI {
 				completo.setVisible(false);
 			}
 		});
-		lblIntermediario.setBounds(0, 0, 107, 25);
+		lblIntermediario.setBounds(0, 0, 107, 27);
 		panel_1_1_1.add(lblIntermediario);
 		lblIntermediario.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		
@@ -144,6 +154,8 @@ public class Tela_Apartamento_GUI {
 		panel_1.add(panel_1_2);
 		
 		JLabel lblCompleto = new JLabel("Completo");
+		lblCompleto.setBorder(new MatteBorder(3, 3, 1, 1, (Color) new Color(0, 0, 0)));
+		lblCompleto.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCompleto.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -152,17 +164,19 @@ public class Tela_Apartamento_GUI {
 				completo.setVisible(true);
 			}
 		});
-		lblCompleto.setBounds(10, 0, 84, 25);
+		lblCompleto.setBounds(0, 0, 107, 25);
 		panel_1_2.add(lblCompleto);
 		lblCompleto.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		
-		JButton btnNewButton_1 = new JButton("X");
+		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.RED));
+		btnNewButton_1.setIcon(new ImageIcon(Tela_Apartamento_GUI.class.getResource("/br/com/tokio/images/CLOSE_resized.png")));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
 		});
-		btnNewButton_1.setBounds(370, 0, 60, 28);
+		btnNewButton_1.setBounds(389, 11, 31, 33);
 		panel_1.add(btnNewButton_1);
 		
 		JButton btnNewButton_1_1 = new JButton("");
@@ -173,7 +187,7 @@ public class Tela_Apartamento_GUI {
 			}
 		});
 		btnNewButton_1_1.setIcon(new ImageIcon(Tela_Apartamento_GUI.class.getResource("/br/com/tokio/images/arrow_resized_resized.png")));
-		btnNewButton_1_1.setBounds(321, 0, 39, 28);
+		btnNewButton_1_1.setBounds(340, 11, 39, 28);
 		panel_1.add(btnNewButton_1_1);
 		
 		JLabel lblNewLabel_3 = new JLabel("Escolha seu plano:");
