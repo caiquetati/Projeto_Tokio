@@ -1,15 +1,18 @@
 package br.com.tokio.model;
 
+import java.sql.Date;
+
 public class Usuario {
 	//Atributos
-	private int cpf, telefone, idSeguro;
-	private String nome, senha, sexo, dtNascimento;
-	//private Date dtNascimento;
+	private int cpf, telefone;
+	private String nome, senha, sexo;
+	private Date dtNascimento;
+	
 	//Construtor Vazio
 	public Usuario() {
 	}
 	//Construtor
-	public Usuario(int cpf, String nome, String senha, String dtNascimento, String sexo, int telefone) {
+	public Usuario(int cpf, String nome, String senha, Date dtNascimento, String sexo, int telefone) {
 		this.cpf = cpf;
 		this.nome = nome;
 		this.senha = senha;
@@ -48,17 +51,11 @@ public class Usuario {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	public String getDtNascimento() {
+	public java.sql.Date getDtNascimento() {
 		return dtNascimento;
 	}
-	public void setDtNascimento(String dtNascimento) {
+	public void setDtNascimento(Date dtNascimento) {
 		this.dtNascimento = dtNascimento;
-	}
-	public int getIdSeguro() {
-		return idSeguro;
-	}
-	public void setIdSeguro(int idSeguro) {
-		this.idSeguro = idSeguro;
 	}
 	
 	

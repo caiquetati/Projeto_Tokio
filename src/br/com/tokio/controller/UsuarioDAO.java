@@ -1,6 +1,7 @@
 package br.com.tokio.controller;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -44,18 +45,17 @@ public class UsuarioDAO {
 	}
 
 	// Metodo Criar Usuario e enviar para o banco de dados
-	public void insert(Usuario usuario, Seguro seguro) {
-		String sql = "INSERT INTO t_ceap_cliente (nmr_cpf, nm_cliente, senha_cliente, dt_nascimento_cliente, ds_sexo_cliente, tel_cliente, t_ceap_seguro_id_seguro) values (?, ?, ?, ?, ?, ?, ?)";
+	public void insert(Usuario usuario) {
+		String sql = "INSERT INTO t_ceap_cliente (nmr_cpf_cliente, nm_cliente, senha_cliente, dt_nascimento_cliente, ds_sexo_cliente, tel_cliente) values (?, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
 			// Complemento da Query
 			stmt.setInt(1, usuario.getCpf());
 			stmt.setString(2, usuario.getNome());
 			stmt.setString(3, criptografar(usuario.getSenha()));
-			stmt.setString(4, usuario.getDtNascimento());
+			stmt.setDate(4, usuario.getDtNascimento());
 			stmt.setString(5, usuario.getSexo());
 			stmt.setInt(6, usuario.getTelefone());
-			stmt.setInt(7, seguro.getIdSeguro());
 			// Executa a query
 			stmt.execute();
 			stmt.close();
@@ -69,17 +69,17 @@ public class UsuarioDAO {
 	// Funcao para ver a lista de usuarios do banco de dados
 	public List<Usuario> selectAll() {
 		List<Usuario> listaUsuarios = new ArrayList<Usuario>();
-		String sql = "SELECT * FROM t_sip_cliente order by NM_CLIENTE";
+		String sql = "SELECT * FROM t_ceap_cliente order by NM_CLIENTE";
 		try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
 			// Loop que roda enquanto tiver dados na tabela
 			while (rs.next()) {
 				Usuario usuario = new Usuario();
-				usuario.setCpf(rs.getInt("CPF_CLIENTE"));
+				usuario.setCpf(rs.getInt("NMR_CPF_CLIENTE"));
 				usuario.setNome(rs.getString("NM_CLIENTE"));
-				usuario.setSenha(rs.getString("CD_SENHA_CLIENTE"));
-				usuario.setDtNascimento(rs.getString("DT_NASCIMENTO_CLIENTE"));
+				usuario.setSenha(rs.getString("SENHA_CLIENTE"));
+				usuario.setDtNascimento(rs.getDate("DT_NASCIMENTO_CLIENTE"));
 				usuario.setSexo(rs.getString("DS_SEXO_CLIENTE"));
 				usuario.setTelefone(rs.getInt("TEL_CLIENTE"));
 				listaUsuarios.add(usuario);
@@ -94,17 +94,17 @@ public class UsuarioDAO {
 
 	public Usuario selectById(int id) {
 		Usuario usuario = null;
-		String sql = "select * from t_sip_cliente where cpf=?";
+		String sql = "select * from t_ceap_cliente where nmr_cpf_cliente=?";
 		try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
 			stmt.setLong(1, id);
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				usuario = new Usuario();
-				usuario.setCpf(rs.getInt("CPF"));
-				usuario.setNome(rs.getString("nome"));
-				usuario.setSenha(rs.getString("senha"));
-				usuario.setDtNascimento(rs.getString("DT_NASCIMENTO_CLIENTE"));
+				usuario.setCpf(rs.getInt("NMR_CPF_CLIENTE"));
+				usuario.setNome(rs.getString("NM_CLIENTE"));
+				usuario.setSenha(rs.getString("SENHA_CLIENTE"));
+				usuario.setDtNascimento(rs.getDate("DT_NASCIMENTO_CLIENTE"));
 				usuario.setSexo(rs.getString("DS_SEXO_CLIENTE"));
 				usuario.setTelefone(rs.getInt("TEL_CLIENTE"));
 			}
@@ -119,7 +119,7 @@ public class UsuarioDAO {
 
 	// delete - Configurar
 	public void delete(long id) {
-		String sql = "delete from t_sip_cliente where cpf=?";
+		String sql = "delete from t_ceap_cliente where nmr_cpf_cliente=?";
 		try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
 			stmt.setLong(1, id);
@@ -132,7 +132,7 @@ public class UsuarioDAO {
 
 	// update - Configurar
 	public void update(Usuario usuario) {
-		String sql = "update usuario set nome=?, senha=? where cpf=?";
+		String sql = "update t_ceap_cliente set nm_cliente=?, senha_cliente=? where nmr_cpf_cliente=?";
 		try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
 			stmt.setString(1, usuario.getNome());
