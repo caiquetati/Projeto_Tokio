@@ -2,7 +2,7 @@ package br.com.tokio.model;
 
 public class Usuario {
 	//Atributos
-	private int cpf, telefone;
+	private int cpf, telefone, idSeguro;
 	private String nome, senha, sexo, dtNascimento;
 	//private Date dtNascimento;
 	//Construtor Vazio
@@ -54,6 +54,13 @@ public class Usuario {
 	public void setDtNascimento(String dtNascimento) {
 		this.dtNascimento = dtNascimento;
 	}
+	public int getIdSeguro() {
+		return idSeguro;
+	}
+	public void setIdSeguro(int idSeguro) {
+		this.idSeguro = idSeguro;
+	}
+	
 	
 
 }

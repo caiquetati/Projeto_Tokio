@@ -8,13 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.tokio.connection.ConnectionFactory;
+import br.com.tokio.model.Seguro;
 import br.com.tokio.model.Usuario;
-import br.com.tokio.util.CriptografiaUtils;
+import br.com.tokio.util.CriptografiaAES;
 
 public class UsuarioDAO {
-
+	// Atributos
 	private Connection conexao;
 
+	// Construtor
 	public UsuarioDAO() {
 		this.conexao = new ConnectionFactory().conectar();
 	}
@@ -34,7 +36,7 @@ public class UsuarioDAO {
 	// Criptografar Senha
 	public static String criptografar(String senha) {
 		try {
-			senha = CriptografiaUtils.criptografar(senha);
+			senha = CriptografiaAES.criptografar(senha);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -42,28 +44,25 @@ public class UsuarioDAO {
 	}
 
 	// Metodo Criar Usuario e enviar para o banco de dados
-	public void insert(Usuario usuario) {
-		String sql = "INSERT INTO t_sip_cliente () values (?)";
-		if (verificarSenha(usuario.getSenha())) {
-			try {
-				PreparedStatement stmt = conexao.prepareStatement(sql);
-				// Complemento da Query
-				stmt.setInt(1, usuario.getCpf());
-				stmt.setString(2, usuario.getNome());
-				stmt.setString(3, criptografar(usuario.getSenha()));
-				stmt.setString(4, usuario.getDtNascimento());
-				stmt.setString(5, usuario.getSexo());
-				stmt.setInt(6, usuario.getTelefone());
-				// Executa a query
-				stmt.execute();
-				stmt.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			System.out.println("Usuario Criado");
-		} else {
-			System.out.println("A senha não cumpriu com os requesitos");
+	public void insert(Usuario usuario, Seguro seguro) {
+		String sql = "INSERT INTO t_ceap_cliente (nmr_cpf, nm_cliente, senha_cliente, dt_nascimento_cliente, ds_sexo_cliente, tel_cliente, t_ceap_seguro_id_seguro) values (?, ?, ?, ?, ?, ?, ?)";
+		try {
+			PreparedStatement stmt = conexao.prepareStatement(sql);
+			// Complemento da Query
+			stmt.setInt(1, usuario.getCpf());
+			stmt.setString(2, usuario.getNome());
+			stmt.setString(3, criptografar(usuario.getSenha()));
+			stmt.setString(4, usuario.getDtNascimento());
+			stmt.setString(5, usuario.getSexo());
+			stmt.setInt(6, usuario.getTelefone());
+			stmt.setInt(7, seguro.getIdSeguro());
+			// Executa a query
+			stmt.execute();
+			stmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
+		System.out.println("Usuario Criado");
 
 	}
 
@@ -130,6 +129,7 @@ public class UsuarioDAO {
 			e.printStackTrace();
 		}
 	}
+
 	// update - Configurar
 	public void update(Usuario usuario) {
 		String sql = "update usuario set nome=?, senha=? where cpf=?";

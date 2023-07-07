@@ -8,7 +8,7 @@ public class ConnectionFactory {
 	public Connection conectar() {
 		try {
 			System.out.println("Fazendo a conexão com o banco de dados da oracle");
-			return DriverManager.getConnection("link","usuario","senha");
+			return DriverManager.getConnection("","","");
 		} catch(SQLException e) {
 			throw new RuntimeException(e);
 		} finally {
