@@ -22,6 +22,8 @@ import javax.swing.BoxLayout;
 import java.awt.Component;
 import java.awt.CardLayout;
 import java.awt.GridLayout;
+import javax.swing.border.MatteBorder;
+import javax.swing.SwingConstants;
 
 public class Tela_Casa_GUI {
 
@@ -67,17 +69,22 @@ public class Tela_Casa_GUI {
 		panel.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Confirmar");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnNewButton.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			//	JOptionPane.showMessageDialog(null, "voce escolheu...");
+				Tela_Pagamento_GUI pagamento = new Tela_Pagamento_GUI();
+				pagamento.frame.setVisible(true);
 			}
 		});
 		btnNewButton.setBounds(315, 254, 110, 23);
 		panel.add(btnNewButton);
 		
 		JTextPane basico = new JTextPane();
+		basico.setFont(new Font("Tahoma", Font.BOLD, 12));
 		basico.setVisible(false);
-		basico.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		basico.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		basico.setText("Incêndio\r\nroubo\r\ndanos elétricos\r\ndisp. aluguel \r\nResponsabilidade civil\r\n");
 		basico.setBounds(186, 81, 210, 162);
 		panel.add(basico);
@@ -96,23 +103,20 @@ public class Tela_Casa_GUI {
 		completo.setBounds(186, 81, 210, 162);
 		panel.add(completo);
 		
-		JLabel lblNewLabel_1 = new JLabel("Seguro");
-		lblNewLabel_1.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 18));
-		lblNewLabel_1.setBounds(186, 11, 94, 45);
+		JLabel lblNewLabel_1 = new JLabel("Seguro Casa");
+		lblNewLabel_1.setFont(new Font("Lucida Bright", Font.BOLD, 22));
+		lblNewLabel_1.setBounds(128, 11, 147, 45);
 		panel.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("Casa");
-		lblNewLabel_2.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 18));
-		lblNewLabel_2.setBounds(196, 48, 84, 14);
-		panel.add(lblNewLabel_2);
-		
-		JButton btnNewButton_1 = new JButton("X");
+		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setBorder(new LineBorder(Color.RED, 1, true));
+		btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\close_resized (2).png"));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
 		});
-		btnNewButton_1.setBounds(374, 0, 51, 28);
+		btnNewButton_1.setBounds(374, 0, 27, 28);
 		panel.add(btnNewButton_1);
 		
 		JButton btnNewButton_1_1 = new JButton("");
@@ -127,12 +131,15 @@ public class Tela_Casa_GUI {
 		panel.add(btnNewButton_1_1);
 		
 		JPanel panelBasico = new JPanel();
+		panelBasico.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
 		panelBasico.setBounds(36, 91, 107, 27);
 		panel.add(panelBasico);
 		panelBasico.setBackground(new Color(153, 153, 153));
 		panelBasico.setLayout(null);
 		
-		JLabel lblBasico = new JLabel("Basico");
+		JLabel lblBasico =new JLabel("Básico");
+		lblBasico.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
+		lblBasico.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBasico.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -141,8 +148,8 @@ public class Tela_Casa_GUI {
 				completo.setVisible(false);
 			}
 		});
-		lblBasico.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblBasico.setBounds(10, 0, 53, 25);
+		lblBasico.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblBasico.setBounds(0, 0, 107, 25);
 		panelBasico.add(lblBasico);
 		
 		
@@ -153,6 +160,8 @@ public class Tela_Casa_GUI {
 		panelIntermediario.setBackground(new Color(153, 153, 153));
 		
 		JLabel lblIntermediario = new JLabel("Intermediario");
+		lblIntermediario.setHorizontalAlignment(SwingConstants.CENTER);
+		lblIntermediario.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
 		lblIntermediario.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -161,18 +170,21 @@ public class Tela_Casa_GUI {
 				completo.setVisible(false);
 			}
 		});
-		lblIntermediario.setBounds(0, 0, 107, 25);
+		lblIntermediario.setBounds(0, 0, 107, 27);
 		panelIntermediario.add(lblIntermediario);
-		lblIntermediario.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblIntermediario.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		JPanel panelCompleto = new JPanel();
+		panelCompleto.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
 		panelCompleto.setBounds(36, 204, 107, 27);
 		panel.add(panelCompleto);
 		panelCompleto.setLayout(null);
 		panelCompleto.setBackground(new Color(153, 153, 153));
 		
 		JLabel lblCompleto = new JLabel("Completo");
-		lblCompleto.setBounds(0, 0, 84, 25);
+		lblCompleto.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
+		lblCompleto.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCompleto.setBounds(0, 0, 107, 25);
 		panelCompleto.add(lblCompleto);
 		lblCompleto.addMouseListener(new MouseAdapter() {
 			@Override
@@ -182,10 +194,10 @@ public class Tela_Casa_GUI {
 				completo.setVisible(true);
 			}
 		});
-		lblCompleto.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblCompleto.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		JLabel lblNewLabel_3 = new JLabel("Escolha seu plano:");
-		lblNewLabel_3.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 11));
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_3.setBounds(10, 66, 133, 14);
 		panel.add(lblNewLabel_3);
 		
