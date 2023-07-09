@@ -16,6 +16,8 @@ import javax.swing.border.EtchedBorder;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.border.MatteBorder;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class Tela_Condominio_GUI {
 
@@ -75,25 +77,45 @@ public class Tela_Condominio_GUI {
 		lblNewLabel_3.setBounds(0, 0, 53, 25);
 
 		JTextPane basico = new JTextPane();
-		basico.setFont(new Font("Tahoma", Font.BOLD, 11));
+		basico.setFont(new Font("Tahoma", Font.BOLD, 12));
 		basico.setVisible(false);
 		basico.setText("Incêndio\r\nroubo\r\ndanos elétricos\r\ndisp. aluguel \r\nResponsabilidade civil\r\n");
 		basico.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		basico.setBounds(210, 79, 210, 165);
+		basico.setBounds(210, 79, 210, 84);
 
 		JTextPane intermediario = new JTextPane();
+		intermediario.setFont(new Font("Tahoma", Font.BOLD, 12));
 		intermediario.setVisible(false);
 		intermediario.setText(
 				"incêndio\r\nroubo\r\ndanos elétricos\r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\n");
 		intermediario.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		intermediario.setBounds(210, 79, 210, 165);
+		intermediario.setBounds(210, 79, 210, 96);
 
+		JLabel Value_basico = new JLabel("Valor:  R$52,73 /mes");
+		Value_basico.setFont(new Font("Tahoma", Font.BOLD, 11));
+		Value_basico.setVisible(false);
+		Value_basico.setBounds(287, 62, 133, 14);
+		panel_1.add(Value_basico);
+		
+		JLabel Value_intermediario = new JLabel("Valor:  R$55,31 /mes");
+		Value_intermediario.setFont(new Font("Tahoma", Font.BOLD, 11));
+		Value_intermediario.setVisible(false);
+		Value_intermediario.setBounds(287, 62, 133, 14);
+		panel_1.add(Value_intermediario);
+		
+		JLabel Value_completo = new JLabel("Valor:  R$61,66 /mes");
+		Value_completo.setFont(new Font("Tahoma", Font.BOLD, 11));
+		Value_completo.setVisible(false);
+		Value_completo.setBounds(287, 62, 133, 14);
+		panel_1.add(Value_completo);
+		
 		JTextPane completo = new JTextPane();
+		completo.setFont(new Font("Tahoma", Font.BOLD, 12));
 		completo.setVisible(false);
 		completo.setText(
 				"incêndio                              \r\nroubo                                   \r\ndanos elétricos  \r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\nVidros \r\nvazamento de tubulações \r\nincêndio\r\nroubo\r\ndanos elétricos\r\n");
 		completo.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		completo.setBounds(210, 79, 210, 165);
+		completo.setBounds(210, 79, 210, 176);
 
 		JPanel panel_1_1 = new JPanel();
 		panel_1_1.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
@@ -102,6 +124,9 @@ public class Tela_Condominio_GUI {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				basico.setVisible(true);
+				Value_basico.setVisible(true);
+				Value_intermediario.setVisible(false);;
+				Value_completo.setVisible(false);
 				intermediario.setVisible(false);
 				completo.setVisible(false);
 			}
@@ -127,31 +152,14 @@ public class Tela_Condominio_GUI {
 					@Override
 					public void mouseClicked(MouseEvent e) {
 						basico.setVisible(false);
+						Value_basico.setVisible(false);
+						Value_intermediario.setVisible(true);;
+						Value_completo.setVisible(false);
 						intermediario.setVisible(true);
 						completo.setVisible(false);
 					}
 				});
 				lblNewLabel_3_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-
-		JPanel panel_1_2 = new JPanel();
-		panel_1_2.setLayout(null);
-		panel_1_2.setBackground(new Color(153, 153, 153));
-		panel_1_2.setBounds(45, 188, 107, 27);
-		panel_1.add(panel_1_2);
-
-		JLabel lblNewLabel_3_2 = new JLabel("Completo");
-		lblNewLabel_3_2.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
-		lblNewLabel_3_2.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				basico.setVisible(false);
-				intermediario.setVisible(false);
-				completo.setVisible(true);
-			}
-		});
-		lblNewLabel_3_2.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblNewLabel_3_2.setBounds(0, 0, 108, 25);
-		panel_1_2.add(lblNewLabel_3_2);
 
 		JButton btnNewButton = new JButton("Confirmar");
 		btnNewButton.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
@@ -197,11 +205,47 @@ public class Tela_Condominio_GUI {
 		lblNewLabel_3_3.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_3_3.setBounds(9, 61, 133, 14);
 		panel_1.add(lblNewLabel_3_3);
-		
-				JLabel lblNewLabel = new JLabel("");
-				lblNewLabel.setIcon(new ImageIcon(Tela_Condominio_GUI.class
-						.getResource("/br/com/tokio/images/seguro_condominio_updated_resized (1).jpg")));
-				lblNewLabel.setBounds(0, 0, 430, 278);
-				panel_1.add(lblNewLabel);
+
+						JComboBox comboBox = new JComboBox();
+						comboBox.setFont(new Font("Tahoma", Font.BOLD, 12));
+						comboBox.setModel(new DefaultComboBoxModel(new String[] {"Alberto Nunes ", "Maria Angelina", "Ricardo Soares", "João Alberto", "Cristiane Silva"}));
+						comboBox.setBounds(35, 245, 133, 22);
+						panel_1.add(comboBox);
+								
+								JLabel lblNewLabel_2 = new JLabel("Escolhe um corretor:");
+								lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 13));
+								lblNewLabel_2.setBounds(12, 226, 156, 14);
+								panel_1.add(lblNewLabel_2);
+								
+										JLabel lblNewLabel_3_2 = new JLabel("Completo");
+										lblNewLabel_3_2.setBounds(45, 171, 108, 25);
+										panel_1.add(lblNewLabel_3_2);
+										lblNewLabel_3_2.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
+										lblNewLabel_3_2.addMouseListener(new MouseAdapter() {
+											@Override
+											public void mouseClicked(MouseEvent e) {
+												basico.setVisible(false);
+												Value_basico.setVisible(false);
+												Value_intermediario.setVisible(false);;
+												Value_completo.setVisible(true);
+												intermediario.setVisible(false);
+												completo.setVisible(true);
+											}
+										});
+										lblNewLabel_3_2.setFont(new Font("Tahoma", Font.BOLD, 14));
+										
+												JPanel panel_1_2 = new JPanel();
+												panel_1_2.setLayout(null);
+												panel_1_2.setBackground(new Color(153, 153, 153));
+												panel_1_2.setBounds(45, 171, 107, 27);
+												panel_1.add(panel_1_2);
+												
+												
+												
+														JLabel lblNewLabel = new JLabel("");
+														lblNewLabel.setIcon(new ImageIcon(Tela_Condominio_GUI.class
+																.getResource("/br/com/tokio/images/seguro_condominio_updated_resized (1).jpg")));
+														lblNewLabel.setBounds(0, 0, 430, 278);
+														panel_1.add(lblNewLabel);
 	}
 }
