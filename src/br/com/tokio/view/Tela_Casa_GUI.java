@@ -179,7 +179,6 @@ public class Tela_Casa_GUI {
 		lblBasico.setBounds(0, 0, 107, 25);
 		panelBasico.add(lblBasico);
 		
-		JPanel panelIntermediario = new JPanel();
 		panelIntermediario.setBounds(36, 143, 107, 27);
 		panel.add(panelIntermediario);
 		panelIntermediario.setLayout(null);
