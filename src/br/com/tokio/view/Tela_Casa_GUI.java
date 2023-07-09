@@ -26,6 +26,7 @@ import javax.swing.border.MatteBorder;
 import javax.swing.SwingConstants;
 import javax.swing.DefaultComboBoxModel;
 
+
 public class Tela_Casa_GUI {
 
 	JFrame frame;
@@ -148,7 +149,6 @@ public class Tela_Casa_GUI {
 		Value_intermediario.setVisible(false);
 		Value_intermediario.setBounds(272, 52, 124, 28);
 		panel.add(Value_intermediario);
-		
 		JPanel panelBasico = new JPanel();
 		panelBasico.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
 		panelBasico.setBounds(36, 91, 107, 27);
@@ -179,7 +179,11 @@ public class Tela_Casa_GUI {
 		lblBasico.setBounds(0, 0, 107, 25);
 		panelBasico.add(lblBasico);
 		
-		
+		JPanel panelIntermediario = new JPanel();
+		panelIntermediario.setBounds(36, 143, 107, 27);
+		panel.add(panelIntermediario);
+		panelIntermediario.setLayout(null);
+		panelIntermediario.setBackground(new Color(153, 153, 153));
 		
 		JLabel lblIntermediario = new JLabel("Intermediario");
 		lblIntermediario.setHorizontalAlignment(SwingConstants.CENTER);
@@ -203,7 +207,6 @@ public class Tela_Casa_GUI {
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_3.setBounds(10, 66, 133, 14);
 		panel.add(lblNewLabel_3);
-		
 		
 		JLabel lblCompleto = new JLabel("Completo");
 		lblCompleto.setBounds(36, 182, 107, 25);
@@ -243,16 +246,11 @@ public class Tela_Casa_GUI {
 		lblNewLabel_2.setBounds(9, 229, 156, 14);
 		panel.add(lblNewLabel_2);
 		
-		
-		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel.setIcon(new ImageIcon(Tela_Casa_GUI.class.getResource("/br/com/tokio/images/planos_updated_resized_updated.jpg")));
 		lblNewLabel.setBounds(0, 0, 425, 277);
 		panel.add(lblNewLabel);
-		
-		
-		
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBounds(0, 0, 450, 300);

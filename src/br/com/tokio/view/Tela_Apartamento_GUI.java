@@ -147,6 +147,7 @@ public class Tela_Apartamento_GUI {
 		completo.setText("incêndio                              \r\nroubo                                   \r\ndanos elétricos  \r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\nVidros \r\nvazamento de tubulações \r\nincêndio\r\nroubo\r\ndanos elétricos\r\n");
 		completo.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		completo.setBounds(210, 87, 210, 168);
+    
 		panel_1.add(completo);
 		
 		JPanel panel_1_1 = new JPanel();
@@ -223,6 +224,7 @@ public class Tela_Apartamento_GUI {
 		lblCompleto.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.RED));
 		btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\close_resized (2).png"));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -260,8 +262,7 @@ public class Tela_Apartamento_GUI {
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_2.setBounds(10, 217, 156, 14);
 		panel_1.add(lblNewLabel_2);
-		
-		
+
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(Tela_Apartamento_GUI.class.getResource("/br/com/tokio/images/apartamento_resized_updated.jpg")));
 		lblNewLabel.setBounds(0, 0, 430, 278);

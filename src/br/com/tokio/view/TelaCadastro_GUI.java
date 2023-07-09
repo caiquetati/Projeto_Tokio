@@ -130,7 +130,7 @@ public class TelaCadastro_GUI {
 		
 		JLabel lblNewLabel_3 = new JLabel("CPF:");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_3.setBounds(41, 208, 46, 14);
+		lblNewLabel_3.setBounds(41, 208, 46, 14); 
 		panel.add(lblNewLabel_3);
 		
 		JButton Cadastro = new JButton("CADASTRAR");
@@ -148,6 +148,7 @@ public class TelaCadastro_GUI {
 		panel.add(Cadastro);
 		
 		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.RED));
 		lblNewLabel_4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

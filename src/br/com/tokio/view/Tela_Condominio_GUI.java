@@ -201,12 +201,11 @@ public class Tela_Condominio_GUI {
 		panel_1.add(intermediario);
 		panel_1.add(completo);
 		
-		
 		JLabel lblNewLabel_3_3 = new JLabel("Escolha seu plano:");
 		lblNewLabel_3_3.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_3_3.setBounds(9, 61, 133, 14);
 		panel_1.add(lblNewLabel_3_3);
-						
+
 						JComboBox comboBox = new JComboBox();
 						comboBox.setFont(new Font("Tahoma", Font.BOLD, 12));
 						comboBox.setModel(new DefaultComboBoxModel(new String[] {"Alberto Nunes ", "Maria Angelina", "Ricardo Soares", "João Alberto", "Cristiane Silva"}));
@@ -248,7 +247,5 @@ public class Tela_Condominio_GUI {
 																.getResource("/br/com/tokio/images/seguro_condominio_updated_resized (1).jpg")));
 														lblNewLabel.setBounds(0, 0, 430, 278);
 														panel_1.add(lblNewLabel);
-						
-						
 	}
 }

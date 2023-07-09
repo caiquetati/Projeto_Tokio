@@ -15,7 +15,6 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
 import java.awt.Font;
 import java.text.ParseException;
 
@@ -25,6 +24,7 @@ import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URI;
@@ -71,8 +71,7 @@ public class Tela_Pagamento_GUI {
 		frame.setBounds(100, 100, 524, 344);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
-		
+
 		JPanel panel = new JPanel();
 		panel.setBorder(new MatteBorder(4, 4, 4, 4, (Color) new Color(0, 0, 0)));
 		panel.setBounds(0, 0, 524, 344);
@@ -104,6 +103,7 @@ public class Tela_Pagamento_GUI {
 		JLabel lblNewLabel_2 = new JLabel("Nº cartão");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_2.setBounds(21, 11, 84, 14);
+
 		debito.add(lblNewLabel_2);
 		
 		MaskFormatter mascaraTel = null;
@@ -179,7 +179,6 @@ public class Tela_Pagamento_GUI {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 13));
-		
 		btnNewButton.setBounds(40, 127, 89, 23);
 		panel_1.add(btnNewButton);
 		
@@ -249,7 +248,6 @@ public class Tela_Pagamento_GUI {
 		lblNewLabel_7_1_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\problem (2)_resized.png"));
 		lblNewLabel_7_1_1.setBounds(426, 0, 25, 38);
 		panel_1.add(lblNewLabel_7_1_1);
-		
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Nº cartão");
 		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.BOLD, 11));
