@@ -41,8 +41,9 @@ import java.awt.event.FocusEvent;
 public class TelaCadastro_GUI {
 
 	JFrame frame;
-	private JTextField Nome;
-	private JTextField textField;
+	private JTextField nome;
+	private JTextField idade;
+	private JTextField senha;
 
 	/**
 	 * Launch the application.
@@ -110,7 +111,7 @@ public class TelaCadastro_GUI {
 		panel.add(lblNewLabel_2_1);
 		
 		JLabel lblNewLabel_1 = new JLabel("PRIMEIRO ACESSO");
-		lblNewLabel_1.setFont(new Font("Lucida Bright", Font.BOLD, 22));
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 22));
 		lblNewLabel_1.setBounds(131, 9, 216, 41);
 		panel.add(lblNewLabel_1);
 		
@@ -119,17 +120,17 @@ public class TelaCadastro_GUI {
 		lblNewLabel_2.setBounds(41, 64, 59, 23);
 		panel.add(lblNewLabel_2);
 		
-		Nome = new JTextField();
+		nome = new JTextField();
 
-		Nome.setBorder(new MatteBorder(2, 2, 0, 0, (Color) new Color(0, 0, 0)));
-		Nome.setBounds(60, 88, 216, 20);
-		panel.add(Nome);
-		Nome.setColumns(10);
+		nome.setBorder(new MatteBorder(2, 2, 0, 0, (Color) new Color(0, 0, 0)));
+		nome.setBounds(60, 88, 216, 20);
+		panel.add(nome);
+		nome.setColumns(10);
 		; 
 		
 		JLabel lblNewLabel_3 = new JLabel("CPF:");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_3.setBounds(41, 119, 46, 14);
+		lblNewLabel_3.setBounds(41, 208, 46, 14); 
 		panel.add(lblNewLabel_3);
 		
 		JButton Cadastro = new JButton("CADASTRAR");
@@ -163,21 +164,21 @@ public class TelaCadastro_GUI {
 		lblNewLabel_5.setBounds(41, 165, 46, 14);
 		panel.add(lblNewLabel_5);
 		
-		textField = new JTextField();
-		textField.setBorder(new MatteBorder(2, 2, 0, 0, (Color) new Color(0, 0, 0)));
-		textField.setBounds(60, 180, 216, 20);
-		panel.add(textField);
-		textField.setColumns(10);
+		idade = new JTextField();
+		idade.setBorder(new MatteBorder(2, 2, 0, 0, (Color) new Color(0, 0, 0)));
+		idade.setBounds(60, 180, 216, 20);
+		panel.add(idade);
+		idade.setColumns(10);
 		
 		JLabel lblNewLabel_6 = new JLabel("Genero:");
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_6.setBounds(289, 119, 46, 14);
 		panel.add(lblNewLabel_6);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Masculino", "Feminino", "Não-binario", "Outro"}));
-		comboBox.setBounds(302, 134, 96, 22);
-		panel.add(comboBox);
+		JComboBox sexo = new JComboBox();
+		sexo.setModel(new DefaultComboBoxModel(new String[] {"Masculino", "Feminino", "Não-binario", "Outro"}));
+		sexo.setBounds(302, 134, 96, 22);
+		panel.add(sexo);
 		
 		JLabel lblNewLabel_7 = new JLabel("Telefone:");
 		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -186,20 +187,31 @@ public class TelaCadastro_GUI {
 		
 		
 		MaskFormatter mascaraTel = new MaskFormatter("(##)#####-####");
-		JFormattedTextField formattedTextField = new JFormattedTextField(mascaraTel);
-		formattedTextField.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
-		formattedTextField.setLocale(new Locale("pt", "BR"));
-		formattedTextField.setToolTipText("");
-		formattedTextField.setName("");
-		formattedTextField.setBounds(302, 89, 108, 20);
-		panel.add(formattedTextField);
+		JFormattedTextField telefone = new JFormattedTextField(mascaraTel);
+		telefone.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
+		telefone.setLocale(new Locale("pt", "BR"));
+		telefone.setToolTipText("");
+		telefone.setName("");
+		telefone.setBounds(302, 89, 108, 20);
+		panel.add(telefone);
 		
 		MaskFormatter mascaraCPF = new MaskFormatter("###.###.###-##");
 		
-		JFormattedTextField formattedTextField_1 = new JFormattedTextField(mascaraCPF);
-		formattedTextField_1.setBorder(new MatteBorder(2, 2, 0, 0, (Color) new Color(0, 0, 0)));
-		formattedTextField_1.setBounds(60, 134, 216, 20);
-		panel.add(formattedTextField_1);
+		JFormattedTextField cpf = new JFormattedTextField(mascaraCPF);
+		cpf.setBorder(new MatteBorder(2, 2, 0, 0, (Color) new Color(0, 0, 0)));
+		cpf.setBounds(60, 221, 216, 20);
+		panel.add(cpf);
+		
+		JLabel lblNewLabel_9 = new JLabel("Senha");
+		lblNewLabel_9.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_9.setBounds(41, 119, 46, 14);
+		panel.add(lblNewLabel_9);
+		
+		senha = new JTextField();
+		senha.setColumns(10);
+		senha.setBorder(new MatteBorder(2, 2, 0, 0, (Color) new Color(0, 0, 0)));
+		senha.setBounds(60, 135, 216, 20);
+		panel.add(senha);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.addMouseListener(new MouseAdapter() {
@@ -209,7 +221,7 @@ public class TelaCadastro_GUI {
 			}
 		});
 		lblNewLabel.setIcon(new ImageIcon(TelaCadastro_GUI.class.getResource("/br/com/tokio/images/Image_Cadastro_resized_resized_updated.png")));
-		lblNewLabel.setBounds(25, 9, 450, 326);
+		lblNewLabel.setBounds(27, 20, 450, 310);
 		panel.add(lblNewLabel);
 	}private static void openDulvidas() {
         try {
@@ -218,8 +230,4 @@ public class TelaCadastro_GUI {
         } catch (Exception e) {
             e.printStackTrace();}
         }
-	
-
-
-
 }

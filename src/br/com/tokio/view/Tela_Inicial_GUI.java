@@ -80,13 +80,12 @@ public class Tela_Inicial_GUI {
 		JPanel panel_1 = new JPanel();
 		
 		panel_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-		panel_1.setBackground(new Color(60, 179, 113));
+		panel_1.setBackground(new Color(46, 139, 87));
 		panel_1.setBounds(10, 11, 430, 278);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		lblNewLabel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -98,7 +97,6 @@ public class Tela_Inicial_GUI {
 		panel_1.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		lblNewLabel_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -116,13 +114,12 @@ public class Tela_Inicial_GUI {
 				openLinkedin();
 			}
 		});
-		lblNewLabel_1_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		lblNewLabel_1_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\linkedin_resized.png"));
 		lblNewLabel_1_1.setBounds(90, 237, 30, 30);
 		panel_1.add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setBorder(new MatteBorder(1, 1, 1, 2, (Color) new Color(255, 0, 0)));
+		lblNewLabel_2.setBorder(null);
 		lblNewLabel_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -219,7 +216,6 @@ public class Tela_Inicial_GUI {
 			}
 		});
 		lblNewLabel_1_1_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\whatsapp (1)_resized.png"));
-		lblNewLabel_1_1_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		lblNewLabel_1_1_1.setBounds(10, 237, 30, 30);
 		panel_1.add(lblNewLabel_1_1_1);
 		
@@ -237,7 +233,7 @@ public class Tela_Inicial_GUI {
 		JLabel lblNewLabel_6 = new JLabel("");
 		lblNewLabel_6.setBackground(new Color(0, 0, 0));
 		lblNewLabel_6.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\ang.png"));
-		lblNewLabel_6.setBounds(0, -11, 395, 105);
+		lblNewLabel_6.setBounds(0, 0, 395, 105);
 		panel_1.add(lblNewLabel_6);
 		
 		JLabel lblNewLabel_7 = new JLabel("");
