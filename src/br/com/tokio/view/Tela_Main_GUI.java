@@ -152,7 +152,6 @@ public class Tela_Main_GUI {
 			public void mouseClicked(MouseEvent e) {
 				Tela_Casa_GUI casa = new Tela_Casa_GUI();
 				casa.frame.setLocationRelativeTo(null);
-
 				casa.frame.setVisible(true);
 				;
 

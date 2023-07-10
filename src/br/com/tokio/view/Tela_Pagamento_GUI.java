@@ -86,25 +86,11 @@ public class Tela_Pagamento_GUI {
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Pagamento ");
+		JLabel lblNewLabel = new JLabel("PAGAMENTO");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 22));
 		lblNewLabel.setBounds(157, 11, 184, 59);
 		panel_1.add(lblNewLabel);
-		
-		JPanel debito = new JPanel();
-		debito.setVisible(false);
-		debito.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-		debito.setBounds(40, 179, 335, 120);
-		debito.setBackground(new Color(60, 179, 113));
-		panel_1.add(debito);
-		debito.setLayout(null);
-		
-		JLabel lblNewLabel_2 = new JLabel("Nº cartão");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_2.setBounds(21, 11, 84, 14);
-
-		debito.add(lblNewLabel_2);
 		
 		MaskFormatter mascaraTel = null;
 		try {
@@ -113,15 +99,6 @@ public class Tela_Pagamento_GUI {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		JFormattedTextField formattedTextField = new JFormattedTextField(mascaraTel);
-		
-		formattedTextField.setBounds(31, 24, 139, 20);
-		debito.add(formattedTextField);
-		
-		JLabel lblNewLabel_3 = new JLabel("CVV");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_3.setBounds(21, 55, 46, 14);
-		debito.add(lblNewLabel_3);
 		
 		MaskFormatter mascaraTel2 = null;
 		try {
@@ -130,14 +107,6 @@ public class Tela_Pagamento_GUI {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		JFormattedTextField formattedTextField_1 = new JFormattedTextField(mascaraTel2);
-		formattedTextField_1.setBounds(31, 69, 55, 20);
-		debito.add(formattedTextField_1);
-		
-		JLabel lblNewLabel_4 = new JLabel("Validade");
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_4.setBounds(106, 55, 64, 14);
-		debito.add(lblNewLabel_4);
 		
 		MaskFormatter marcaraTel3 = null;
 		try {
@@ -146,15 +115,8 @@ public class Tela_Pagamento_GUI {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		JFormattedTextField formattedTextField_2 = new JFormattedTextField(mascaraTel);
-		formattedTextField_2.setBounds(131, 69, 64, 20);
-		debito.add(formattedTextField_2);
 		
-		JButton btnNewButton_3 = new JButton("Confirmar");
-		btnNewButton_3.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnNewButton_3.setBounds(225, 88, 100, 23);
-		debito.add(btnNewButton_3);
+		
 		
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\qrcode_resized.jpg"));
@@ -169,7 +131,7 @@ public class Tela_Pagamento_GUI {
 		credito.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		credito.setBackground(new Color(60, 179, 113));
 		
-		JButton btnNewButton = new JButton("Debito");
+		JButton btnNewButton = new JButton("DÊBITO\r\n");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				debito.setVisible(true);
@@ -182,7 +144,7 @@ public class Tela_Pagamento_GUI {
 		btnNewButton.setBounds(40, 127, 89, 23);
 		panel_1.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Credito");
+		JButton btnNewButton_1 = new JButton("CRÉDITO\r\n");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				debito.setVisible(false);
@@ -199,7 +161,7 @@ public class Tela_Pagamento_GUI {
 		lblNewLabel_5.setBounds(408, 166, 86, 28);
 		panel_1.add(lblNewLabel_5);
 		
-		JButton btnNewButton_2 = new JButton("Boleto");
+		JButton btnNewButton_2 = new JButton("BOLETO\r\n");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				gerar();                                                                                       
@@ -276,11 +238,7 @@ public class Tela_Pagamento_GUI {
 		formattedTextField_2_1.setBounds(131, 69, 64, 20);
 		credito.add(formattedTextField_2_1);
 		
-		JButton btnNewButton_3_1 = new JButton("Confirmar");
-		btnNewButton_3_1.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnNewButton_3_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-		btnNewButton_3_1.setBounds(225, 88, 100, 23);
-		credito.add(btnNewButton_3_1);
+		
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"1X", "2X", "3X", "4X", "5X", "6X", "7X", "8X", "9X", "10X", "11X", "12X"}));
@@ -292,6 +250,62 @@ public class Tela_Pagamento_GUI {
 		lblNewLabel_2_2.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_2_2.setBounds(196, 11, 129, 14);
 		credito.add(lblNewLabel_2_2);
+		
+		JButton btn_credito = new JButton("Confirmar");
+		btn_credito.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btn_credito.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btn_credito.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+		btn_credito.setBounds(225, 88, 100, 23);
+		credito.add(btn_credito);
+		
+		JPanel debito = new JPanel();
+		debito.setBounds(0, 0, 335, 120);
+		credito.add(debito);
+		debito.setVisible(false);
+		debito.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+		debito.setBackground(new Color(60, 179, 113));
+		debito.setLayout(null);
+		
+		JLabel lblNewLabel_2 = new JLabel("Nº cartão");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_2.setBounds(21, 11, 84, 14);
+		
+				debito.add(lblNewLabel_2);
+				JFormattedTextField formattedTextField = new JFormattedTextField(mascaraTel);
+				
+				formattedTextField.setBounds(31, 24, 139, 20);
+				debito.add(formattedTextField);
+				
+				JLabel lblNewLabel_3 = new JLabel("CVV");
+				lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 11));
+				lblNewLabel_3.setBounds(21, 55, 46, 14);
+				debito.add(lblNewLabel_3);
+				JFormattedTextField formattedTextField_1 = new JFormattedTextField(mascaraTel2);
+				formattedTextField_1.setBounds(31, 69, 55, 20);
+				debito.add(formattedTextField_1);
+				
+				JLabel lblNewLabel_4 = new JLabel("Validade");
+				lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 11));
+				lblNewLabel_4.setBounds(106, 55, 64, 14);
+				debito.add(lblNewLabel_4);
+				JFormattedTextField formattedTextField_2 = new JFormattedTextField(mascaraTel);
+				formattedTextField_2.setBounds(131, 69, 64, 20);
+				debito.add(formattedTextField_2);
+		
+		JButton btn_debito = new JButton("Confirmar");
+		btn_debito.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		btn_debito.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+		btn_debito.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btn_debito.setBounds(225, 88, 100, 23);
+		debito.add(btn_debito);
+		
 	}private static void openDulvidas() {
         try {
             URI uri = new URI("https://docs.google.com/document/d/1oALTDDmqvJZ56OjX-miOh3cdlJV5kLIB30OqqQmuUEs/edit?pli=1"); 

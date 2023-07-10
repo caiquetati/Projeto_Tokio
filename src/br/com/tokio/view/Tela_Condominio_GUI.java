@@ -80,7 +80,7 @@ public class Tela_Condominio_GUI {
 		JTextPane basico = new JTextPane();
 		basico.setFont(new Font("Tahoma", Font.BOLD, 12));
 		basico.setVisible(false);
-		basico.setText("Incêndio\r\nroubo\r\ndanos elétricos\r\ndisp. aluguel \r\nResponsabilidade civil\r\n");
+		basico.setText("Incêndio\r\nRoubo\r\nDanos elétricos\r\nDisp. aluguel \r\nResponsabilidade civil\r\n");
 		basico.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		basico.setBounds(287, 118, 210, 84);
 
@@ -88,24 +88,24 @@ public class Tela_Condominio_GUI {
 		intermediario.setFont(new Font("Tahoma", Font.BOLD, 12));
 		intermediario.setVisible(false);
 		intermediario.setText(
-				"incêndio\r\nroubo\r\ndanos elétricos\r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\n");
+				"Incêndio\r\nRoubo\r\nDanos elétricos\r\nDesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\n");
 		intermediario.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		intermediario.setBounds(287, 118, 210, 96);
 
 		JLabel Value_basico = new JLabel("Valor:  R$52,73 /mes");
-		Value_basico.setFont(new Font("Tahoma", Font.BOLD, 11));
+		Value_basico.setFont(new Font("Tahoma", Font.BOLD, 12));
 		Value_basico.setVisible(false);
 		Value_basico.setBounds(362, 97, 133, 14);
 		panel_1.add(Value_basico);
 		
 		JLabel Value_intermediario = new JLabel("Valor:  R$55,31 /mes");
-		Value_intermediario.setFont(new Font("Tahoma", Font.BOLD, 11));
+		Value_intermediario.setFont(new Font("Tahoma", Font.BOLD, 12));
 		Value_intermediario.setVisible(false);
 		Value_intermediario.setBounds(362, 97, 133, 14);
 		panel_1.add(Value_intermediario);
 		
 		JLabel Value_completo = new JLabel("Valor:  R$61,66 /mes");
-		Value_completo.setFont(new Font("Tahoma", Font.BOLD, 11));
+		Value_completo.setFont(new Font("Tahoma", Font.BOLD, 12));
 		Value_completo.setVisible(false);
 		Value_completo.setBounds(362, 97, 133, 14);
 		panel_1.add(Value_completo);
@@ -114,7 +114,7 @@ public class Tela_Condominio_GUI {
 		completo.setFont(new Font("Tahoma", Font.BOLD, 12));
 		completo.setVisible(false);
 		completo.setText(
-				"incêndio                              \r\nroubo                                   \r\ndanos elétricos  \r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\nVidros \r\nvazamento de tubulações \r\nincêndio\r\nroubo\r\ndanos elétricos\r\n");
+				"Incêndio                              \r\nRoubo                                   \r\nDanos elétricos  \r\nDesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\nVidros \r\nVazamento de tubulações \r\nIncêndio\r\nRoubo\r\nDanos elétricos\r\n");
 		completo.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		completo.setBounds(287, 118, 210, 176);
 
@@ -167,8 +167,8 @@ public class Tela_Condominio_GUI {
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tela_Pagamento_GUI pagamento = new Tela_Pagamento_GUI();
-				pagamento.frame.setVisible(true);
+				Tela_Assistencia_GUI assistencia = new Tela_Assistencia_GUI();
+				assistencia.frame.setVisible(true);
 			}
 		});
 		btnNewButton.setBounds(411, 316, 110, 23);
@@ -187,11 +187,9 @@ public class Tela_Condominio_GUI {
 		JButton btnNewButton_1_1 = new JButton("");
 		btnNewButton_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tela_Main_GUI main = new Tela_Main_GUI();
-				main.frame.setVisible(true);
-				main.frame.setLocationRelativeTo(null);
+				
 				frame.dispose();
-
+				
 			}
 		});
 		btnNewButton_1_1.setIcon(
@@ -211,10 +209,10 @@ public class Tela_Condominio_GUI {
 						JComboBox comboBox = new JComboBox();
 						comboBox.setFont(new Font("Tahoma", Font.BOLD, 12));
 						comboBox.setModel(new DefaultComboBoxModel(new String[] {"Alberto Nunes ", "Maria Angelina", "Ricardo Soares", "João Alberto", "Cristiane Silva"}));
-						comboBox.setBounds(61, 251, 133, 22);
+						comboBox.setBounds(68, 256, 133, 22);
 						panel_1.add(comboBox);
 								
-								JLabel lblNewLabel_2 = new JLabel("Escolhe um corretor:");
+								JLabel lblNewLabel_2 = new JLabel("Escolha um corretor:");
 								lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 14));
 								lblNewLabel_2.setBounds(38, 238, 156, 14);
 								panel_1.add(lblNewLabel_2);

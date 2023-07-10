@@ -80,18 +80,10 @@ public class Tela_Apartamento_GUI {
 
 			public void actionPerformed(ActionEvent e) {
 				
-				escolha();
-				if (resposta == JOptionPane.YES_OPTION) {
-		            JOptionPane.showMessageDialog(null, "Boa, soldado!");
-		        } else {
-		        	Tela_Pagamento_GUI pagamento = new Tela_Pagamento_GUI();
-					pagamento.frame.setVisible(true);
-					frame.dispose();
-		        }
-//					Tela_Pagamento_GUI pagamento = new Tela_Pagamento_GUI();
-//					pagamento.frame.setVisible(true);
-//					frame.dispose();
-				
+				Tela_Assistencia_GUI assistencia = new Tela_Assistencia_GUI();
+				assistencia.frame.setVisible(true);
+				assistencia.frame.setLocationRelativeTo(null);
+				frame.dispose();
 					
 				
 				
@@ -108,7 +100,7 @@ public class Tela_Apartamento_GUI {
 		
 		JLabel Value_basico = new JLabel("Valor: R$19,53 /mes");
 		Value_basico.setVisible(false);
-		Value_basico.setFont(new Font("Tahoma", Font.BOLD, 11));
+		Value_basico.setFont(new Font("Tahoma", Font.BOLD, 12));
 		Value_basico.setBounds(378, 94, 126, 14);
 		panel_1.add(Value_basico);
 		
@@ -124,13 +116,13 @@ public class Tela_Apartamento_GUI {
 		
 		JLabel Value_intermediario = new JLabel("Valor: R$22,94 /mes");
 		Value_intermediario.setVisible(false);
-		Value_intermediario.setFont(new Font("Tahoma", Font.BOLD, 11));
+		Value_intermediario.setFont(new Font("Tahoma", Font.BOLD, 12));
 		Value_intermediario.setBounds(378, 94, 126, 14);
 		panel_1.add(Value_intermediario);
 		
 		JLabel Value_completo = new JLabel("Valor: R$28,43 /mes");
 		Value_completo.setVisible(false);
-		Value_completo.setFont(new Font("Tahoma", Font.BOLD, 11));
+		Value_completo.setFont(new Font("Tahoma", Font.BOLD, 12));
 		Value_completo.setBounds(378, 94, 126, 14);
 		panel_1.add(Value_completo);
 		
@@ -225,7 +217,6 @@ public class Tela_Apartamento_GUI {
 		lblCompleto.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		JButton btnNewButton_1 = new JButton("");
-		btnNewButton_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.RED));
 		btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\close_resized (2).png"));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -238,9 +229,7 @@ public class Tela_Apartamento_GUI {
 		JButton btnNewButton_1_1 = new JButton("");
 		btnNewButton_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tela_Main_GUI main = new Tela_Main_GUI();
-				main.frame.setVisible(true);
-				main.frame.setLocationRelativeTo(null);
+				
 				frame.dispose();
 			}
 		});
@@ -272,9 +261,5 @@ public class Tela_Apartamento_GUI {
 		panel_1.add(lblNewLabel);
 		
 		
-	}public void escolha(){
-		String[] options = { "Sim", "Não" };
-        int resposta = JOptionPane.showOptionDialog(null, "Você é um soldado?", "Pergunta",
-                JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
 	}
 }

@@ -69,7 +69,7 @@ public class Tela_Casa_GUI {
 		
 		JLabel lblNewLabel_1 = new JLabel("Seguro Casa");
 		lblNewLabel_1.setFont(new Font("Lucida Bright", Font.BOLD, 22));
-		lblNewLabel_1.setBounds(128, 11, 147, 45);
+		lblNewLabel_1.setBounds(200, 11, 147, 45);
 		panel.add(lblNewLabel_1);
 		
 		JPanel panelBasico = new JPanel();
@@ -87,7 +87,7 @@ public class Tela_Casa_GUI {
 		
 		JPanel panelCompleto = new JPanel();
 		panelCompleto.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
-		panelCompleto.setBounds(36, 181, 107, 27);
+		panelCompleto.setBounds(36, 191, 107, 27);
 		panel.add(panelCompleto);
 		panelCompleto.setLayout(null);
 		panelCompleto.setBackground(new Color(153, 153, 153));
@@ -104,7 +104,7 @@ public class Tela_Casa_GUI {
 		basico.setVisible(false);
 		basico.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		basico.setText("Incêndio\r\nroubo\r\ndanos elétricos\r\ndisp. aluguel \r\nResponsabilidade civil\r\n");
-		basico.setBounds(205, 81, 210, 81);
+		basico.setBounds(302, 111, 210, 81);
 		panel.add(basico);
 		
 		JTextPane intermediario = new JTextPane();
@@ -112,7 +112,7 @@ public class Tela_Casa_GUI {
 		intermediario.setVisible(false);
 		intermediario.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		intermediario.setText("incêndio\r\nroubo\r\ndanos elétricos\r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\n");
-		intermediario.setBounds(205, 81, 210, 94);
+		intermediario.setBounds(302, 111, 210, 94);
 		panel.add(intermediario);
 		
 		JTextPane completo = new JTextPane();
@@ -120,44 +120,45 @@ public class Tela_Casa_GUI {
 		completo.setVisible(false);
 		completo.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		completo.setText("incêndio                              \r\nroubo                                   \r\ndanos elétricos  \r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\nVidros \r\nvazamento de tubulações \r\nincêndio\r\nroubo\r\ndanos elétricos\r\n");
-		completo.setBounds(205, 81, 210, 173);
+		completo.setBounds(302, 111, 210, 173);
 		panel.add(completo);
 		
 		JButton btnNewButton_1 = new JButton("");
-		btnNewButton_1.setBorder(new LineBorder(Color.RED, 1, true));
 		btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\close_resized (2).png"));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
 		});
-		btnNewButton_1.setBounds(374, 0, 27, 28);
+		btnNewButton_1.setBounds(495, 0, 27, 28);
 		panel.add(btnNewButton_1);
 		
 		JButton btnNewButton_1_1 = new JButton("");
 		btnNewButton_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tela_Main_GUI main = new Tela_Main_GUI();
-				main.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		btnNewButton_1_1.setIcon(new ImageIcon(Tela_Casa_GUI.class.getResource("/br/com/tokio/images/arrow_resized_resized.png")));
-		btnNewButton_1_1.setBounds(325, 0, 39, 28);
+		btnNewButton_1_1.setBounds(446, 0, 39, 28);
 		panel.add(btnNewButton_1_1);
 		
 		JLabel Value_completo = new JLabel("Valor: R$ 13,85 /mes ");
+		Value_completo.setFont(new Font("Tahoma", Font.BOLD, 12));
 		Value_completo.setVisible(false);
-		Value_completo.setBounds(272, 52, 124, 28);
+		Value_completo.setBounds(374, 72, 124, 28);
 		panel.add(Value_completo);
 		
 		JLabel Value_intermediario = new JLabel("Valor: R$ 8,75 /mes ");
+		Value_intermediario.setFont(new Font("Tahoma", Font.BOLD, 12));
 		Value_intermediario.setVisible(false);
-		Value_intermediario.setBounds(272, 52, 124, 28);
+		Value_intermediario.setBounds(374, 72, 124, 28);
 		panel.add(Value_intermediario);
 		
 		JLabel Value_basico = new JLabel("Valor: R$ 7,87 /mes ");
+		Value_basico.setFont(new Font("Tahoma", Font.BOLD, 12));
 		Value_basico.setVisible(false);
-		Value_basico.setBounds(272, 53, 124, 28);
+		Value_basico.setBounds(374, 72, 124, 28);
 		panel.add(Value_basico);
 		
 		JLabel lblBasico =new JLabel("Básico");
@@ -202,7 +203,7 @@ public class Tela_Casa_GUI {
 		lblIntermediario.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		JLabel lblNewLabel_3 = new JLabel("Escolha seu plano:");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel_3.setBounds(10, 66, 133, 14);
 		panel.add(lblNewLabel_3);
 		
@@ -212,12 +213,12 @@ public class Tela_Casa_GUI {
 		comboBox.setToolTipText("");
 		comboBox.setName("Alberto Nunes \r\nMaria Angelina\r\nRicardo Soares\r\nJoão Alberto\r\nCristiane Silva\r\n");
 		comboBox.setFont(new Font("Tahoma", Font.BOLD, 12));
-		comboBox.setBounds(25, 244, 140, 22);
+		comboBox.setBounds(47, 262, 140, 22);
 		panel.add(comboBox);
 		
 		JLabel lblNewLabel_2 = new JLabel("Escolhe um corretor:");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_2.setBounds(9, 229, 156, 14);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel_2.setBounds(22, 247, 156, 14);
 		panel.add(lblNewLabel_2);
 		
 		JButton btnNewButton = new JButton("Confirmar");
@@ -237,12 +238,12 @@ public class Tela_Casa_GUI {
 				assistencia.frame.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(315, 254, 110, 23);
+		btnNewButton.setBounds(412, 315, 110, 23);
 		panel.add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel.setIcon(new ImageIcon(Tela_Casa_GUI.class.getResource("/br/com/tokio/images/planos_updated_resized_updated.jpg")));
+		lblNewLabel.setIcon(new ImageIcon(Tela_Casa_GUI.class.getResource("/br/com/tokio/images/casa_resized_updated.jpg")));
 		lblNewLabel.setBounds(0, 0, 522, 338);
 		panel.add(lblNewLabel);
 		
