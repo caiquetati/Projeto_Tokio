@@ -82,6 +82,27 @@ public class Tela_Assistencia_GUI {
 		JList list = new JList();
 		list.setVisible(false);
 
+		JLabel valor_hrs = new JLabel("Valor: R$19,53");
+		valor_hrs.setVisible(false);
+		valor_hrs.setFont(new Font("Tahoma", Font.BOLD, 12));
+		valor_hrs.setHorizontalAlignment(SwingConstants.CENTER);
+		valor_hrs.setBounds(370, 63, 97, 23);
+		panel_1.add(valor_hrs);
+
+		JLabel Valor_especial = new JLabel("Valor: R$29,23");
+		Valor_especial.setVisible(false);
+		Valor_especial.setFont(new Font("Tahoma", Font.BOLD, 12));
+		Valor_especial.setHorizontalAlignment(SwingConstants.CENTER);
+		Valor_especial.setBounds(370, 63, 97, 23);
+		panel_1.add(Valor_especial);
+
+		JLabel valor_vip = new JLabel("Valor: R$38,15");
+		valor_vip.setVisible(false);
+		valor_vip.setFont(new Font("Tahoma", Font.BOLD, 12));
+		valor_vip.setHorizontalAlignment(SwingConstants.CENTER);
+		valor_vip.setBounds(370, 63, 97, 23);
+		panel_1.add(valor_vip);
+		
 		JLabel lblNewLabel_2 = new JLabel("24HRS");
 		lblNewLabel_2.addMouseListener(new MouseAdapter() {
 			@Override
@@ -89,9 +110,15 @@ public class Tela_Assistencia_GUI {
 				hrs.setVisible(true);
 				especial.setVisible(false);
 				list.setVisible(false);
+				valor_hrs.setVisible(true);
+				Valor_especial.setVisible(false);
+				valor_vip.setVisible(false);
 
 			}
 		});
+		
+		
+		
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 12));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setBounds(0, 0, 82, 33);
@@ -129,20 +156,15 @@ public class Tela_Assistencia_GUI {
 		especial.setFont(new Font("Tahoma", Font.BOLD, 12));
 		especial.setBackground(new Color(255, 255, 224));
 		especial.setModel(new AbstractListModel() {
-			String[] values = new String[] { "Linha Branca ", "Linha Marrom", "Limpeza de caixa de agua ",
-					"Limpeza de calhas", "Verificaçao de possiveis vazamentos",
-					"Troca de lampada, tomada e interrupitores", "Chaveiro", "Encanador", "Eletricista",
-					"Desentupidora", "Vidraceiro", "Help Desk" };
-
+			String[] values = new String[] {"Linha Branca ", "Linha Marrom", "Limpeza de caixa de agua ", "Limpeza de calhas", "Verificaçao de possiveis", " vazamentos", "Troca de lampada, ", "tomada e interrupitores", "Chaveiro", "Encanador", "Eletricista", "Desentupidora", "Vidraceiro", "Help Desk"};
 			public int getSize() {
 				return values.length;
 			}
-
 			public Object getElementAt(int index) {
 				return values[index];
 			}
 		});
-		especial.setBounds(316, 82, 151, 208);
+		especial.setBounds(316, 82, 171, 211);
 		panel_1.add(especial);
 
 		list.setVisible(false);
@@ -161,7 +183,7 @@ public class Tela_Assistencia_GUI {
 				return values[index];
 			}
 		});
-		list.setBounds(316, 82, 151, 126);
+		list.setBounds(316, 82, 193, 126);
 		panel_1.add(list);
 
 		JLabel lblNewLabel_5 = new JLabel("");
@@ -196,20 +218,7 @@ public class Tela_Assistencia_GUI {
 		lblNewLabel.setBounds(0, 0, 519, 52);
 		panel_1.add(lblNewLabel);
 
-		JLabel valor_hrs = new JLabel("Valor: R$19,53");
-		valor_hrs.setHorizontalAlignment(SwingConstants.CENTER);
-		valor_hrs.setBounds(370, 63, 97, 23);
-		panel_1.add(valor_hrs);
-
-		JLabel Valor_especial = new JLabel("Valor: R$29,23");
-		Valor_especial.setHorizontalAlignment(SwingConstants.CENTER);
-		Valor_especial.setBounds(370, 63, 97, 23);
-		panel_1.add(Valor_especial);
-
-		JLabel valor_vip = new JLabel("Valor: R$38,15");
-		valor_vip.setHorizontalAlignment(SwingConstants.CENTER);
-		valor_vip.setBounds(370, 63, 97, 23);
-		panel_1.add(valor_vip);
+		
 
 		JLabel lblNewLabel_4 = new JLabel("VIP");
 		lblNewLabel_4.setBounds(34, 246, 82, 33);
@@ -221,6 +230,8 @@ public class Tela_Assistencia_GUI {
 				especial.setVisible(false);
 				list.setVisible(true);
 				valor_hrs.setVisible(false);
+				Valor_especial.setVisible(false);
+				valor_vip.setVisible(true);
 
 			}
 		});
@@ -257,9 +268,17 @@ public class Tela_Assistencia_GUI {
 				hrs.setVisible(false);
 				especial.setVisible(true);
 				list.setVisible(false);
+				valor_hrs.setVisible(false);
+				Valor_especial.setVisible(true);
+				valor_vip.setVisible(false);
 			}
 		});
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 12));
+		
+		JLabel lblNewLabel_6 = new JLabel("");
+		lblNewLabel_6.setIcon(new ImageIcon(Tela_Assistencia_GUI.class.getResource("/br/com/tokio/images/suporte-tecnico_resized.png")));
+		lblNewLabel_6.setBounds(148, 132, 144, 119);
+		panel_1.add(lblNewLabel_6);
 	}
 }

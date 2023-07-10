@@ -116,13 +116,6 @@ public class Tela_Pagamento_GUI {
 			e.printStackTrace();
 		}
 		
-		
-		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\qrcode_resized.jpg"));
-		lblNewLabel_1.setBounds(405, 194, 89, 96);
-		panel_1.add(lblNewLabel_1);
-		
 		JPanel credito = new JPanel();
 		credito.setVisible(false);
 		credito.setBounds(40, 179, 335, 120);
@@ -130,6 +123,21 @@ public class Tela_Pagamento_GUI {
 		credito.setLayout(null);
 		credito.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		credito.setBackground(new Color(60, 179, 113));
+		
+		JPanel debito = new JPanel();
+		debito.setBounds(0, 0, 335, 120);
+		credito.add(debito);
+		debito.setVisible(false);
+		debito.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+		debito.setBackground(new Color(60, 179, 113));
+		debito.setLayout(null);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\qrcode_resized.jpg"));
+		lblNewLabel_1.setBounds(405, 194, 89, 96);
+		panel_1.add(lblNewLabel_1);
+		
+	
 		
 		JButton btnNewButton = new JButton("DÊBITO\r\n");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -261,13 +269,7 @@ public class Tela_Pagamento_GUI {
 		btn_credito.setBounds(225, 88, 100, 23);
 		credito.add(btn_credito);
 		
-		JPanel debito = new JPanel();
-		debito.setBounds(0, 0, 335, 120);
-		credito.add(debito);
-		debito.setVisible(false);
-		debito.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-		debito.setBackground(new Color(60, 179, 113));
-		debito.setLayout(null);
+	
 		
 		JLabel lblNewLabel_2 = new JLabel("Nº cartão");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
