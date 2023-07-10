@@ -1,31 +1,29 @@
 package br.com.tokio.view;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Desktop;
-
-import javax.swing.ImageIcon;
+import java.awt.EventQueue;
 import java.awt.Font;
-import javax.swing.UIManager;
-import javax.swing.border.LineBorder;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.URI;
 
-import javax.swing.border.EtchedBorder;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.UIManager;
+import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
-import javax.swing.SwingConstants;
+
+import br.com.tokio.model.Seguro;
+import br.com.tokio.model.Usuario;
 
 public class Tela_Main_GUI {
 
 	 JFrame frame;
+	 private Usuario usuarioAtual;
+	 private static Seguro seguro = new Seguro();
 
 	/**
 	 * Launch the application.
@@ -203,5 +201,22 @@ public class Tela_Main_GUI {
         } catch (Exception e) {
             e.printStackTrace();}
         }
+
+	public static Seguro getSeguro() {
+		return seguro;
+	}
+
+	public void setSeguro(Seguro seguro) {
+		this.seguro = seguro;
+	}
+
+	public Usuario getUsuarioAtual() {
+		return usuarioAtual;
+	}
+
+	public void setUsuarioAtual(Usuario usuarioAtual) {
+		this.usuarioAtual = usuarioAtual;
+	}
+	
 
 }

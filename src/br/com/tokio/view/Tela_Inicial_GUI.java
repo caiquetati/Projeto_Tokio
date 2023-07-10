@@ -24,6 +24,7 @@ import javax.swing.border.MatteBorder;
 import javax.swing.text.MaskFormatter;
 
 import br.com.tokio.controller.UsuarioDAO;
+import br.com.tokio.model.Usuario;
 
 public class Tela_Inicial_GUI {
 
@@ -191,9 +192,11 @@ public class Tela_Inicial_GUI {
 			public void actionPerformed(ActionEvent e) {
 				UsuarioDAO dao = new UsuarioDAO();
 				int id = Integer.parseInt(formattedTextField_1.getText());
-				dao.selectById(id);
+				Usuario usuarioAtual = dao.selectById(id);
 
 				Tela_Main_GUI cadastro = new Tela_Main_GUI();
+				cadastro.setUsuarioAtual(usuarioAtual);
+				
 				JOptionPane.showMessageDialog(null, "Dados corretos, seja bem vindo!");
 				cadastro.frame.setVisible(true);
 				frame.dispose();

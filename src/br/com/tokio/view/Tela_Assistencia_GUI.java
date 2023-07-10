@@ -20,7 +20,7 @@ import java.awt.event.ActionEvent;
 
 public class Tela_Assistencia_GUI {
 
-	private JFrame frame;
+	public JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -70,6 +70,7 @@ public class Tela_Assistencia_GUI {
 		JButton btnNewButton = new JButton("Confrmar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				Tela_Pagamento_GUI tela = new Tela_Pagamento_GUI();
 				tela.frame.setVisible(true);
 				frame.dispose();

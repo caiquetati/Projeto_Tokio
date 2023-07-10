@@ -209,9 +209,11 @@ public class TelaCadastro_GUI {
 			public void actionPerformed(ActionEvent e) {
 				UsuarioDAO dao = new UsuarioDAO();
 				try {
-					dao.verificarSenha(senha.getText());					
-					Usuario novoUsuario = new Usuario(cpf.getText(), nome.getText(), senha.getText(), "00000", (String) sexo.getSelectedItem(),(String) telefone.getText());					
-					dao.insert(novoUsuario);
+					dao.verificarSenha(senha.getText());
+					int ano, mes, dia;
+					//Date dtNascimento = new Date(ano,mes,dia);
+					//Usuario novoUsuario = new Usuario(cpf.getText(), nome.getText(), senha.getText(), dtNascimento, (String) sexo.getSelectedItem(),(String) telefone.getText());					
+					//dao.insert(novoUsuario);
 				} catch(Exception error) {
 					error.getStackTrace();
 				}

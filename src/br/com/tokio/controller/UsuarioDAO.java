@@ -59,10 +59,10 @@ public class UsuarioDAO {
 			// Executa a query
 			stmt.execute();
 			stmt.close();
+			System.out.println("Usuario Criado");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Usuario Criado");
 
 	}
 

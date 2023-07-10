@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
@@ -26,7 +27,6 @@ import br.com.tokio.model.Seguro;
 public class Tela_Casa_GUI {
 
 	JFrame frame;
-	private Seguro seguro = new Seguro();
 
 	/**
 	 * Launch the application.
@@ -225,16 +225,18 @@ public class Tela_Casa_GUI {
 		btnNewButton.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			//	JOptionPane.showMessageDialog(null, "voce escolheu...");
+				Seguro seguro = Tela_Main_GUI.getSeguro();
 				if(basico.isVisible()) {
 					seguro.setTipoSeguro("basico");
+					seguro.setVlSeguro(100000);
 				} else if (intermediario.isVisible()) {
 					seguro.setTipoSeguro("intermediario");
+					seguro.setVlSeguro(100000);
 				} else if (completo.isVisible()) {
 					seguro.setTipoSeguro("completo");
+					seguro.setVlSeguro(100000);
 				}
-				Tela_Pagamento_GUI pagamento = new Tela_Pagamento_GUI();
-				pagamento.frame.setVisible(true);
+				JOptionPane.showMessageDialog(null, "voce escolheu: " + seguro.getTipoSeguro());
 			}
 		});
 		btnNewButton.setBounds(315, 254, 110, 23);
@@ -257,13 +259,6 @@ public class Tela_Casa_GUI {
 		private static void __tmp() {
 			  javax.swing.JPanel __wbp_panel = new javax.swing.JPanel();
 		}
-	}
-	public Seguro getSeguro() {
-		return seguro;
-	}
-
-	public void setSeguro(Seguro seguro) {
-		this.seguro = seguro;
 	}
 	
 }
