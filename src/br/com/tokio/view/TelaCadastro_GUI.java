@@ -1,42 +1,34 @@
 package br.com.tokio.view;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.ImageIcon;
 import java.awt.Color;
-import javax.swing.UIManager;
-import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
-import javax.swing.JButton;
-import java.awt.Component;
 import java.awt.Desktop;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.URI;
+import java.sql.Date;
 import java.text.ParseException;
-
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JFormattedTextField;
 import java.util.Locale;
-import javax.swing.text.MaskFormatter;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.TitledBorder;
-import javax.swing.border.LineBorder;
-import javax.swing.border.SoftBevelBorder;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.MatteBorder;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
-import java.awt.Color;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
+import javax.swing.border.MatteBorder;
+import javax.swing.text.MaskFormatter;
+
+import br.com.tokio.controller.UsuarioDAO;
+import br.com.tokio.model.Usuario;
+import br.com.tokio.util.CriptografiaAES;
 
 public class TelaCadastro_GUI {
 
@@ -133,20 +125,6 @@ public class TelaCadastro_GUI {
 		lblNewLabel_3.setBounds(41, 208, 46, 14); 
 		panel.add(lblNewLabel_3);
 		
-		JButton Cadastro = new JButton("CADASTRAR");
-		Cadastro.setFont(new Font("Tahoma", Font.BOLD, 11));
-		Cadastro.setBorder(new MatteBorder(2, 2, 3, 1, (Color) new Color(0, 0, 0)));
-		Cadastro.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!!");
-				Tela_Main_GUI main = new Tela_Main_GUI();
-				main.frame.setVisible(true);
-				frame.dispose();
-			}
-		});
-		Cadastro.setBounds(361, 323, 116, 23);
-		panel.add(Cadastro);
-		
 		JLabel lblNewLabel_4 = new JLabel("");
 		lblNewLabel_4.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.RED));
 		lblNewLabel_4.addMouseListener(new MouseAdapter() {
@@ -223,6 +201,29 @@ public class TelaCadastro_GUI {
 		lblNewLabel.setIcon(new ImageIcon(TelaCadastro_GUI.class.getResource("/br/com/tokio/images/Image_Cadastro_resized_resized_updated.png")));
 		lblNewLabel.setBounds(27, 20, 450, 310);
 		panel.add(lblNewLabel);
+		
+		JButton Cadastro = new JButton("CADASTRAR");
+		Cadastro.setFont(new Font("Tahoma", Font.BOLD, 11));
+		Cadastro.setBorder(new MatteBorder(2, 2, 3, 1, (Color) new Color(0, 0, 0)));
+		Cadastro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				UsuarioDAO dao = new UsuarioDAO();
+				try {
+					dao.verificarSenha(senha.getText());					
+					Usuario novoUsuario = new Usuario(cpf.getText(), nome.getText(), senha.getText(), "00000", (String) sexo.getSelectedItem(),(String) telefone.getText());					
+					dao.insert(novoUsuario);
+				} catch(Exception error) {
+					error.getStackTrace();
+				}
+				JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!!");
+				Tela_Main_GUI main = new Tela_Main_GUI();
+				main.frame.setVisible(true);
+				frame.dispose();
+			}
+		});
+		Cadastro.setBounds(361, 323, 116, 23);
+		panel.add(Cadastro);
+		
 	}private static void openDulvidas() {
         try {
             URI uri = new URI("https://docs.google.com/document/d/1oALTDDmqvJZ56OjX-miOh3cdlJV5kLIB30OqqQmuUEs/edit?pli=1"); 

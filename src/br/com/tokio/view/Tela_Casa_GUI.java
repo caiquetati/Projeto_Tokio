@@ -1,35 +1,32 @@
 package br.com.tokio.view;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.ImageIcon;
-import javax.swing.border.LineBorder;
 import java.awt.Color;
+import java.awt.EventQueue;
 import java.awt.Font;
-import javax.swing.JComboBox;
-import javax.swing.JTextPane;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JButton;
-import javax.swing.border.EtchedBorder;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.BoxLayout;
-import java.awt.Component;
-import java.awt.CardLayout;
-import java.awt.GridLayout;
-import javax.swing.border.MatteBorder;
-import javax.swing.SwingConstants;
+
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextPane;
+import javax.swing.SwingConstants;
+import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
+
+import br.com.tokio.model.Seguro;
 
 
 public class Tela_Casa_GUI {
 
 	JFrame frame;
+	private Seguro seguro = new Seguro();
 
 	/**
 	 * Launch the application.
@@ -70,18 +67,37 @@ public class Tela_Casa_GUI {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Confirmar");
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnNewButton.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			//	JOptionPane.showMessageDialog(null, "voce escolheu...");
-				Tela_Pagamento_GUI pagamento = new Tela_Pagamento_GUI();
-				pagamento.frame.setVisible(true);
-			}
-		});
-		btnNewButton.setBounds(315, 254, 110, 23);
-		panel.add(btnNewButton);
+		JLabel lblNewLabel_1 = new JLabel("Seguro Casa");
+		lblNewLabel_1.setFont(new Font("Lucida Bright", Font.BOLD, 22));
+		lblNewLabel_1.setBounds(128, 11, 147, 45);
+		panel.add(lblNewLabel_1);
+		
+		JPanel panelBasico = new JPanel();
+		panelBasico.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
+		panelBasico.setBounds(36, 91, 107, 27);
+		panelBasico.setBackground(new Color(153, 153, 153));
+		panelBasico.setLayout(null);
+		panel.add(panelBasico);
+		
+		JPanel panelIntermediario = new JPanel();
+		panelIntermediario.setBounds(36, 129, 107, 27);
+		panelIntermediario.setLayout(null);
+		panelIntermediario.setBackground(new Color(153, 153, 153));
+		panel.add(panelIntermediario);
+		
+		JPanel panelCompleto = new JPanel();
+		panelCompleto.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
+		panelCompleto.setBounds(36, 181, 107, 27);
+		panel.add(panelCompleto);
+		panelCompleto.setLayout(null);
+		panelCompleto.setBackground(new Color(153, 153, 153));
+		
+		JLabel lblCompleto = new JLabel("Completo");
+		lblCompleto.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCompleto.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblCompleto.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
+		lblCompleto.setBounds(0, 0, 107, 25);
+		panelCompleto.add(lblCompleto);
 		
 		JTextPane basico = new JTextPane();
 		basico.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -106,11 +122,6 @@ public class Tela_Casa_GUI {
 		completo.setText("incêndio                              \r\nroubo                                   \r\ndanos elétricos  \r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\nVidros \r\nvazamento de tubulações \r\nincêndio\r\nroubo\r\ndanos elétricos\r\n");
 		completo.setBounds(205, 81, 210, 173);
 		panel.add(completo);
-		
-		JLabel lblNewLabel_1 = new JLabel("Seguro Casa");
-		lblNewLabel_1.setFont(new Font("Lucida Bright", Font.BOLD, 22));
-		lblNewLabel_1.setBounds(128, 11, 147, 45);
-		panel.add(lblNewLabel_1);
 		
 		JButton btnNewButton_1 = new JButton("");
 		btnNewButton_1.setBorder(new LineBorder(Color.RED, 1, true));
@@ -139,22 +150,10 @@ public class Tela_Casa_GUI {
 		Value_completo.setBounds(272, 52, 124, 28);
 		panel.add(Value_completo);
 		
-		JPanel panelIntermediario = new JPanel();
-		panelIntermediario.setBounds(36, 129, 107, 27);
-		panel.add(panelIntermediario);
-		panelIntermediario.setLayout(null);
-		panelIntermediario.setBackground(new Color(153, 153, 153));
-		
 		JLabel Value_intermediario = new JLabel("Valor: R$ 8,75 /mes ");
 		Value_intermediario.setVisible(false);
 		Value_intermediario.setBounds(272, 52, 124, 28);
 		panel.add(Value_intermediario);
-		JPanel panelBasico = new JPanel();
-		panelBasico.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
-		panelBasico.setBounds(36, 91, 107, 27);
-		panel.add(panelBasico);
-		panelBasico.setBackground(new Color(153, 153, 153));
-		panelBasico.setLayout(null);
 		
 		JLabel Value_basico = new JLabel("Valor: R$ 7,87 /mes ");
 		Value_basico.setVisible(false);
@@ -207,30 +206,6 @@ public class Tela_Casa_GUI {
 		lblNewLabel_3.setBounds(10, 66, 133, 14);
 		panel.add(lblNewLabel_3);
 		
-		JLabel lblCompleto = new JLabel("Completo");
-		lblCompleto.setBounds(36, 182, 107, 25);
-		panel.add(lblCompleto);
-		lblCompleto.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
-		lblCompleto.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCompleto.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				basico.setVisible(false);
-				Value_basico.setVisible(false);
-				Value_intermediario.setVisible(false);;
-				Value_completo.setVisible(true);
-				intermediario.setVisible(false);
-				completo.setVisible(true);
-			}
-		});
-		lblCompleto.setFont(new Font("Tahoma", Font.BOLD, 14));
-		
-		JPanel panelCompleto = new JPanel();
-		panelCompleto.setBorder(new MatteBorder(3, 2, 1, 1, (Color) new Color(0, 0, 0)));
-		panelCompleto.setBounds(36, 181, 107, 27);
-		panel.add(panelCompleto);
-		panelCompleto.setLayout(null);
-		panelCompleto.setBackground(new Color(153, 153, 153));
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Alberto Nunes ", "Maria Angelina", "Ricardo Soares", "João Alberto", "Cristiane Silva"}));
@@ -245,20 +220,50 @@ public class Tela_Casa_GUI {
 		lblNewLabel_2.setBounds(9, 229, 156, 14);
 		panel.add(lblNewLabel_2);
 		
+		JButton btnNewButton = new JButton("Confirmar");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnNewButton.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			//	JOptionPane.showMessageDialog(null, "voce escolheu...");
+				if(basico.isVisible()) {
+					seguro.setTipoSeguro("basico");
+				} else if (intermediario.isVisible()) {
+					seguro.setTipoSeguro("intermediario");
+				} else if (completo.isVisible()) {
+					seguro.setTipoSeguro("completo");
+				}
+				Tela_Pagamento_GUI pagamento = new Tela_Pagamento_GUI();
+				pagamento.frame.setVisible(true);
+			}
+		});
+		btnNewButton.setBounds(315, 254, 110, 23);
+		panel.add(btnNewButton);
+		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel.setIcon(new ImageIcon(Tela_Casa_GUI.class.getResource("/br/com/tokio/images/planos_updated_resized_updated.jpg")));
 		lblNewLabel.setBounds(0, 0, 425, 277);
 		panel.add(lblNewLabel);
 		
+		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBounds(0, 0, 450, 300);
 		panel_2.setBackground(new Color(20, 129, 99));
 		frame.getContentPane().add(panel_2);
+		
 	}
 	private static class __Tmp {
 		private static void __tmp() {
 			  javax.swing.JPanel __wbp_panel = new javax.swing.JPanel();
 		}
 	}
+	public Seguro getSeguro() {
+		return seguro;
+	}
+
+	public void setSeguro(Seguro seguro) {
+		this.seguro = seguro;
+	}
+	
 }
