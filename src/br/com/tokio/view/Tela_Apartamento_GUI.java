@@ -35,6 +35,7 @@ public class Tela_Apartamento_GUI {
 				try {
 					Tela_Apartamento_GUI window = new Tela_Apartamento_GUI();
 					window.frame.setVisible(true);
+					window.frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -55,19 +56,19 @@ public class Tela_Apartamento_GUI {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setUndecorated(true);
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 541, 364);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new MatteBorder(4, 4, 4, 4, (Color) new Color(0, 0, 0)));
-		panel.setBounds(0, 0, 450, 300);
+		panel.setBounds(0, 0, 541, 364);
 		panel.setBackground(new Color(20, 129, 99));
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(10, 11, 430, 278);
+		panel_1.setBounds(10, 11, 521, 342);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -97,18 +98,18 @@ public class Tela_Apartamento_GUI {
 			}
 		});
 		confirmar.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(0, 0, 0)));
-		confirmar.setBounds(321, 255, 111, 23);
+		confirmar.setBounds(410, 319, 111, 23);
 		panel_1.add(confirmar);
 		
 		JLabel lblNewLabel_1 = new JLabel("Seguro Apartamento");
 		lblNewLabel_1.setFont(new Font("Lucida Bright", Font.BOLD, 22));
-		lblNewLabel_1.setBounds(81, 11, 238, 33);
+		lblNewLabel_1.setBounds(162, 11, 238, 33);
 		panel_1.add(lblNewLabel_1);
 		
 		JLabel Value_basico = new JLabel("Valor: R$19,53 /mes");
 		Value_basico.setVisible(false);
 		Value_basico.setFont(new Font("Tahoma", Font.BOLD, 11));
-		Value_basico.setBounds(294, 69, 126, 14);
+		Value_basico.setBounds(378, 94, 126, 14);
 		panel_1.add(Value_basico);
 		
 		
@@ -117,20 +118,20 @@ public class Tela_Apartamento_GUI {
 		basico.setVisible(false);
 		basico.setText("Incêndio\r\nroubo\r\ndanos elétricos\r\ndisp. aluguel \r\nResponsabilidade civil\r\n");
 		basico.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
-		basico.setBounds(210, 69, 210, 85);
+		basico.setBounds(294, 118, 210, 85);
 		panel_1.add(basico);
 		
 		
 		JLabel Value_intermediario = new JLabel("Valor: R$22,94 /mes");
 		Value_intermediario.setVisible(false);
 		Value_intermediario.setFont(new Font("Tahoma", Font.BOLD, 11));
-		Value_intermediario.setBounds(294, 69, 126, 14);
+		Value_intermediario.setBounds(378, 94, 126, 14);
 		panel_1.add(Value_intermediario);
 		
 		JLabel Value_completo = new JLabel("Valor: R$28,43 /mes");
 		Value_completo.setVisible(false);
 		Value_completo.setFont(new Font("Tahoma", Font.BOLD, 11));
-		Value_completo.setBounds(294, 69, 126, 14);
+		Value_completo.setBounds(378, 94, 126, 14);
 		panel_1.add(Value_completo);
 		
 		JTextPane intermediario = new JTextPane();
@@ -138,7 +139,7 @@ public class Tela_Apartamento_GUI {
 		intermediario.setVisible(false);
 		intermediario.setText("incêndio\r\nroubo\r\ndanos elétricos\r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\n");
 		intermediario.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
-		intermediario.setBounds(210, 87, 210, 109);
+		intermediario.setBounds(294, 118, 210, 109);
 		panel_1.add(intermediario);
 		
 		JTextPane completo = new JTextPane();
@@ -146,7 +147,7 @@ public class Tela_Apartamento_GUI {
 		completo.setVisible(false);
 		completo.setText("incêndio                              \r\nroubo                                   \r\ndanos elétricos  \r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\nVidros \r\nvazamento de tubulações \r\nincêndio\r\nroubo\r\ndanos elétricos\r\n");
 		completo.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
-		completo.setBounds(210, 87, 210, 168);
+		completo.setBounds(294, 118, 210, 168);
     
 		panel_1.add(completo);
 		
@@ -202,7 +203,7 @@ public class Tela_Apartamento_GUI {
 		JPanel panel_1_2 = new JPanel();
 		panel_1_2.setLayout(null);
 		panel_1_2.setBackground(new Color(153, 153, 153));
-		panel_1_2.setBounds(26, 169, 107, 27);
+		panel_1_2.setBounds(26, 176, 107, 27);
 		panel_1.add(panel_1_2);
 		
 		JLabel lblCompleto = new JLabel("Completo");
@@ -231,7 +232,7 @@ public class Tela_Apartamento_GUI {
 				System.exit(0);
 			}
 		});
-		btnNewButton_1.setBounds(389, 11, 31, 33);
+		btnNewButton_1.setBounds(490, 0, 31, 33);
 		panel_1.add(btnNewButton_1);
 		
 		JButton btnNewButton_1_1 = new JButton("");
@@ -239,10 +240,12 @@ public class Tela_Apartamento_GUI {
 			public void actionPerformed(ActionEvent e) {
 				Tela_Main_GUI main = new Tela_Main_GUI();
 				main.frame.setVisible(true);
+				main.frame.setLocationRelativeTo(null);
+				frame.dispose();
 			}
 		});
 		btnNewButton_1_1.setIcon(new ImageIcon(Tela_Apartamento_GUI.class.getResource("/br/com/tokio/images/arrow_resized_resized.png")));
-		btnNewButton_1_1.setBounds(340, 11, 39, 33);
+		btnNewButton_1_1.setBounds(441, 0, 39, 33);
 		panel_1.add(btnNewButton_1_1);
 		
 		JLabel lblNewLabel_3 = new JLabel("Escolha seu plano:");
@@ -255,17 +258,17 @@ public class Tela_Apartamento_GUI {
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Alberto Nunes ", "Maria Angelina", "Ricardo Soares", "João Alberto", "Cristiane Silva"}));
 		comboBox.setName("Alberto Nunes \r\nMaria Angelina\r\nRicardo Soares\r\nJoão Alberto\r\nCristiane Silva\r\n");
 		comboBox.setToolTipText("");
-		comboBox.setBounds(26, 233, 140, 22);
+		comboBox.setBounds(46, 245, 140, 22);
 		panel_1.add(comboBox);
 		
 		JLabel lblNewLabel_2 = new JLabel("Escolhe um corretor:");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_2.setBounds(10, 217, 156, 14);
+		lblNewLabel_2.setBounds(26, 231, 156, 14);
 		panel_1.add(lblNewLabel_2);
 
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Tela_Apartamento_GUI.class.getResource("/br/com/tokio/images/apartamento_resized_updated.jpg")));
-		lblNewLabel.setBounds(0, 0, 430, 278);
+		lblNewLabel.setIcon(new ImageIcon(Tela_Apartamento_GUI.class.getResource("/br/com/tokio/images/apartamento_resized_updated.jpeg")));
+		lblNewLabel.setBounds(0, 0, 521, 342);
 		panel_1.add(lblNewLabel);
 		
 		

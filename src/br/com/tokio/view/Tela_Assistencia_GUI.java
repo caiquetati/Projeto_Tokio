@@ -20,7 +20,7 @@ import java.awt.event.ActionEvent;
 
 public class Tela_Assistencia_GUI {
 
-	private JFrame frame;
+	public JFrame frame;
 
 	/**
 	 * Launch the application.

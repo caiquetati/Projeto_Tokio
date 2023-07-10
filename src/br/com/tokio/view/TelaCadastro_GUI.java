@@ -29,13 +29,15 @@ import javax.swing.text.MaskFormatter;
 import br.com.tokio.controller.UsuarioDAO;
 import br.com.tokio.model.Usuario;
 import br.com.tokio.util.CriptografiaAES;
+import javax.swing.JPasswordField;
+
+import javax.swing.JFormattedTextField.AbstractFormatter;
 
 public class TelaCadastro_GUI {
 
 	JFrame frame;
 	private JTextField nome;
-	private JTextField idade;
-	private JTextField senha;
+	private JPasswordField senha;
 
 	/**
 	 * Launch the application.
@@ -126,7 +128,6 @@ public class TelaCadastro_GUI {
 		panel.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("");
-		lblNewLabel_4.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.RED));
 		lblNewLabel_4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -141,12 +142,6 @@ public class TelaCadastro_GUI {
 		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel_5.setBounds(41, 165, 46, 14);
 		panel.add(lblNewLabel_5);
-		
-		idade = new JTextField();
-		idade.setBorder(new MatteBorder(2, 2, 0, 0, (Color) new Color(0, 0, 0)));
-		idade.setBounds(60, 180, 216, 20);
-		panel.add(idade);
-		idade.setColumns(10);
 		
 		JLabel lblNewLabel_6 = new JLabel("Genero:");
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -185,23 +180,6 @@ public class TelaCadastro_GUI {
 		lblNewLabel_9.setBounds(41, 119, 46, 14);
 		panel.add(lblNewLabel_9);
 		
-		senha = new JTextField();
-		senha.setColumns(10);
-		senha.setBorder(new MatteBorder(2, 2, 0, 0, (Color) new Color(0, 0, 0)));
-		senha.setBounds(60, 135, 216, 20);
-		panel.add(senha);
-		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				
-			}
-		});
-		lblNewLabel.setIcon(new ImageIcon(TelaCadastro_GUI.class.getResource("/br/com/tokio/images/Image_Cadastro_resized_resized_updated.png")));
-		lblNewLabel.setBounds(27, 20, 450, 310);
-		panel.add(lblNewLabel);
-		
 		JButton Cadastro = new JButton("CADASTRAR");
 		Cadastro.setFont(new Font("Tahoma", Font.BOLD, 11));
 		Cadastro.setBorder(new MatteBorder(2, 2, 3, 1, (Color) new Color(0, 0, 0)));
@@ -217,12 +195,37 @@ public class TelaCadastro_GUI {
 				}
 				JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!!");
 				Tela_Main_GUI main = new Tela_Main_GUI();
+				main.frame.setLocationRelativeTo(null);
+
 				main.frame.setVisible(true);
 				frame.dispose();
 			}
 		});
 		Cadastro.setBounds(361, 323, 116, 23);
 		panel.add(Cadastro);
+		
+		senha = new JPasswordField();
+		senha.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
+		senha.setBounds(60, 135, 216, 20);
+		panel.add(senha);
+		
+		JFormattedTextField txt_Nascimento = new JFormattedTextField((AbstractFormatter) null);
+		txt_Nascimento.setBorder(new MatteBorder(2, 2, 0, 0, (Color) new Color(0, 0, 0)));
+		txt_Nascimento.setBounds(60, 179, 216, 20);
+		panel.add(txt_Nascimento);
+		
+	
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+			}
+		});
+		lblNewLabel.setIcon(new ImageIcon(TelaCadastro_GUI.class.getResource("/br/com/tokio/images/Image_Cadastro_resized_resized_updated.png")));
+		lblNewLabel.setBounds(27, 20, 450, 310);
+		panel.add(lblNewLabel);
 		
 	}private static void openDulvidas() {
         try {

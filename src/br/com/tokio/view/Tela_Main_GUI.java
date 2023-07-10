@@ -36,6 +36,9 @@ public class Tela_Main_GUI {
 				try {
 					Tela_Main_GUI window = new Tela_Main_GUI();
 					window.frame.setVisible(true);
+					window.frame.setLocationRelativeTo(null);
+					
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -92,7 +95,9 @@ public class Tela_Main_GUI {
 			public void mouseClicked(MouseEvent e) {
 				Tela_Condominio_GUI cond = new Tela_Condominio_GUI();
 				cond.frame.setVisible(true);
-				frame.dispose();
+				cond.frame.setLocationRelativeTo(null);
+
+				
 
 			}
 		});
@@ -118,7 +123,9 @@ public class Tela_Main_GUI {
 			public void mouseClicked(MouseEvent e) {
 				Tela_Apartamento_GUI apartamento = new Tela_Apartamento_GUI();
 				apartamento.frame.setVisible(true);
-				frame.dispose();
+				apartamento.frame.setLocationRelativeTo(null);
+				
+		
 
 			}
 		});
@@ -144,8 +151,10 @@ public class Tela_Main_GUI {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				Tela_Casa_GUI casa = new Tela_Casa_GUI();
+				casa.frame.setLocationRelativeTo(null);
+
 				casa.frame.setVisible(true);
-				frame.dispose();
+				;
 
 			}
 		});

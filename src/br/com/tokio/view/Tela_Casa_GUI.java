@@ -57,13 +57,13 @@ public class Tela_Casa_GUI {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setUndecorated(true);
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 542, 360);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
-		panel.setBounds(10, 11, 425, 277);
+		panel.setBounds(10, 11, 522, 338);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
@@ -233,8 +233,8 @@ public class Tela_Casa_GUI {
 				} else if (completo.isVisible()) {
 					seguro.setTipoSeguro("completo");
 				}
-				Tela_Pagamento_GUI pagamento = new Tela_Pagamento_GUI();
-				pagamento.frame.setVisible(true);
+				Tela_Assistencia_GUI assistencia = new Tela_Assistencia_GUI();
+				assistencia.frame.setVisible(true);
 			}
 		});
 		btnNewButton.setBounds(315, 254, 110, 23);
@@ -243,12 +243,12 @@ public class Tela_Casa_GUI {
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel.setIcon(new ImageIcon(Tela_Casa_GUI.class.getResource("/br/com/tokio/images/planos_updated_resized_updated.jpg")));
-		lblNewLabel.setBounds(0, 0, 425, 277);
+		lblNewLabel.setBounds(0, 0, 522, 338);
 		panel.add(lblNewLabel);
 		
 		
 		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(0, 0, 450, 300);
+		panel_2.setBounds(0, 0, 542, 360);
 		panel_2.setBackground(new Color(20, 129, 99));
 		frame.getContentPane().add(panel_2);
 		
