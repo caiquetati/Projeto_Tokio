@@ -11,18 +11,18 @@ public class Teste {
 	public static void main(String[] args) {
 		UsuarioDAO dao = new UsuarioDAO();
 //		Date dtNascimento = new Date(2004,16,04);
-//		Usuario usuario = new Usuario(59186, "tatibana", "Fiap@123", dtNascimento, "masculino", 85491);
-//		dao.insert(usuario);
+		Usuario usuario = new Usuario("0000", "vambora", "Fiap@123", "160604", "masculino", "85491");
+		dao.insert(usuario);
 		
-		CorretorDAO c = new CorretorDAO();
-		c.Gerar();
+		//CorretorDAO c = new CorretorDAO();
+		//c.Gerar();
 		
-		List<Usuario> listaUsuario = dao.selectAll();
-		for(Usuario usuario : listaUsuario) {
-			System.out.println(usuario.getCpf());
-			System.out.println(usuario.getNome());
-			System.out.println(usuario.getSenha());
-		}
+//		List<Usuario> listaUsuario = dao.selectAll();
+//		for(Usuario usuario : listaUsuario) {
+//			System.out.println(usuario.getCpf());
+//			System.out.println(usuario.getNome());
+//			System.out.println(usuario.getSenha());
+//		}
 	}
 
 }

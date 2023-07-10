@@ -50,12 +50,12 @@ public class UsuarioDAO {
 		try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
 			// Complemento da Query
-			stmt.setInt(1, usuario.getCpf());
+			stmt.setString(1, usuario.getCpf());
 			stmt.setString(2, usuario.getNome());
 			stmt.setString(3, criptografar(usuario.getSenha()));
-			stmt.setDate(4, usuario.getDtNascimento());
+			stmt.setString(4, usuario.getDtNascimento());
 			stmt.setString(5, usuario.getSexo());
-			stmt.setInt(6, usuario.getTelefone());
+			stmt.setString(6, usuario.getTelefone());
 			// Executa a query
 			stmt.execute();
 			stmt.close();
@@ -76,12 +76,12 @@ public class UsuarioDAO {
 			// Loop que roda enquanto tiver dados na tabela
 			while (rs.next()) {
 				Usuario usuario = new Usuario();
-				usuario.setCpf(rs.getInt("NMR_CPF_CLIENTE"));
+				usuario.setCpf(rs.getString("NMR_CPF_CLIENTE"));
 				usuario.setNome(rs.getString("NM_CLIENTE"));
 				usuario.setSenha(rs.getString("SENHA_CLIENTE"));
-				usuario.setDtNascimento(rs.getDate("DT_NASCIMENTO_CLIENTE"));
+				usuario.setDtNascimento(rs.getString("DT_NASCIMENTO_CLIENTE"));
 				usuario.setSexo(rs.getString("DS_SEXO_CLIENTE"));
-				usuario.setTelefone(rs.getInt("TEL_CLIENTE"));
+				usuario.setTelefone(rs.getString("TEL_CLIENTE"));
 				listaUsuarios.add(usuario);
 			}
 			rs.close();
@@ -101,12 +101,12 @@ public class UsuarioDAO {
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				usuario = new Usuario();
-				usuario.setCpf(rs.getInt("NMR_CPF_CLIENTE"));
+				usuario.setCpf(rs.getString("NMR_CPF_CLIENTE"));
 				usuario.setNome(rs.getString("NM_CLIENTE"));
 				usuario.setSenha(rs.getString("SENHA_CLIENTE"));
-				usuario.setDtNascimento(rs.getDate("DT_NASCIMENTO_CLIENTE"));
+				usuario.setDtNascimento(rs.getString("DT_NASCIMENTO_CLIENTE"));
 				usuario.setSexo(rs.getString("DS_SEXO_CLIENTE"));
-				usuario.setTelefone(rs.getInt("TEL_CLIENTE"));
+				usuario.setTelefone(rs.getString("TEL_CLIENTE"));
 			}
 			rs.close();
 			stmt.close();
@@ -137,7 +137,7 @@ public class UsuarioDAO {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
 			stmt.setString(1, usuario.getNome());
 			stmt.setString(2, usuario.getSenha());
-			stmt.setLong(3, usuario.getCpf());
+			stmt.setString(3, usuario.getCpf());
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
