@@ -2,21 +2,23 @@ package br.com.tokio.view;
 
 import java.awt.Color;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 import java.awt.Font;
-import javax.swing.JList;
-import javax.swing.border.MatteBorder;
-import javax.swing.AbstractListModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
+import javax.swing.AbstractListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.MatteBorder;
+
+import br.com.tokio.model.Seguro;
 
 public class Tela_Assistencia_GUI {
 
@@ -70,6 +72,15 @@ public class Tela_Assistencia_GUI {
 		JButton btnNewButton = new JButton("Confrmar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+//				Seguro seguro = Tela_Main_GUI.getSeguro();
+//				if(hrs.isVisible) {
+//					seguro.setTipoAssistenca("24hrs");
+//				} else if (especial.isVisible()) {
+//					seguro.setTipoAssistenca("Especial");					
+//				} else if (list.isVisible()) {
+//					seguro.setTipoAssistenca("VIP");
+//				}
+				
 				Tela_Pagamento_GUI tela = new Tela_Pagamento_GUI();
 				tela.frame.setVisible(true);
 				frame.dispose();

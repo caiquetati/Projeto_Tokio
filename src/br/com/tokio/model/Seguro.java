@@ -3,15 +3,16 @@ package br.com.tokio.model;
 public class Seguro {
 	
 	private int idSeguro, vlSeguro;
-	private String tipoSeguro, planoSeguro;
+	private String tipoSeguro, planoSeguro, tipoAssistenca;
 	
 	public Seguro() {
 		
 	}
-	public Seguro(int idSeguro, String tipoSeguro, String planoSeguro, int vlSeguro) {
+	public Seguro(int idSeguro, String tipoSeguro, String planoSeguro, String tipoAssistenca, int vlSeguro) {
 		this.idSeguro = idSeguro;
 		this.tipoSeguro = tipoSeguro;
 		this.planoSeguro = planoSeguro;
+		this.tipoAssistenca = tipoAssistenca;
 		this.vlSeguro = vlSeguro;
 	}
 
@@ -22,7 +23,15 @@ public class Seguro {
 	public void setIdSeguro(int idSeguro) {
 		this.idSeguro = idSeguro;
 	}
-
+	
+	public String getTipoAssistenca() {
+		return tipoAssistenca;
+	}
+	
+	public void setTipoAssistenca(String tipoAssistenca) {
+		this.tipoAssistenca = tipoAssistenca;
+	}
+	
 	public int getVlSeguro() {
 		return vlSeguro;
 	}

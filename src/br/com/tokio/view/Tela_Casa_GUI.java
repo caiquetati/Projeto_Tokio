@@ -26,7 +26,6 @@ import br.com.tokio.model.Seguro;
 public class Tela_Casa_GUI {
 
 	JFrame frame;
-	private Seguro seguro = new Seguro();
 
 	/**
 	 * Launch the application.
@@ -226,12 +225,16 @@ public class Tela_Casa_GUI {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			//	JOptionPane.showMessageDialog(null, "voce escolheu...");
+				Seguro seguro = Tela_Main_GUI.getSeguro();
 				if(basico.isVisible()) {
 					seguro.setTipoSeguro("basico");
+					seguro.setVlSeguro(100000);
 				} else if (intermediario.isVisible()) {
 					seguro.setTipoSeguro("intermediario");
+					seguro.setVlSeguro(100000);
 				} else if (completo.isVisible()) {
 					seguro.setTipoSeguro("completo");
+					seguro.setVlSeguro(100000);
 				}
 				Tela_Assistencia_GUI assistencia = new Tela_Assistencia_GUI();
 				assistencia.frame.setVisible(true);
@@ -257,13 +260,6 @@ public class Tela_Casa_GUI {
 		private static void __tmp() {
 			  javax.swing.JPanel __wbp_panel = new javax.swing.JPanel();
 		}
-	}
-	public Seguro getSeguro() {
-		return seguro;
-	}
-
-	public void setSeguro(Seguro seguro) {
-		this.seguro = seguro;
 	}
 	
 }
