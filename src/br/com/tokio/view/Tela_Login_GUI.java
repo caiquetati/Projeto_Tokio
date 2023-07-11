@@ -25,10 +25,10 @@ import javax.swing.text.MaskFormatter;
 
 import br.com.tokio.controller.UsuarioDAO;
 
-public class Tela_Inicial_GUI {
+public class Tela_Login_GUI {
 
 	public JFrame frame;
-	private JPasswordField passwordField;
+	private JPasswordField passSenha;
 
 	/**
 	 * Launch the application.
@@ -38,7 +38,7 @@ public class Tela_Inicial_GUI {
 			public void run() {
 
 				try {
-					Tela_Inicial_GUI window = new Tela_Inicial_GUI();
+					Tela_Login_GUI window = new Tela_Login_GUI();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,7 +50,7 @@ public class Tela_Inicial_GUI {
 	/**
 	 * Create the application.
 	 */
-	public Tela_Inicial_GUI() {
+	public Tela_Login_GUI() {
 		initialize();
 	}
 
@@ -132,15 +132,15 @@ public class Tela_Inicial_GUI {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		JFormattedTextField formattedTextField_1 = new JFormattedTextField(mascaraCPF);
-		formattedTextField_1.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
-		formattedTextField_1.setBounds(138, 116, 180, 20);
-		panel_1.add(formattedTextField_1);
+		JFormattedTextField txtfCPF = new JFormattedTextField(mascaraCPF);
+		txtfCPF.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
+		txtfCPF.setBounds(138, 116, 180, 20);
+		panel_1.add(txtfCPF);
 
-		passwordField = new JPasswordField();
-		passwordField.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
-		passwordField.setBounds(138, 147, 180, 20);
-		panel_1.add(passwordField);
+		passSenha = new JPasswordField();
+		passSenha.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
+		passSenha.setBounds(138, 147, 180, 20);
+		panel_1.add(passSenha);
 
 		JLabel lblNewLabel_3 = new JLabel("CPF:\r\n");
 		lblNewLabel_3.setForeground(new Color(0, 0, 0));
@@ -172,9 +172,9 @@ public class Tela_Inicial_GUI {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				TelaCadastro_GUI cadastro = null;
+				Tela_Cadastro_GUI cadastro = null;
 				try {
-					cadastro = new TelaCadastro_GUI();
+					cadastro = new Tela_Cadastro_GUI();
 				} catch (ParseException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -190,12 +190,14 @@ public class Tela_Inicial_GUI {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				UsuarioDAO dao = new UsuarioDAO();
-				int id = Integer.parseInt(formattedTextField_1.getText());
-				dao.selectById(id);
+				String id = txtfCPF.getText();
+				JOptionPane.showMessageDialog(null, dao.selectById(id).getNome());
+				
 
 				Tela_Main_GUI cadastro = new Tela_Main_GUI();
 				JOptionPane.showMessageDialog(null, "Dados corretos, seja bem vindo!");
 				cadastro.frame.setVisible(true);
+				cadastro.frame.setLocationRelativeTo(null);
 				frame.dispose();
 
 			}

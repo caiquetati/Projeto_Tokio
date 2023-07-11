@@ -145,7 +145,7 @@ public class Tela_Condominio_GUI {
 		panel_1_1_1.setBounds(45, 133, 107, 27);
 		panel_1.add(panel_1_1_1);
 		
-				JLabel lblNewLabel_3_1 = new JLabel("Intermediario");
+				JLabel lblNewLabel_3_1 = new JLabel("Intermediário");
 				lblNewLabel_3_1.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
 				lblNewLabel_3_1.setBounds(0, 0, 107, 25);
 				panel_1_1_1.add(lblNewLabel_3_1);

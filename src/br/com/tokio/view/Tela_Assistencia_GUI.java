@@ -2,21 +2,23 @@ package br.com.tokio.view;
 
 import java.awt.Color;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 import java.awt.Font;
-import javax.swing.JList;
-import javax.swing.border.MatteBorder;
-import javax.swing.AbstractListModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
+import javax.swing.AbstractListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.MatteBorder;
+
+import br.com.tokio.model.Seguro;
 
 public class Tela_Assistencia_GUI {
 
@@ -72,15 +74,15 @@ public class Tela_Assistencia_GUI {
 		panel_2.setBackground(new Color(60, 179, 113));
 		panel_1.add(panel_2);
 		panel_2.setLayout(null);
-		JList hrs = new JList();
-		hrs.setVisible(false);
+		JList listHrs = new JList();
+		listHrs.setVisible(false);
 
-		JList especial = new JList();
-		especial.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-		especial.setVisible(false);
+		JList listEspecial = new JList();
+		listEspecial.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+		listEspecial.setVisible(false);
 
-		JList list = new JList();
-		list.setVisible(false);
+		JList listVIP = new JList();
+		listVIP.setVisible(false);
 
 		JLabel valor_hrs = new JLabel("Valor: R$19,53");
 		valor_hrs.setVisible(false);
@@ -107,9 +109,9 @@ public class Tela_Assistencia_GUI {
 		lblNewLabel_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				hrs.setVisible(true);
-				especial.setVisible(false);
-				list.setVisible(false);
+				listHrs.setVisible(true);
+				listEspecial.setVisible(false);
+				listVIP.setVisible(false);
 				valor_hrs.setVisible(true);
 				Valor_especial.setVisible(false);
 				valor_vip.setVisible(false);
@@ -132,8 +134,8 @@ public class Tela_Assistencia_GUI {
 		lblNewLabel_1.setBounds(20, 74, 185, 33);
 		panel_1.add(lblNewLabel_1);
 
-		hrs.setFont(new Font("Tahoma", Font.BOLD, 12));
-		hrs.setModel(new AbstractListModel() {
+		listHrs.setFont(new Font("Tahoma", Font.BOLD, 12));
+		listHrs.setModel(new AbstractListModel() {
 			String[] values = new String[] { "Chaveiro", "Encanador", "Eletricista", "Desentupidora", "Vidraceiro",
 					"Help Desk" };
 
@@ -145,18 +147,18 @@ public class Tela_Assistencia_GUI {
 				return values[index];
 			}
 		});
-		hrs.setName("\r\n");
-		hrs.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-		hrs.setBackground(new Color(255, 255, 224));
-		hrs.setBounds(316, 82, 151, 110);
-		panel_1.add(hrs);
+		listHrs.setName("\r\n");
+		listHrs.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+		listHrs.setBackground(new Color(255, 255, 224));
+		listHrs.setBounds(316, 82, 151, 110);
+		panel_1.add(listHrs);
 
-		especial.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-		especial.setVisible(false);
-		especial.setFont(new Font("Tahoma", Font.BOLD, 12));
-		especial.setBackground(new Color(255, 255, 224));
-		especial.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Linha Branca ", "Linha Marrom", "Limpeza de caixa de agua ", "Limpeza de calhas", "Verificaçao de possiveis", " vazamentos", "Troca de lampada, ", "tomada e interrupitores", "Chaveiro", "Encanador", "Eletricista", "Desentupidora", "Vidraceiro", "Help Desk"};
+		listEspecial.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+		listEspecial.setVisible(false);
+		listEspecial.setFont(new Font("Tahoma", Font.BOLD, 12));
+		listEspecial.setBackground(new Color(255, 255, 224));
+		listEspecial.setModel(new AbstractListModel() {
+			String[] values = new String[] {"Linha Branca ", "Linha Marrom", "Limpeza de caixa de água ", "Limpeza de calhas", "Verificação de possíveis", " vazamentos", "Troca de  lâmpada, ", "tomada e interrupitores", "Chaveiro", "Encanador", "Eletricista", "Desentupidora", "Vidraceiro", "Help Desk"};
 			public int getSize() {
 				return values.length;
 			}
@@ -164,27 +166,24 @@ public class Tela_Assistencia_GUI {
 				return values[index];
 			}
 		});
-		especial.setBounds(316, 82, 171, 211);
-		panel_1.add(especial);
+		listEspecial.setBounds(316, 82, 171, 211);
+		panel_1.add(listEspecial);
 
-		list.setVisible(false);
-		list.setFont(new Font("Tahoma", Font.BOLD, 12));
-		list.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-		list.setBackground(new Color(255, 255, 224));
-		list.setModel(new AbstractListModel() {
-			String[] values = new String[] { "Linha Branca", "Linha Marrom", "Limpeza de ar condicionado", "Caçamba",
-					"Instalaçao de suporte de TV", "Limpeza de raios e trovões", "Descarte Inteligente" };
-
+		listVIP.setVisible(false);
+		listVIP.setFont(new Font("Tahoma", Font.BOLD, 12));
+		listVIP.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+		listVIP.setBackground(new Color(255, 255, 224));
+		listVIP.setModel(new AbstractListModel() {
+			String[] values = new String[] {"Linha Branca", "Linha Marrom", "Limpeza de ar condicionado", "Caçamba", "Instalação de suporte de TV", "Limpeza de raios e trovões", "Descarte Inteligente"};
 			public int getSize() {
 				return values.length;
 			}
-
 			public Object getElementAt(int index) {
 				return values[index];
 			}
 		});
-		list.setBounds(316, 82, 193, 126);
-		panel_1.add(list);
+		listVIP.setBounds(316, 82, 193, 126);
+		panel_1.add(listVIP);
 
 		JLabel lblNewLabel_5 = new JLabel("");
 		lblNewLabel_5.addMouseListener(new MouseAdapter() {
@@ -226,9 +225,9 @@ public class Tela_Assistencia_GUI {
 		lblNewLabel_4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				hrs.setVisible(false);
-				especial.setVisible(false);
-				list.setVisible(true);
+				listHrs.setVisible(false);
+				listEspecial.setVisible(false);
+				listVIP.setVisible(true);
 				valor_hrs.setVisible(false);
 				Valor_especial.setVisible(false);
 				valor_vip.setVisible(true);
@@ -250,24 +249,32 @@ public class Tela_Assistencia_GUI {
 		panel_1.add(panel_2_1);
 		panel_2_1.setLayout(null);
 
-		JButton btnNewButton = new JButton("Confrmar");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnConfirmar = new JButton("Confrmar");
+		btnConfirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Seguro seguro = Tela_Main_GUI.getSeguro();
+				if(listHrs.isVisible()) {
+					seguro.setTipoAssistencia("24HRS");
+				} else if(listEspecial.isVisible()) {
+					seguro.setTipoAssistencia("ESPECIAL");
+				} else if(listVIP.isVisible()) {
+					seguro.setTipoAssistencia("VIP");
+				}
 				Tela_Pagamento_GUI tela = new Tela_Pagamento_GUI();
 				tela.frame.setVisible(true);
 				frame.dispose();
 			}
 		});
-		btnNewButton.setBounds(420, 304, 89, 23);
-		panel_1.add(btnNewButton);
+		btnConfirmar.setBounds(420, 304, 89, 23);
+		panel_1.add(btnConfirmar);
 
 		panel_2_1.add(lblNewLabel_3);
 		lblNewLabel_3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				hrs.setVisible(false);
-				especial.setVisible(true);
-				list.setVisible(false);
+				listHrs.setVisible(false);
+				listEspecial.setVisible(true);
+				listVIP.setVisible(false);
 				valor_hrs.setVisible(false);
 				Valor_especial.setVisible(true);
 				valor_vip.setVisible(false);

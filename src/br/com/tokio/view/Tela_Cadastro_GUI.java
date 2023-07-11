@@ -33,11 +33,12 @@ import javax.swing.JPasswordField;
 
 import javax.swing.JFormattedTextField.AbstractFormatter;
 
-public class TelaCadastro_GUI {
+public class Tela_Cadastro_GUI {
 
 	JFrame frame;
 	private JTextField nome;
 	private JPasswordField senha;
+	public String[] data;
 
 	/**
 	 * Launch the application.
@@ -46,7 +47,7 @@ public class TelaCadastro_GUI {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaCadastro_GUI window = new TelaCadastro_GUI();
+					Tela_Cadastro_GUI window = new Tela_Cadastro_GUI();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -59,7 +60,7 @@ public class TelaCadastro_GUI {
 	 * Create the application.
 	 * @throws ParseException 
 	 */
-	public TelaCadastro_GUI() throws ParseException {
+	public Tela_Cadastro_GUI() throws ParseException {
 		initialize();
 	}
 
@@ -93,11 +94,11 @@ public class TelaCadastro_GUI {
 		lblNewLabel_8.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Tela_Inicial_GUI telacadastro = new Tela_Inicial_GUI();
+				Tela_Login_GUI telacadastro = new Tela_Login_GUI();
 				telacadastro.frame.setVisible(true);
 			}
 		});
-		lblNewLabel_8.setIcon(new ImageIcon(TelaCadastro_GUI.class.getResource("/br/com/tokio/images/arrow_resized_resized.png")));
+		lblNewLabel_8.setIcon(new ImageIcon(Tela_Cadastro_GUI.class.getResource("/br/com/tokio/images/arrow_resized_resized.png")));
 		lblNewLabel_8.setBounds(376, 20, 25, 30);
 		panel.add(lblNewLabel_8);
 		lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\problem (2)_resized.png"));
@@ -109,10 +110,10 @@ public class TelaCadastro_GUI {
 		lblNewLabel_1.setBounds(131, 9, 216, 41);
 		panel.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("Nome:");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_2.setBounds(41, 64, 59, 23);
-		panel.add(lblNewLabel_2);
+		JLabel lblNome = new JLabel("Nome:");
+		lblNome.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNome.setBounds(41, 68, 235, 14);
+		panel.add(lblNome);
 		
 		nome = new JTextField();
 
@@ -122,10 +123,10 @@ public class TelaCadastro_GUI {
 		nome.setColumns(10);
 		; 
 		
-		JLabel lblNewLabel_3 = new JLabel("CPF:");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_3.setBounds(41, 208, 46, 14); 
-		panel.add(lblNewLabel_3);
+		JLabel lblCPF = new JLabel("CPF:");
+		lblCPF.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblCPF.setBounds(41, 208, 235, 14); 
+		panel.add(lblCPF);
 		
 		JLabel lblNewLabel_4 = new JLabel("");
 		lblNewLabel_4.addMouseListener(new MouseAdapter() {
@@ -138,47 +139,55 @@ public class TelaCadastro_GUI {
 		lblNewLabel_4.setBounds(449, 23, 28, 23);
 		panel.add(lblNewLabel_4);
 		
-		JLabel lblNewLabel_5 = new JLabel("Idade:");
-		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_5.setBounds(41, 165, 46, 14);
-		panel.add(lblNewLabel_5);
+		JLabel lblDtNascimento = new JLabel("Data de nascimento: ");
+		lblDtNascimento.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblDtNascimento.setBounds(41, 165, 235, 14);
+		panel.add(lblDtNascimento);
 		
-		JLabel lblNewLabel_6 = new JLabel("Genero:");
-		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_6.setBounds(289, 119, 46, 14);
-		panel.add(lblNewLabel_6);
+		JLabel lblGenero = new JLabel("Gênero");
+		lblGenero.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblGenero.setBounds(289, 119, 46, 14);
+		panel.add(lblGenero);
 		
 		JComboBox sexo = new JComboBox();
 		sexo.setModel(new DefaultComboBoxModel(new String[] {"Masculino", "Feminino", "Não-binario", "Outro"}));
 		sexo.setBounds(302, 134, 96, 22);
 		panel.add(sexo);
 		
-		JLabel lblNewLabel_7 = new JLabel("Telefone:");
-		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_7.setBounds(289, 68, 83, 14);
-		panel.add(lblNewLabel_7);
+		JLabel lblTelefone = new JLabel("Telefone:");
+		lblTelefone.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblTelefone.setBounds(289, 68, 121, 14);
+		panel.add(lblTelefone);
 		
 		
 		MaskFormatter mascaraTel = new MaskFormatter("(##)#####-####");
-		JFormattedTextField telefone = new JFormattedTextField(mascaraTel);
-		telefone.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
-		telefone.setLocale(new Locale("pt", "BR"));
-		telefone.setToolTipText("");
-		telefone.setName("");
-		telefone.setBounds(302, 89, 108, 20);
-		panel.add(telefone);
+		JFormattedTextField txtTelefone = new JFormattedTextField(mascaraTel);
+		txtTelefone.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
+		txtTelefone.setLocale(new Locale("pt", "BR"));
+		txtTelefone.setToolTipText("");
+		txtTelefone.setName("");
+		txtTelefone.setBounds(302, 89, 108, 20);
+		panel.add(txtTelefone);
 		
 		MaskFormatter mascaraCPF = new MaskFormatter("###.###.###-##");
 		
-		JFormattedTextField cpf = new JFormattedTextField(mascaraCPF);
-		cpf.setBorder(new MatteBorder(2, 2, 0, 0, (Color) new Color(0, 0, 0)));
-		cpf.setBounds(60, 221, 216, 20);
-		panel.add(cpf);
+		JFormattedTextField txtCpf = new JFormattedTextField(mascaraCPF);
+		txtCpf.setBorder(new MatteBorder(2, 2, 0, 0, (Color) new Color(0, 0, 0)));
+		txtCpf.setBounds(60, 221, 216, 20);
+		panel.add(txtCpf);
 		
-		JLabel lblNewLabel_9 = new JLabel("Senha");
-		lblNewLabel_9.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_9.setBounds(41, 119, 46, 14);
-		panel.add(lblNewLabel_9);
+		MaskFormatter mascaraNascimento = new MaskFormatter("##/##/####");
+		JFormattedTextField txtNascimento = new JFormattedTextField(mascaraNascimento);
+		txtNascimento.setBorder(new MatteBorder(2, 2, 0, 0, (Color) new Color(0, 0, 0)));
+		txtNascimento.setBounds(60, 179, 216, 20);
+		
+		panel.add(txtNascimento);
+		
+		
+		JLabel lblSenha = new JLabel("Senha");
+		lblSenha.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblSenha.setBounds(41, 119, 235, 14);
+		panel.add(lblSenha);
 		
 		JButton Cadastro = new JButton("CADASTRAR");
 		Cadastro.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -186,19 +195,26 @@ public class TelaCadastro_GUI {
 		Cadastro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				UsuarioDAO dao = new UsuarioDAO();
+				boolean estado = false;
 				try {
-					dao.verificarSenha(senha.getText());					
-					Usuario novoUsuario = new Usuario(cpf.getText(), nome.getText(), senha.getText(), "00000", (String) sexo.getSelectedItem(),(String) telefone.getText());					
+					dao.verificarSenha(senha.getText());	
+					//Formatação de data para nosso região
+					data = txtNascimento.getText().split("/");
+					Date dtNascimento = new Date(Integer.parseInt(data[2]), Integer.parseInt(data[1]), Integer.parseInt(data[0]));
+					Usuario novoUsuario = new Usuario(txtCpf.getText(), nome.getText(), senha.getText(),dtNascimento,(String) sexo.getSelectedItem(), txtTelefone.getText());					
 					dao.insert(novoUsuario);
+					
+					//Chamar outra Janela
+					JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!!");
+					Tela_Login_GUI main = new Tela_Login_GUI();
+					main.frame.setLocationRelativeTo(null);
+					main.frame.setVisible(true);
+					main.frame.setLocationRelativeTo(null);
+					frame.dispose();			
 				} catch(Exception error) {
 					error.getStackTrace();
 				}
-				JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!!");
-				Tela_Main_GUI main = new Tela_Main_GUI();
-				main.frame.setLocationRelativeTo(null);
 
-				main.frame.setVisible(true);
-				frame.dispose();
 			}
 		});
 		Cadastro.setBounds(361, 323, 116, 23);
@@ -209,13 +225,6 @@ public class TelaCadastro_GUI {
 		senha.setBounds(60, 135, 216, 20);
 		panel.add(senha);
 		
-		JFormattedTextField txt_Nascimento = new JFormattedTextField((AbstractFormatter) null);
-		txt_Nascimento.setBorder(new MatteBorder(2, 2, 0, 0, (Color) new Color(0, 0, 0)));
-		txt_Nascimento.setBounds(60, 179, 216, 20);
-		panel.add(txt_Nascimento);
-		
-	
-		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.addMouseListener(new MouseAdapter() {
 			@Override
@@ -223,7 +232,7 @@ public class TelaCadastro_GUI {
 				
 			}
 		});
-		lblNewLabel.setIcon(new ImageIcon(TelaCadastro_GUI.class.getResource("/br/com/tokio/images/Image_Cadastro_resized_resized_updated.png")));
+		lblNewLabel.setIcon(new ImageIcon(Tela_Cadastro_GUI.class.getResource("/br/com/tokio/images/Image_Cadastro_resized_resized_updated.png")));
 		lblNewLabel.setBounds(27, 20, 450, 310);
 		panel.add(lblNewLabel);
 		

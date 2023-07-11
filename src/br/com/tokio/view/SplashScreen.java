@@ -14,16 +14,17 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
 import javax.swing.SwingConstants;
-public class Teste {
-    private JFrame frame;
+public class SplashScreen {
+    public JFrame frame;
     private JProgressBar progressBar;
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Teste window = new Teste();
+                    SplashScreen window = new SplashScreen();
                     window.frame.setVisible(true);
+                    window.frame.setLocationRelativeTo(null);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -31,7 +32,7 @@ public class Teste {
         });
     }
 
-    public Teste() {
+    public SplashScreen() {
         initialize();
         startProgressBar();
     }
@@ -78,8 +79,9 @@ public class Teste {
 
                 if (progress > progressBar.getMaximum()) {
                     ((Timer) e.getSource()).stop();
-                    Tela_Inicial_GUI tela = new Tela_Inicial_GUI();
+                    Tela_Login_GUI tela = new Tela_Login_GUI();
                     tela.frame.setVisible(true);
+                    tela.frame.setLocationRelativeTo(frame);
                     frame.dispose();
                     
                 }

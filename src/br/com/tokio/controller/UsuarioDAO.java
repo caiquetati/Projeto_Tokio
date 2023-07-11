@@ -53,7 +53,7 @@ public class UsuarioDAO {
 			stmt.setString(1, usuario.getCpf());
 			stmt.setString(2, usuario.getNome());
 			stmt.setString(3, criptografar(usuario.getSenha()));
-			stmt.setString(4, usuario.getDtNascimento());
+			stmt.setDate(4, usuario.getDtNascimento());
 			stmt.setString(5, usuario.getSexo());
 			stmt.setString(6, usuario.getTelefone());
 			// Executa a query
@@ -79,7 +79,7 @@ public class UsuarioDAO {
 				usuario.setCpf(rs.getString("NMR_CPF_CLIENTE"));
 				usuario.setNome(rs.getString("NM_CLIENTE"));
 				usuario.setSenha(rs.getString("SENHA_CLIENTE"));
-				usuario.setDtNascimento(rs.getString("DT_NASCIMENTO_CLIENTE"));
+				usuario.setDtNascimento(rs.getDate("DT_NASCIMENTO_CLIENTE"));
 				usuario.setSexo(rs.getString("DS_SEXO_CLIENTE"));
 				usuario.setTelefone(rs.getString("TEL_CLIENTE"));
 				listaUsuarios.add(usuario);
@@ -92,19 +92,19 @@ public class UsuarioDAO {
 		return listaUsuarios;
 	}
 
-	public Usuario selectById(int id) {
+	public Usuario selectById(String id) {
 		Usuario usuario = null;
 		String sql = "select * from t_ceap_cliente where nmr_cpf_cliente=?";
 		try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
-			stmt.setLong(1, id);
+			stmt.setString(1, id);
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				usuario = new Usuario();
 				usuario.setCpf(rs.getString("NMR_CPF_CLIENTE"));
 				usuario.setNome(rs.getString("NM_CLIENTE"));
 				usuario.setSenha(rs.getString("SENHA_CLIENTE"));
-				usuario.setDtNascimento(rs.getString("DT_NASCIMENTO_CLIENTE"));
+				usuario.setDtNascimento(rs.getDate("DT_NASCIMENTO_CLIENTE"));
 				usuario.setSexo(rs.getString("DS_SEXO_CLIENTE"));
 				usuario.setTelefone(rs.getString("TEL_CLIENTE"));
 			}

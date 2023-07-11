@@ -4,14 +4,14 @@ import java.sql.Date;
 
 public class Usuario {
 	//Atributos
-	private String cpf, nome, senha, sexo;
-	private String dtNascimento, telefone;
+	private String cpf, nome, senha, sexo, telefone;
+	private Date dtNascimento;
 	
 	//Construtor Vazio
 	public Usuario() {
 	}
 	//Construtor
-	public Usuario(String cpf, String nome, String senha, String dtNascimento, String sexo, String telefone) {
+	public Usuario(String cpf, String nome, String senha, Date dtNascimento, String sexo, String telefone) {
 		this.cpf = cpf;
 		this.nome = nome;
 		this.senha = senha;
@@ -50,10 +50,10 @@ public class Usuario {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	public String getDtNascimento() {
+	public Date getDtNascimento() {
 		return dtNascimento;
 	}
-	public void setDtNascimento(String dtNascimento) {
+	public void setDtNascimento(Date dtNascimento) {
 		this.dtNascimento = dtNascimento;
 	}
 	

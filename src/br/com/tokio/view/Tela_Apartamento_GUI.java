@@ -108,7 +108,7 @@ public class Tela_Apartamento_GUI {
 		JTextPane basico = new JTextPane();
 		basico.setFont(new Font("Tahoma", Font.BOLD, 12));
 		basico.setVisible(false);
-		basico.setText("Incêndio\r\nroubo\r\ndanos elétricos\r\ndisp. aluguel \r\nResponsabilidade civil\r\n");
+		basico.setText("Incêndio\r\nRoubo\r\nDanos elétricos\r\nDisp. aluguel \r\nResponsabilidade civil\r\n");
 		basico.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		basico.setBounds(294, 118, 210, 85);
 		panel_1.add(basico);
@@ -129,7 +129,7 @@ public class Tela_Apartamento_GUI {
 		JTextPane intermediario = new JTextPane();
 		intermediario.setFont(new Font("Tahoma", Font.BOLD, 12));
 		intermediario.setVisible(false);
-		intermediario.setText("incêndio\r\nroubo\r\ndanos elétricos\r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\n");
+		intermediario.setText("Incêndio\r\nRoubo\r\nDanos elétricos\r\nDesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\n");
 		intermediario.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		intermediario.setBounds(294, 118, 210, 109);
 		panel_1.add(intermediario);
@@ -137,7 +137,7 @@ public class Tela_Apartamento_GUI {
 		JTextPane completo = new JTextPane();
 		completo.setFont(new Font("Tahoma", Font.BOLD, 12));
 		completo.setVisible(false);
-		completo.setText("incêndio                              \r\nroubo                                   \r\ndanos elétricos  \r\ndesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\nVidros \r\nvazamento de tubulações \r\nincêndio\r\nroubo\r\ndanos elétricos\r\n");
+		completo.setText("Incêndio                              \r\nRoubo                                   \r\nDanos elétricos  \r\nDesp. aluguel \r\nResponsabilidade civil\r\nVendável\r\nVidros \r\nDazamento de tubulações \r\n\r\n\r\n\r\n");
 		completo.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		completo.setBounds(294, 118, 210, 168);
     
@@ -174,7 +174,7 @@ public class Tela_Apartamento_GUI {
 		panel_1_1_1.setBounds(26, 131, 107, 27);
 		panel_1.add(panel_1_1_1);
 		
-		JLabel lblIntermediario = new JLabel("Intermediario");
+		JLabel lblIntermediario = new JLabel("Intermediário");
 		lblIntermediario.setBorder(new MatteBorder(2, 2, 1, 1, (Color) new Color(0, 0, 0)));
 		lblIntermediario.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIntermediario.addMouseListener(new MouseAdapter() {
@@ -250,7 +250,7 @@ public class Tela_Apartamento_GUI {
 		comboBox.setBounds(46, 245, 140, 22);
 		panel_1.add(comboBox);
 		
-		JLabel lblNewLabel_2 = new JLabel("Escolhe um corretor:");
+		JLabel lblNewLabel_2 = new JLabel("Escolha um corretor:");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_2.setBounds(26, 231, 156, 14);
 		panel_1.add(lblNewLabel_2);
