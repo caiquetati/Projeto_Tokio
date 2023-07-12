@@ -98,10 +98,10 @@ public class Tela_Apartamento_GUI {
 		lblNewLabel_1.setBounds(162, 11, 238, 33);
 		panel_1.add(lblNewLabel_1);
 		
-		JLabel Value_basico = new JLabel("Valor: R$19,53 /mes");
+		JLabel Value_basico = new JLabel("Valor: R$19,53 /mês");
 		Value_basico.setVisible(false);
 		Value_basico.setFont(new Font("Tahoma", Font.BOLD, 12));
-		Value_basico.setBounds(378, 94, 126, 14);
+		Value_basico.setBounds(348, 94, 156, 14);
 		panel_1.add(Value_basico);
 		
 		
@@ -114,16 +114,16 @@ public class Tela_Apartamento_GUI {
 		panel_1.add(basico);
 		
 		
-		JLabel Value_intermediario = new JLabel("Valor: R$22,94 /mes");
+		JLabel Value_intermediario = new JLabel("Valor: R$22,94 /mês");
 		Value_intermediario.setVisible(false);
 		Value_intermediario.setFont(new Font("Tahoma", Font.BOLD, 12));
-		Value_intermediario.setBounds(378, 94, 126, 14);
+		Value_intermediario.setBounds(348, 94, 156, 14);
 		panel_1.add(Value_intermediario);
 		
-		JLabel Value_completo = new JLabel("Valor: R$28,43 /mes");
+		JLabel Value_completo = new JLabel("Valor: R$28,43 /mês");
 		Value_completo.setVisible(false);
 		Value_completo.setFont(new Font("Tahoma", Font.BOLD, 12));
-		Value_completo.setBounds(378, 94, 126, 14);
+		Value_completo.setBounds(348, 94, 156, 14);
 		panel_1.add(Value_completo);
 		
 		JTextPane intermediario = new JTextPane();
@@ -217,7 +217,7 @@ public class Tela_Apartamento_GUI {
 		lblCompleto.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		JButton btnNewButton_1 = new JButton("");
-		btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\close_resized (2).png"));
+		btnNewButton_1.setIcon(new ImageIcon(Tela_Apartamento_GUI.class.getResource("/br/com/tokio/images/close_resized (2).png")));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
@@ -259,6 +259,11 @@ public class Tela_Apartamento_GUI {
 		lblNewLabel.setIcon(new ImageIcon(Tela_Apartamento_GUI.class.getResource("/br/com/tokio/images/apartamento_resized_updated.jpeg")));
 		lblNewLabel.setBounds(0, 0, 521, 342);
 		panel_1.add(lblNewLabel);
+		
+		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setIcon(new ImageIcon(Tela_Apartamento_GUI.class.getResource("/br/com/tokio/images/fundo_casa.png")));
+		lblNewLabel_4.setBounds(0, 0, 541, 364);
+		panel.add(lblNewLabel_4);
 		
 		
 	}

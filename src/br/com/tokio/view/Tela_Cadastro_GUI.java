@@ -101,7 +101,7 @@ public class Tela_Cadastro_GUI {
 		lblNewLabel_8.setIcon(new ImageIcon(Tela_Cadastro_GUI.class.getResource("/br/com/tokio/images/arrow_resized_resized.png")));
 		lblNewLabel_8.setBounds(376, 20, 25, 30);
 		panel.add(lblNewLabel_8);
-		lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\problem (2)_resized.png"));
+		lblNewLabel_2_1.setIcon(new ImageIcon(Tela_Cadastro_GUI.class.getResource("/br/com/tokio/images/problem (2)_resized.png")));
 		lblNewLabel_2_1.setBounds(411, 20, 39, 30);
 		panel.add(lblNewLabel_2_1);
 		
@@ -135,7 +135,7 @@ public class Tela_Cadastro_GUI {
 				System.exit(0);
 			}
 		});
-		lblNewLabel_4.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\close_resized (2).png"));
+		lblNewLabel_4.setIcon(new ImageIcon(Tela_Cadastro_GUI.class.getResource("/br/com/tokio/images/close_resized (2).png")));
 		lblNewLabel_4.setBounds(449, 23, 28, 23);
 		panel.add(lblNewLabel_4);
 		
@@ -209,7 +209,6 @@ public class Tela_Cadastro_GUI {
 					Tela_Login_GUI main = new Tela_Login_GUI();
 					main.frame.setLocationRelativeTo(null);
 					main.frame.setVisible(true);
-					main.frame.setLocationRelativeTo(null);
 					frame.dispose();			
 				} catch(Exception error) {
 					error.getStackTrace();
@@ -217,7 +216,7 @@ public class Tela_Cadastro_GUI {
 
 			}
 		});
-		Cadastro.setBounds(361, 323, 116, 23);
+		Cadastro.setBounds(350, 307, 116, 23);
 		panel.add(Cadastro);
 		
 		senha = new JPasswordField();

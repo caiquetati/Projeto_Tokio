@@ -87,7 +87,7 @@ public class Tela_Login_GUI {
 				openInstagram();
 			}
 		});
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\instagram_resized (1).png"));
+		lblNewLabel.setIcon(new ImageIcon(Tela_Login_GUI.class.getResource("/br/com/tokio/images/instagram_resized (1).png")));
 		lblNewLabel.setBounds(50, 237, 30, 30);
 		panel_1.add(lblNewLabel);
 
@@ -98,7 +98,7 @@ public class Tela_Login_GUI {
 				openFacebook();
 			}
 		});
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\facebook (1)_resized.png"));
+		lblNewLabel_1.setIcon(new ImageIcon(Tela_Login_GUI.class.getResource("/br/com/tokio/images/facebook (1)_resized.png")));
 		lblNewLabel_1.setBounds(130, 237, 30, 30);
 		panel_1.add(lblNewLabel_1);
 
@@ -109,7 +109,7 @@ public class Tela_Login_GUI {
 				openLinkedin();
 			}
 		});
-		lblNewLabel_1_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\linkedin_resized.png"));
+		lblNewLabel_1_1.setIcon(new ImageIcon(Tela_Login_GUI.class.getResource("/br/com/tokio/images/linkedin_resized.png")));
 		lblNewLabel_1_1.setBounds(90, 237, 30, 30);
 		panel_1.add(lblNewLabel_1_1);
 
@@ -121,7 +121,7 @@ public class Tela_Login_GUI {
 				System.exit(0);
 			}
 		});
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\close_resized (2).png"));
+		lblNewLabel_2.setIcon(new ImageIcon(Tela_Login_GUI.class.getResource("/br/com/tokio/images/close_resized (2).png")));
 		lblNewLabel_2.setBounds(405, 0, 25, 30);
 		panel_1.add(lblNewLabel_2);
 
@@ -214,7 +214,7 @@ public class Tela_Login_GUI {
 				openWats();
 			}
 		});
-		lblNewLabel_1_1_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\whatsapp (1)_resized.png"));
+		lblNewLabel_1_1_1.setIcon(new ImageIcon(Tela_Login_GUI.class.getResource("/br/com/tokio/images/whatsapp (1)_resized.png")));
 		lblNewLabel_1_1_1.setBounds(10, 237, 30, 30);
 		panel_1.add(lblNewLabel_1_1_1);
 
@@ -225,20 +225,25 @@ public class Tela_Login_GUI {
 				openDulvidas();
 			}
 		});
-		lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\problem (2)_resized.png"));
+		lblNewLabel_2_1.setIcon(new ImageIcon(Tela_Login_GUI.class.getResource("/br/com/tokio/images/problem (2)_resized.png")));
 		lblNewLabel_2_1.setBounds(373, 0, 25, 30);
 		panel_1.add(lblNewLabel_2_1);
 
 		JLabel lblNewLabel_6 = new JLabel("");
 		lblNewLabel_6.setBackground(new Color(0, 0, 0));
-		lblNewLabel_6.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\ang.png"));
+		lblNewLabel_6.setIcon(new ImageIcon(Tela_Login_GUI.class.getResource("/br/com/tokio/images/ang.png")));
 		lblNewLabel_6.setBounds(0, 0, 395, 105);
 		panel_1.add(lblNewLabel_6);
 
 		JLabel lblNewLabel_7 = new JLabel("");
-		lblNewLabel_7.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\profile_resized.png"));
+		lblNewLabel_7.setIcon(new ImageIcon(Tela_Login_GUI.class.getResource("/br/com/tokio/images/profile_resized.png")));
 		lblNewLabel_7.setBounds(328, 116, 74, 59);
 		panel_1.add(lblNewLabel_7);
+		
+		JLabel lblNewLabel_8 = new JLabel("");
+		lblNewLabel_8.setIcon(new ImageIcon(Tela_Login_GUI.class.getResource("/br/com/tokio/images/blurry_background (1).png")));
+		lblNewLabel_8.setBounds(0, 0, 450, 300);
+		panel.add(lblNewLabel_8);
 
 	}
 

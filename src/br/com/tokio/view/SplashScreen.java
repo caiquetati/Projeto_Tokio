@@ -52,7 +52,7 @@ public class SplashScreen {
         panel.setLayout(null);
         
         JLabel lblNewLabel_1 = new JLabel("");
-        lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\bloggif_64a75a2f339b6.gif"));
+        lblNewLabel_1.setIcon(new ImageIcon(SplashScreen.class.getResource("/br/com/tokio/images/bloggif_64a75a2f339b6.gif")));
         lblNewLabel_1.setBounds(152, 191, 146, 34);
         panel.add(lblNewLabel_1);
 
@@ -62,7 +62,7 @@ public class SplashScreen {
         
         JLabel lblNewLabel = new JLabel("");
         lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\ang.png"));
+        lblNewLabel.setIcon(new ImageIcon(SplashScreen.class.getResource("/br/com/tokio/images/ang.png")));
         lblNewLabel.setBounds(0, 31, 450, 82);
         panel.add(lblNewLabel);
     }

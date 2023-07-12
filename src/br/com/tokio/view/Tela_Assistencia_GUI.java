@@ -84,25 +84,25 @@ public class Tela_Assistencia_GUI {
 		JList listVIP = new JList();
 		listVIP.setVisible(false);
 
-		JLabel valor_hrs = new JLabel("Valor: R$19,53");
+		JLabel valor_hrs = new JLabel("Valor: R$19,53/mês");
 		valor_hrs.setVisible(false);
 		valor_hrs.setFont(new Font("Tahoma", Font.BOLD, 12));
-		valor_hrs.setHorizontalAlignment(SwingConstants.CENTER);
-		valor_hrs.setBounds(370, 63, 97, 23);
+		valor_hrs.setHorizontalAlignment(SwingConstants.LEFT);
+		valor_hrs.setBounds(344, 63, 143, 23);
 		panel_1.add(valor_hrs);
 
-		JLabel Valor_especial = new JLabel("Valor: R$29,23");
+		JLabel Valor_especial = new JLabel("Valor: R$29,23/mês");
 		Valor_especial.setVisible(false);
 		Valor_especial.setFont(new Font("Tahoma", Font.BOLD, 12));
-		Valor_especial.setHorizontalAlignment(SwingConstants.CENTER);
-		Valor_especial.setBounds(370, 63, 97, 23);
+		Valor_especial.setHorizontalAlignment(SwingConstants.LEFT);
+		Valor_especial.setBounds(344, 63, 143, 23);
 		panel_1.add(Valor_especial);
 
-		JLabel valor_vip = new JLabel("Valor: R$38,15");
+		JLabel valor_vip = new JLabel("Valor: R$38,15/mês");
 		valor_vip.setVisible(false);
 		valor_vip.setFont(new Font("Tahoma", Font.BOLD, 12));
-		valor_vip.setHorizontalAlignment(SwingConstants.CENTER);
-		valor_vip.setBounds(370, 63, 97, 23);
+		valor_vip.setHorizontalAlignment(SwingConstants.LEFT);
+		valor_vip.setBounds(344, 63, 123, 23);
 		panel_1.add(valor_vip);
 		
 		JLabel lblNewLabel_2 = new JLabel("24HRS");
@@ -195,7 +195,7 @@ public class Tela_Assistencia_GUI {
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5.setIcon(
 				new ImageIcon(Tela_Assistencia_GUI.class.getResource("/br/com/tokio/images/close_resized (2).png")));
-		lblNewLabel_5.setBounds(487, -4, 32, 32);
+		lblNewLabel_5.setBounds(487, 0, 32, 32);
 		panel_1.add(lblNewLabel_5);
 
 		JLabel lblNewLabel_5_1 = new JLabel("");
@@ -208,7 +208,7 @@ public class Tela_Assistencia_GUI {
 		lblNewLabel_5_1.setIcon(new ImageIcon(
 				Tela_Assistencia_GUI.class.getResource("/br/com/tokio/images/arrow_resized_resized.png")));
 		lblNewLabel_5_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_5_1.setBounds(450, -4, 32, 32);
+		lblNewLabel_5_1.setBounds(451, 0, 32, 32);
 		panel_1.add(lblNewLabel_5_1);
 
 		JLabel lblNewLabel = new JLabel("ASSISTÊNCIA");
@@ -287,5 +287,10 @@ public class Tela_Assistencia_GUI {
 		lblNewLabel_6.setIcon(new ImageIcon(Tela_Assistencia_GUI.class.getResource("/br/com/tokio/images/suporte-tecnico_resized.png")));
 		lblNewLabel_6.setBounds(148, 132, 144, 119);
 		panel_1.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("");
+		lblNewLabel_7.setIcon(new ImageIcon(Tela_Assistencia_GUI.class.getResource("/br/com/tokio/images/fundo_casa.png")));
+		lblNewLabel_7.setBounds(0, 0, 539, 360);
+		panel.add(lblNewLabel_7);
 	}
 }

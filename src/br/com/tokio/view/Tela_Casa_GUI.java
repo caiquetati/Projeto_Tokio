@@ -125,7 +125,7 @@ public class Tela_Casa_GUI {
 		panel.add(txtpCompleto);
 
 		JButton btnNewButton_1 = new JButton("");
-		btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\close_resized (2).png"));
+		btnNewButton_1.setIcon(new ImageIcon(Tela_Casa_GUI.class.getResource("/br/com/tokio/images/close_resized (2).png")));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
@@ -145,22 +145,22 @@ public class Tela_Casa_GUI {
 		btnNewButton_1_1.setBounds(446, 0, 39, 28);
 		panel.add(btnNewButton_1_1);
 
-		JLabel Value_completo = new JLabel("Valor: R$ 13,85 /mes ");
+		JLabel Value_completo = new JLabel("Valor: R$ 13,85 /mês ");
 		Value_completo.setFont(new Font("Tahoma", Font.BOLD, 12));
 		Value_completo.setVisible(false);
-		Value_completo.setBounds(374, 72, 124, 28);
+		Value_completo.setBounds(351, 72, 147, 28);
 		panel.add(Value_completo);
 
-		JLabel Value_intermediario = new JLabel("Valor: R$ 8,75 /mes ");
+		JLabel Value_intermediario = new JLabel("Valor: R$ 8,75 /mês ");
 		Value_intermediario.setFont(new Font("Tahoma", Font.BOLD, 12));
 		Value_intermediario.setVisible(false);
-		Value_intermediario.setBounds(374, 72, 124, 28);
+		Value_intermediario.setBounds(351, 72, 147, 28);
 		panel.add(Value_intermediario);
 
-		JLabel Value_basico = new JLabel("Valor: R$ 7,87 /mes ");
+		JLabel Value_basico = new JLabel("Valor: R$ 7,87 /mês ");
 		Value_basico.setFont(new Font("Tahoma", Font.BOLD, 12));
 		Value_basico.setVisible(false);
-		Value_basico.setBounds(374, 72, 124, 28);
+		Value_basico.setBounds(351, 72, 147, 28);
 		panel.add(Value_basico);
 
 		JLabel lblBasico = new JLabel("Básico");
@@ -262,6 +262,12 @@ public class Tela_Casa_GUI {
 		panel_2.setBounds(0, 0, 542, 360);
 		panel_2.setBackground(new Color(20, 129, 99));
 		frame.getContentPane().add(panel_2);
+		panel_2.setLayout(null);
+		
+		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setIcon(new ImageIcon(Tela_Casa_GUI.class.getResource("/br/com/tokio/images/fundo_casa.png")));
+		lblNewLabel_4.setBounds(0, 0, 542, 360);
+		panel_2.add(lblNewLabel_4);
 
 	}
 

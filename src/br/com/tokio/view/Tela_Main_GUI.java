@@ -68,14 +68,14 @@ public class Tela_Main_GUI {
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));
 		panel.setBackground(new Color(20, 129, 99));
-		panel.setBounds(0, 0, 539, 360);
+		panel.setBounds(10, 10, 519, 339);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		panel_1.setBackground(new Color(60, 179, 113));
-		panel_1.setBounds(49, 35, 435, 314);
+		panel_1.setBounds(42, 11, 435, 314);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 
@@ -197,8 +197,8 @@ public class Tela_Main_GUI {
 		lblNewLabel_10.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		lblNewLabel_10.setBorder(new MatteBorder(0, 0, 0, 0, (Color) new Color(255, 0, 0)));
-		lblNewLabel_10.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\close_resized (2).png"));
-		lblNewLabel_10.setBounds(494, 11, 35, 30);
+		lblNewLabel_10.setIcon(new ImageIcon(Tela_Main_GUI.class.getResource("/br/com/tokio/images/close_resized (2).png")));
+		lblNewLabel_10.setBounds(474, 11, 35, 30);
 		panel.add(lblNewLabel_10);
 
 		JLabel lblNewLabel_2_1 = new JLabel("");
@@ -209,9 +209,14 @@ public class Tela_Main_GUI {
 				openDulvidas();
 			}
 		});
-		lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\problem (2)_resized.png"));
-		lblNewLabel_2_1.setBounds(494, 52, 35, 30);
+		lblNewLabel_2_1.setIcon(new ImageIcon(Tela_Main_GUI.class.getResource("/br/com/tokio/images/problem (2)_resized.png")));
+		lblNewLabel_2_1.setBounds(474, 41, 35, 30);
 		panel.add(lblNewLabel_2_1);
+		
+		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setBounds(0, 0, 539, 360);
+		frame.getContentPane().add(lblNewLabel_4);
+		lblNewLabel_4.setIcon(new ImageIcon(Tela_Main_GUI.class.getResource("/br/com/tokio/images/fundo_main.png")));
 	}
 
 	private static void openDulvidas() {

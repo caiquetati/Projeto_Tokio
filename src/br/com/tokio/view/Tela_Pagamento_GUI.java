@@ -147,7 +147,8 @@ public class Tela_Pagamento_GUI {
 		debito.setLayout(null);
 
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\qrcode_resized.jpg"));
+		lblNewLabel_1.setVisible(false);
+		lblNewLabel_1.setIcon(new ImageIcon(Tela_Pagamento_GUI.class.getResource("/br/com/tokio/images/qrcode_resized.jpg")));
 		lblNewLabel_1.setBounds(405, 194, 89, 96);
 		panel_1.add(lblNewLabel_1);
 
@@ -176,12 +177,6 @@ public class Tela_Pagamento_GUI {
 		btnCredito.setBounds(157, 127, 89, 23);
 		panel_1.add(btnCredito);
 
-		JLabel lblNewLabel_5 = new JLabel("PIX ");
-		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_5.setBounds(408, 166, 86, 28);
-		panel_1.add(lblNewLabel_5);
-
 		JButton btnBoleto = new JButton("BOLETO\r\n");
 		btnBoleto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -205,7 +200,7 @@ public class Tela_Pagamento_GUI {
 				System.exit(0);
 			}
 		});
-		lblNewLabel_7.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\close_resized (2).png"));
+		lblNewLabel_7.setIcon(new ImageIcon(Tela_Pagamento_GUI.class.getResource("/br/com/tokio/images/close_resized (2).png")));
 		lblNewLabel_7.setBounds(479, 0, 25, 38);
 		panel_1.add(lblNewLabel_7);
 
@@ -230,7 +225,7 @@ public class Tela_Pagamento_GUI {
 				openDulvidas();
 			}
 		});
-		lblNewLabel_7_1_1.setIcon(new ImageIcon("C:\\Users\\User\\Downloads\\problem (2)_resized.png"));
+		lblNewLabel_7_1_1.setIcon(new ImageIcon(Tela_Pagamento_GUI.class.getResource("/br/com/tokio/images/problem (2)_resized.png")));
 		lblNewLabel_7_1_1.setBounds(426, 0, 25, 38);
 		panel_1.add(lblNewLabel_7_1_1);
 
@@ -286,7 +281,7 @@ public class Tela_Pagamento_GUI {
 						Integer.parseInt(validadeText[0]));
 				int parcelas = comboParcelas.getSelectedIndex();
 				Credito credito = new Credito(cartao, cvv, parcelas, validade);
-				Tela_Main_GUI tela = new Tela_Main_GUI();
+				Tela_Concluir_GUI tela = new Tela_Concluir_GUI();
 				tela.frame.setLocationRelativeTo(null);
 				tela.frame.setVisible(true);
 				frame.dispose();				// Enviar ao banco de dados
@@ -343,6 +338,21 @@ public class Tela_Pagamento_GUI {
 		btn_debito.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btn_debito.setBounds(225, 88, 100, 23);
 		debito.add(btn_debito);
+		
+		JButton btnNewButton = new JButton("PIX");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton.setBounds(388, 128, 89, 23);
+		panel_1.add(btnNewButton);
+		
+		JLabel lblNewLabel_5 = new JLabel("");
+		lblNewLabel_5.setIcon(new ImageIcon(Tela_Pagamento_GUI.class.getResource("/br/com/tokio/images/fundo_casa.png")));
+		lblNewLabel_5.setBounds(0, 0, 524, 344);
+		panel.add(lblNewLabel_5);
 
 	}
 

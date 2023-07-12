@@ -73,9 +73,6 @@ public class Tela_Condominio_GUI {
 		lblNewLabel_1.setBounds(161, 11, 232, 45);
 		panel_1.add(lblNewLabel_1);
 
-		JLabel lblNewLabel_3 = new JLabel("Basico");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblNewLabel_3.setBounds(0, 0, 53, 25);
 
 		JTextPane basico = new JTextPane();
 		basico.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -92,19 +89,19 @@ public class Tela_Condominio_GUI {
 		intermediario.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		intermediario.setBounds(287, 118, 210, 96);
 
-		JLabel Value_basico = new JLabel("Valor:  R$52,73 /mes");
+		JLabel Value_basico = new JLabel("Valor:  R$52,73 /mês");
 		Value_basico.setFont(new Font("Tahoma", Font.BOLD, 12));
 		Value_basico.setVisible(false);
 		Value_basico.setBounds(362, 97, 133, 14);
 		panel_1.add(Value_basico);
 		
-		JLabel Value_intermediario = new JLabel("Valor:  R$55,31 /mes");
+		JLabel Value_intermediario = new JLabel("Valor:  R$55,31 /mês");
 		Value_intermediario.setFont(new Font("Tahoma", Font.BOLD, 12));
 		Value_intermediario.setVisible(false);
 		Value_intermediario.setBounds(362, 97, 133, 14);
 		panel_1.add(Value_intermediario);
 		
-		JLabel Value_completo = new JLabel("Valor:  R$61,66 /mes");
+		JLabel Value_completo = new JLabel("Valor:  R$61,66 /mês");
 		Value_completo.setFont(new Font("Tahoma", Font.BOLD, 12));
 		Value_completo.setVisible(false);
 		Value_completo.setBounds(362, 97, 133, 14);
@@ -124,6 +121,18 @@ public class Tela_Condominio_GUI {
 		panel_1_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				
+			}
+		});
+		panel_1_1.setLayout(null);
+		panel_1_1.setBackground(new Color(153, 153, 153));
+		panel_1_1.setBounds(45, 84, 107, 27);
+		panel_1.add(panel_1_1);
+
+		JLabel lblNewLabel_3 = new JLabel("Basico");
+		lblNewLabel_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
 				basico.setVisible(true);
 				Value_basico.setVisible(true);
 				Value_intermediario.setVisible(false);;
@@ -132,10 +141,8 @@ public class Tela_Condominio_GUI {
 				completo.setVisible(false);
 			}
 		});
-		panel_1_1.setLayout(null);
-		panel_1_1.setBackground(new Color(153, 153, 153));
-		panel_1_1.setBounds(45, 84, 107, 27);
-		panel_1.add(panel_1_1);
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel_3.setBounds(0, 0, 107, 25);
 
 		panel_1_1.add(lblNewLabel_3);
 
@@ -246,5 +253,10 @@ public class Tela_Condominio_GUI {
 														lblNewLabel.setIcon(new ImageIcon(Tela_Condominio_GUI.class.getResource("/br/com/tokio/images/condominio_resized_updated.jpg")));
 														lblNewLabel.setBounds(0, 0, 521, 339);
 														panel_1.add(lblNewLabel);
+														
+														JLabel lblNewLabel_4 = new JLabel("");
+														lblNewLabel_4.setIcon(new ImageIcon(Tela_Condominio_GUI.class.getResource("/br/com/tokio/images/fundo_casa.png")));
+														lblNewLabel_4.setBounds(0, 0, 541, 361);
+														panel.add(lblNewLabel_4);
 	}
 }
